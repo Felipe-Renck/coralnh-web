@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CoralnhComponent } from './coralnh/coralnh/coralnh.component';
+import { JanovohamburgoComponent } from './janovohamburgo/janovohamburgo/janovohamburgo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CoralnhComponent,
+    JanovohamburgoComponent
   ],
   imports: [
     BrowserModule,

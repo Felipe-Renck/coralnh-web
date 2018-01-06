@@ -1,0 +1,59 @@
+body {
+    background-image: linear-gradient(180deg, #000, transparent 20%), url(/assets/images/janovohamburgo/background.jpg);
+    background-position: 0% 0%, 50% 54%;
+    background-size: auto, cover;
+    background-attachment: fixed, fixed;
+}
+
+.row {
+    min-height: 150px !important;
+}
+
+.align-center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+img, button {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+#logovertical {
+    height: 150px;
+}
+
+#logocoral {
+    height: 100px;
+    float: right;
+}
+
+#logoescolasabatina {
+    /* TODO: remover margin, pois os logos nao devem ter sobras */
+    height: 65px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+#logoja {
+    height: 64px;
+    ;
+}
+
+#descriptionindex {
+    color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#btnCoralJovemNH {
+    float: right;
+    margin-right: 3px;
+}
+
+#btnEscolaSabatina {
+    float: left;
+    margin-top: 14px;
+}
