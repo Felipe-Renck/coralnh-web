@@ -9,15 +9,15 @@ body {
     min-height: 150px !important;
 }
 
-.align-center {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
 img, button {
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
+}
+
+.align-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
 }
 
 #logovertical {
@@ -39,7 +39,6 @@ img, button {
 
 #logoja {
     height: 64px;
-    ;
 }
 
 #descriptionindex {
@@ -57,3 +56,46 @@ img, button {
     float: left;
     margin-top: 14px;
 }
+
+/* -------MEDIA QUERYS----------------------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width:320px)  
+{ 
+    /* smartphones, iPhone, portrait 480x320 phones */ 
+     #logocoral{
+        float: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+
+    #btnCoralJovemNH{
+        float: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+}
+
+@media only screen and (min-width:481px)  
+{ 
+    /* smartphones, iPhone, portrait 480x320 phones */ 
+    /* #logocoral{
+        float: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+
+    #btnCoralJovemNH{
+        float: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    } */
+}
+
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
