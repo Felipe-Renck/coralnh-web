@@ -2,26 +2,28 @@
 <html>
 
 <head>
+    <base href="/">
   <!-- Stylesheets -->
-  <link href="/assets/stylesheets/bootstrap.css" rel="stylesheet">
+  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Scripts -->
-  <script src="/assets/scripts/jquery-1.10.2.js"></script>
+  <!-- <script src="/assets/scripts/jquery-1.10.2.js"></script> -->
 
   <!-- Icon -->
-  <link rel="icon" type="image/x-icon" href="/assets/images/coralnh/logo-preto-e-azul.png">
+  <link rel="icon" type="image/x-icon" href="/assets/images/janovohamburgo/jovens-adventistas.png">
 
   <!-- Title -->
-  <title>Coral Jovem de Novo Hamburgo</title>
+  <title>Jovens Adventistas - Novo Hamburgo</title>
 </head>
 
 <body>
   <div id="containerindex" class="container">
 
     <div clas="col-sm-12" style="min-height:150px;">
-      <br><br>
+      <br>
+      <br>
       <img id="logovertical" class="align-center" src="./assets/images/janovohamburgo/vertical-logo-b.png">
     </div>
 
@@ -40,7 +42,7 @@
       <div class="col-sm-6">
         <img id="logocoral" src="./assets/images/janovohamburgo/coral-logo-branco-e-azul.png">
         <div style="clear:right"></div>
-        <button id="btnCoralJovemNH" type="button" class="btn btn-info align-center">acesse o site</button>
+        <a id="btnCoralJovemNH" routerLink="/coralnh"  type="button" class="btn btn-info align-center">acesse o site</a>
         <br>
       </div>
       <div class="col-sm-6">
@@ -57,5 +59,4 @@
 
   </div>
 </body>
-
 </html>

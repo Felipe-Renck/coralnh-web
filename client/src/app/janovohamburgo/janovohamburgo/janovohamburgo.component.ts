@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-janovohamburgo',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./janovohamburgo.component.css']
 })
 export class JanovohamburgoComponent implements OnInit {
+  
+  constructor(private router: Router){
 
-  constructor() { }
-
+  }
+  
   ngOnInit() {
 
   }
