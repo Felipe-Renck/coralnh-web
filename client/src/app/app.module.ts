@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
+import { Optional } from "@angular/core";
 
 import { AppComponent } from './app.component';
 import { CoralnhComponent } from './coralnh/coralnh/coralnh.component';
 import { JanovohamburgoComponent } from './janovohamburgo/janovohamburgo/janovohamburgo.component';
+import { VerticalMaisComponent } from './vertical-mais/vertical-mais.component';
 
 const appRoutes: Routes = [
   { path: 'index', component: JanovohamburgoComponent, pathMatch: 'full' },
@@ -19,7 +21,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CoralnhComponent,
-    JanovohamburgoComponent
+    JanovohamburgoComponent,
+    VerticalMaisComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: true }
     )
   ],
   providers: [

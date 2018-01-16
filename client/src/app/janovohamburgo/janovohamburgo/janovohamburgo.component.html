@@ -2,14 +2,6 @@
 <html>
 
 <head>
-  <!-- Stylesheets -->
-  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <!-- Scripts -->
-  <!-- <script src="/assets/scripts/jquery-1.10.2.js"></script> -->
-
   <!-- Icon -->
   <link rel="icon" type="image/x-icon" href="/assets/images/janovohamburgo/jovens-adventistas.png">
 
@@ -33,7 +25,8 @@
         ac lectus eu ornare. In congue facilisis est et tincidunt. Donec nibh arcu, accumsan sit amet dolor egestas, vulputate
         suscipit elit. Etiam nec sapien ut neque blandit rutrum.
       </p>
-      <button type="button" class="btn btn-default align-center">saiba mais</button>
+      <button type="button" class="btn btn-default align-center" data-toggle="modal" data-target="#modal-vertical">saiba mais</button>
+      <vertical-mais></vertical-mais>
       <br>
     </div>
 
@@ -41,13 +34,13 @@
       <div class="col-sm-6">
         <img id="logocoral" src="./assets/images/janovohamburgo/coral-logo-branco-e-azul.png">
         <div style="clear:right"></div>
-        <a id="btnCoralJovemNH" routerLink="/coralnh"  type="button" class="btn btn-info align-center">acesse o site</a>
+        <button id="btnCoralJovemNH" type="button" (click)="BtnCoralClick()" class="btn btn-info align-center">acesse o site</button>
         <br>
       </div>
       <div class="col-sm-6">
         <img id="logoescolasabatina" src="./assets/images/janovohamburgo/escola-sabatina.png">
         <div style="clear:left"></div>
-        <button id="btnEscolaSabatina" type="button" class="btn btn-primary align-center">acesse o site</button>
+        <button id="btnEscolaSabatina" type="button" disabled class="btn btn-primary align-center">em breve!</button>
         <br>
       </div>
     </div>
@@ -58,4 +51,5 @@
 
   </div>
 </body>
+
 </html>
