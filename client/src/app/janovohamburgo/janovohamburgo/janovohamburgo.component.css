@@ -57,6 +57,11 @@ img, button {
     margin-top: 14px;
 }
 
+#descriptionindex{
+    width: 605px;
+    text-align: center;
+}
+
 /* -------MEDIA QUERYS----------------------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width:320px)  
