@@ -264,7 +264,8 @@ img.capaCD {
     bottom: 0;
     height: 100px;
     width: 100vw;
-    background-color: #0098db94;
+    /* background-color: #0098db94; */
+    background-color:rgba(0, 152, 219, 0.6);
 }
 
 body {
@@ -341,10 +342,10 @@ input, select, textarea {
         border: none;
         background-color: unset!important;
         background-image: #1e5799!important;
-        background-image: -moz-linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
-        background-image: -webkit-linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
-        background-image: linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
-        background-image: -o-linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
+        background-image: -moz-linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
+        background-image: -webkit-linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
+        background-image: linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
+        background-image: -o-linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=0)!important;
     }
     .navbar-toggle {
@@ -384,10 +385,10 @@ input, select, textarea {
         border: none;
         background-color: unset!important;
         background-image: #1e5799!important;
-        background-image: -moz-linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
-        background-image: -webkit-linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
-        background-image: linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
-        background-image: -o-linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
+        background-image: -moz-linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
+        background-image: -webkit-linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
+        background-image: linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
+        background-image: -o-linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=0)!important;
     }
     .navbar-toggle {
@@ -427,10 +428,10 @@ input, select, textarea {
         border: none;
         background-color: unset!important;
         background-image: #1e5799!important;
-        background-image: -moz-linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
-        background-image: -webkit-linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
-        background-image: linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
-        background-image: -o-linear-gradient(to bottom, #020202 40%, #000000b0 70%, #ffffff00 100%)!important;
+        background-image: -moz-linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
+        background-image: -webkit-linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
+        background-image: linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
+        background-image: -o-linear-gradient(to bottom, rgb(2, 2, 2) 40%, rgba(0, 0, 0, 0.7) 70%, rgba(255, 255, 255, 0) 100%)!important;
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=0)!important;
     }
     .navbar-toggle {

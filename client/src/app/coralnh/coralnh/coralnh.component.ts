@@ -11,5 +11,4 @@ export class CoralnhComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
