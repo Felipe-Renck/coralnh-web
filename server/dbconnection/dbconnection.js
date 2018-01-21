@@ -10,7 +10,7 @@ var userschema = new Schema({
 
 var User = mongoose.model('Users', userschema);
 
-var userdefault = new User({name:'Roger', surname:'Zabka'});
+var userdefault = new User({ name: 'Roger', surname: 'Zabka' });
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -21,7 +21,7 @@ db.once('open', function () {
 User.findOne({ 'name': 'Roger' }, function (err, user) {
     if (err) return handleError(err);
     // Prints "Space Ghost is a talk show host".
-    console.log(user.name, 
+    console.log(user.name,
         user.surname);
-  });
+});
 
