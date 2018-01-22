@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { HashLocationStrategy, LocationStrategy } from "@angular/common";
-import { Optional } from "@angular/core";
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { Optional } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { JanovohamburgoComponent } from './janovohamburgo/janovohamburgo/janovohamburgo.component';
@@ -15,6 +15,7 @@ import { CoralnhhomeComponent } from './coralnh/coralnhhome/coralnhhome.componen
 import { CoralnhsobreComponent } from './coralnh/coralnhsobre/coralnhsobre.component';
 import { CoralnhcalendarioComponent } from 'app/coralnh/coralnhcalendario/coralnhcalendario.component';
 import { CoralnhcontatoComponent } from 'app/coralnh/coralnhcontato/coralnhcontato.component';
+import {CalendarComponent} from 'ap-angular2-fullcalendar';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     CoralnhcontatoComponent,
     CoralnhgaleriaComponent,
     JanovohamburgoComponent,
-    VerticalMaisComponent
+    VerticalMaisComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
