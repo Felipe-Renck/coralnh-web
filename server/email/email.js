@@ -4,6 +4,7 @@ var email;
 var subject;
 var message;
 var site;
+var error;
 
 function Email(email, subject, message, site) {
     this.email = email;
@@ -12,16 +13,17 @@ function Email(email, subject, message, site) {
     this.site = site;
 }
 
-function messageFormat(email, message, subject, site){
+function messageFormat(email, message, subject, site) {
     var htmlMessage = '';
     htmlMessage = '<h1>' + subject + '</h1>';
     htmlMessage = htmlMessage + '<p>' + message + '</p>';
-    htmlMessage = htmlMessage + '<h3>' + email + ' from ' + site +'</h3>';
+    htmlMessage = htmlMessage + '<h3>' + email + ' from ' + site + '</h3>';
 
     return htmlMessage;
 }
 
 Email.prototype.send = function () {
+
     var transporte = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -37,10 +39,12 @@ Email.prototype.send = function () {
         html: messageFormat(this.email, this.message, this.subject, this.site)
     };
 
-    transporte.sendMail(email, function (err, info) {
-        if (err)
-            throw err; // Oops, algo de errado aconteceu.
 
+    transporte.sendMail(email, function (err, info) {
+        
+        if (err) {
+            return new Error(err);
+        }
         console.log('Email enviado! Leia as informações adicionais: ', info);
     });
 }
