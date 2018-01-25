@@ -15,7 +15,6 @@ import { CoralnhhomeComponent } from './coralnh/coralnhhome/coralnhhome.componen
 import { CoralnhsobreComponent } from './coralnh/coralnhsobre/coralnhsobre.component';
 import { CoralnhcalendarioComponent } from 'app/coralnh/coralnhcalendario/coralnhcalendario.component';
 import { CoralnhcontatoComponent } from 'app/coralnh/coralnhcontato/coralnhcontato.component';
-import {CalendarComponent} from 'ap-angular2-fullcalendar';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -42,8 +41,7 @@ const appRoutes: Routes = [
     CoralnhcontatoComponent,
     CoralnhgaleriaComponent,
     JanovohamburgoComponent,
-    VerticalMaisComponent,
-    CalendarComponent
+    VerticalMaisComponent
   ],
   imports: [
     BrowserModule,
