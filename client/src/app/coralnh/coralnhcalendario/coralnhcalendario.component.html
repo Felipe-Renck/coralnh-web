@@ -1,4 +1,20 @@
-<link href="/node_modules/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
 <p>
   coralnhcalendario works!
 </p>
+<h2>dxScheduler</h2>
+
+<dx-scheduler
+    style="height: 500px; display: block"
+    [dataSource]="appointments"
+    [currentDate]="currentDate"
+    startDateExpr="StartDate"
+    endDateExpr="EndDate"
+    textExpr="Text"
+    [editing]="false"
+    [views]="['agenda','month','week','workWeek','day']"
+    currentView="week"
+    [firstDayOfWeek]="0"
+    [startDayHour]="8"
+    [endDayHour]="19"
+    [resources]="resources"
+></dx-scheduler>
