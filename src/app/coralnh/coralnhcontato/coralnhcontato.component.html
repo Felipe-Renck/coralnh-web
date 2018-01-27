@@ -1,0 +1,34 @@
+<div class="content-background">
+  <div class="content-inside">
+    <br>
+    <h2>Contato</h2>
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm"> 
+      <div class="form-group">
+        <div class="col-sm-4">
+
+          <label for="inputNome">Nome:</label>
+          <input required [(ngModel)]="contato.name" name="name" type="text" class="form-control input-sm" id="inputNome" placeholder="Insira seu nome">
+
+          <label for="inputSobrenome">Sobrenome:</label>
+          <input required [(ngModel)]="contato.surname" name="surname" type="text" class="form-control input-sm" id="inputSobrenome" placeholder="Insira seu sobrenome">
+
+          <label for="inputEmail">E-mail</label>
+          <input required [(ngModel)]="contato.email" name="email" type="email" class="form-control input-sm" id="inputEmail" aria-describedby="emailHelp" placeholder="Insira seu e-mail">
+        </div>
+        <div class="col-sm-8">
+          <label for="inputAssunto">Assunto</label>
+          <input required [(ngModel)]="contato.subject" name="subject" type="text" class="form-control" id="inputAssunto" placeholder="Informe o assunto desejado">
+
+          <label for="inputMensagem">Mensagem</label>
+          <textarea required [(ngModel)]="contato.message" name="message"  type="text" class="form-control" id="inputMensagem" rows="4" placeholder="Descreva o assunto informado"></textarea>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+    <br>
+  </div>
+</div>

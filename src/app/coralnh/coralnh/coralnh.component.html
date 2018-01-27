@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Stylesheets -->
+  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Gloria+Hallelujah|Indie+Flower|Lobster|Pacifico|Sedgwick+Ave|Shadows+Into+Light|Pacifico|Quicksand" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <!-- <script src="/assets/scripts/jquery-1.10.2.js"></script> -->
+
+  <!-- Icon -->
+  <link rel="icon" type="image/x-icon" href="/assets/images/coralnh/logo-preto-e-azulng.png">
+
+  <!-- Title -->
+  <title>Coral Jovem de Novo Hamburgo</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div style="margin-top:14px;">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand">
+          <img class="logo" src="/assets/images/coralnh/logo-branco-e-azul.png" style="height:64px" />
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <div class="align-center">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="menu-toggle-coral text-menu">
+              <a routerLink="coralnhhome" onclick="navBarCollapseHide()">Home</a>
+            </li>
+            <li class="menu-toggle-coral text-menu">
+              <a routerLink="coralnhsobre" onclick="navBarCollapseHide()">O Coral</a>
+            </li>
+            <li class="menu-toggle-coral text-menu">
+              <a  routerLink="coralnhgaleria" onclick="navBarCollapseHide()">Galeria</a>
+            </li>
+            <li class="menu-toggle-coral text-menu">
+              <a routerLink="coralnhcalendario" onclick="navBarCollapseHide()">Calendário</a>
+            </li>
+            <li class="menu-toggle-coral text-menu">
+              <a routerLink="coralnhcontato" onclick="navBarCollapseHide()">Contato</a>
+            </li>
+          </ul>
+          <div style="font-size:32px;float:right;" class="text-center text-social-menu">
+            <a class="fa fa-spotify c_text-shadow_black" href="spotify:artist:7ec9N1DHWwqnjWX9vG0yhM"></a>
+            <a target="_blank" class="fa fa-facebook-square c_text-shadow_black" href="https://www.facebook.com/coraljovemnh/"></a>
+            <a target="_blank" class="fa fa-youtube c_text-shadow_black" href="https://www.youtube.com/channel/UCFPNVYPFwn4MbMz4juWi5ZQ"></a>
+            <a target="_blank" class="fa fa-instagram c_text-shadow_black" href="http://www.instagram.com/coraljovemnh/"></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="background-shadow" data-ix="show-nav"></div>
+
+  <div class="container body-content c_container" style="margin-top:70px !important;">
+    <router-outlet></router-outlet>
+  </div>
+
+</body>
+<footer>
+  <div id="footerDefault" class="footer-custom">
+    <div class="col-sm-12">
+        <p style="color:white;text-align:center;padding-top:6px;margin:0!important">2017 - coralnh.com.br</p>
+    </div>
+  </div>
+</footer>
+</html>

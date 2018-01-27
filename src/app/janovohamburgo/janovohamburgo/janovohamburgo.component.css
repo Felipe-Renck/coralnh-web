@@ -1,0 +1,169 @@
+body {
+    background-image: linear-gradient(180deg, #000, transparent 20%), url(/assets/images/janovohamburgo/background.jpg);
+    background-position: 0% 0%, 50% 54%;
+    background-size: auto, cover;
+    background-attachment: fixed, fixed;
+}
+
+.row {
+    min-height: 150px !important;
+}
+
+img, button {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.align-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+}
+
+#logovertical {
+    height: 180px;
+}
+
+#logocoral {
+    height: 100px;
+    float: right;
+}
+
+#logoescolasabatina {
+    /* TODO: remover margin, pois os logos nao devem ter sobras */
+    height: 65px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+#logoja {
+    height: 64px;
+}
+
+#descriptionindex {
+    color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#btnCoralJovemNH {
+    float: right;
+    margin-right: 3px;
+}
+
+#btnEscolaSabatina {
+    float: left;
+    margin-top: 14px;
+}
+
+/* -------MEDIA QUERYS----------------------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width:320px)  
+{ 
+    body{
+        height: auto !important;
+    }
+
+    /* smartphones, iPhone, portrait 480x320 phones */ 
+    #logovertical{
+        max-width: 100px;
+    }
+
+    #logocoral{
+        height: 165px !important;
+    }
+
+    #logoescolasabatina{
+        height: 100px !important;
+    }
+
+    #logocoral, #logoescolasabatina{
+        float: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+
+    #btnCoralJovemNH, #btnEscolaSabatina{
+        float: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+}
+
+@media only screen and (max-width:481px)  
+{ 
+    body{
+        height: auto !important;
+    }
+
+    /* smartphones, iPhone, portrait 480x320 phones */ 
+    #logovertical{
+        max-width: 100vw;
+        max-height: 120px;
+    }
+
+    #logocoral{
+        height: 165px !important;
+    }
+
+    #logoescolasabatina{
+        height: 100px !important;
+    }
+
+     #logocoral, #logoescolasabatina{
+        float: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+
+    #btnCoralJovemNH, #btnEscolaSabatina{
+        float: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+}
+
+@media (max-width:641px)  { 
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+    body{
+        height: auto !important;
+    }
+
+    /* smartphones, iPhone, portrait 480x320 phones */ 
+    #logovertical{
+        max-width: auto;
+    }
+
+    #logocoral{
+        height: 165px !important;
+    }
+
+    #logoescolasabatina{
+        height: 100px !important;
+    }
+
+    #logocoral, #logoescolasabatina{
+        float: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+
+    #btnCoralJovemNH, #btnEscolaSabatina{
+        float: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+}
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
