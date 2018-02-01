@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { Optional } from '@angular/core';
@@ -16,7 +17,8 @@ import {
   MatRadioModule, MatProgressSpinnerModule, MatTabsModule, MatListModule
 } from '@angular/material';
 
-import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 import { ContatoService } from './services/contato.service';
 
@@ -62,15 +64,12 @@ const appRoutes: Routes = [
     InscricaoComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     MatFormFieldModule,
     HttpModule,
     HttpClientModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false }
-    ),
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule, MatCheckboxModule,
@@ -78,7 +77,11 @@ const appRoutes: Routes = [
     MatGridListModule, MatProgressBarModule, MatSliderModule,
     MatSlideToggleModule, MatMenuModule, MatDialogModule,
     MatSnackBarModule, MatSelectModule, MatInputModule, MatSidenavModule,
-    MatCardModule, MatIconModule, MatRadioModule, MatProgressSpinnerModule, MatTabsModule, MatListModule
+    MatCardModule, MatIconModule, MatRadioModule, MatProgressSpinnerModule, MatTabsModule, MatListModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: false }
+    )
   ],
   exports: [
     FormsModule, ReactiveFormsModule,
