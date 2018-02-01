@@ -1,43 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { Optional } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatStepperModule,
+  MatButtonModule, MatCheckboxModule,
+  MatToolbarModule, MatChipsModule, MatOptionModule,
+  MatGridListModule, MatProgressBarModule, MatSliderModule,
+  MatSlideToggleModule, MatMenuModule, MatDialogModule, MatSnackBarModule,
+  MatSelectModule, MatInputModule, MatSidenavModule, MatCardModule, MatIconModule,
+  MatRadioModule, MatProgressSpinnerModule, MatTabsModule, MatListModule
 } from '@angular/material';
 
 import { MatFormFieldModule } from '@angular/material/form-field'
@@ -93,41 +68,23 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }
-    )
+    ),
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule, MatCheckboxModule,
+    MatToolbarModule, MatChipsModule, MatOptionModule,
+    MatGridListModule, MatProgressBarModule, MatSliderModule,
+    MatSlideToggleModule, MatMenuModule, MatDialogModule,
+    MatSnackBarModule, MatSelectModule, MatInputModule, MatSidenavModule,
+    MatCardModule, MatIconModule, MatRadioModule, MatProgressSpinnerModule, MatTabsModule, MatListModule
   ],
   exports: [
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatStepperModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
+    FormsModule, ReactiveFormsModule,
+    MatButtonModule, MatCheckboxModule, MatToolbarModule,
+    MatChipsModule, MatOptionModule, MatGridListModule, MatProgressBarModule,
+    MatSliderModule, MatSlideToggleModule, MatMenuModule, MatDialogModule, MatSnackBarModule,
+    MatSelectModule, MatInputModule, MatSidenavModule, MatCardModule, MatIconModule, MatRadioModule,
+    MatProgressSpinnerModule, MatTabsModule, MatListModule
   ],
   providers: [ContatoService,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
