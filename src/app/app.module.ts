@@ -6,7 +6,41 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { Optional } from '@angular/core';
-import {MatFormFieldModule} from '@angular/material';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
+
+import { MatFormFieldModule } from '@angular/material/form-field'
 
 import { ContatoService } from './services/contato.service';
 
@@ -27,14 +61,14 @@ const appRoutes: Routes = [
   {
     path: 'coralnh', component: CoralnhComponent,
     children:
-     [{ path: '', redirectTo: 'coralnhhome', pathMatch: 'full' },
+      [{ path: '', redirectTo: 'coralnhhome', pathMatch: 'full' },
       { path: 'coralnhhome', component: CoralnhhomeComponent },
       { path: 'coralnhsobre', component: CoralnhsobreComponent },
       { path: 'coralnhgaleria', component: CoralnhgaleriaComponent },
       { path: 'coralnhcalendario', component: CoralnhcalendarioComponent },
       { path: 'coralnhcontato', component: CoralnhcontatoComponent },
       { path: 'inscricao', component: InscricaoComponent }
-    ]
+      ]
   },
 ];
 
@@ -49,8 +83,7 @@ const appRoutes: Routes = [
     CoralnhgaleriaComponent,
     JanovohamburgoComponent,
     VerticalMaisComponent,
-    InscricaoComponent,
-    //InscricaoComponent
+    InscricaoComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +95,41 @@ const appRoutes: Routes = [
       { enableTracing: false }
     )
   ],
-  providers: [ ContatoService,
+  exports: [
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+  ],
+  providers: [ContatoService,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
