@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
-import { Address } from './address';
+import { User } from './user';
 import { FormControl, Validators } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
@@ -48,11 +48,11 @@ import {
 })
 export class InscricaoComponent implements OnInit {
 
-  address = new Address();
+  user = new User();
   email = new FormControl('', [Validators.required, Validators.email]);
 
   onSubmit() {
-    alert('Thanks for submitting! Data: ' + JSON.stringify(this.address));
+    alert('Thanks for submitting! Data: ' + JSON.stringify(this.user));
   }
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :

@@ -1,18 +1,63 @@
 <mat-card>
     <mat-card-content>
-        <mat-card-title>Inscrição</mat-card-title>>
-        <mat-form-field>
-            <input matInput placeholder="Input">
-        </mat-form-field>
+        <h3>Inscrição</h3>
+        <form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm">
+            <tr>
+                <td>
+                    <mat-input-container class="fullwidth">
+                        <input matInput placeholder="Nome Completo" id="Nome" [(ngModel)]="user.Nome" name="Nome">
+                    </mat-input-container>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-input-container class="fullwidth">
+                        <input matInput placeholder="RG" id="RG" [(ngModel)]="user.RG" name="RG" maxlength="11">
+                    </mat-input-container>
+                </td>
+            </tr>
 
-        <mat-form-field>
-            <textarea matInput placeholder="Textarea"></textarea>
-        </mat-form-field>
+            <tr>
+                <td>
+                    <mat-input-container class="fullwidth">
+                        <input matInput placeholder="Email" id="Email" [(ngModel)]="user.Email" name="Email">
+                    </mat-input-container>
+                </td>
+            </tr>
 
-        <mat-form-field>
-            <mat-select placeholder="Select">
-                <mat-option value="option">Option</mat-option>
-            </mat-select>
-        </mat-form-field>
+            <tr>
+                <td>
+                    <mat-input-container class="fullwidth">
+                        <input matInput placeholder="Telefone" id="Telefone" [(ngModel)]="user.Telefone" name="Telefone">
+                    </mat-input-container>
+                </td>
+            </tr>
+
+            <table class="fullwidth" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-input-container class="fullwidth">
+                            <input matInput placeholder="Celular" id="Celular" [(ngModel)]="user.Celular" name="Celular">
+                        </mat-input-container>
+                    </td>
+                    <td>
+                        <mat-checkbox color="warn">WhatsApp</mat-checkbox>
+                    </td>
+                    <td>
+                        <mat-input-container class="fullwidth">
+                            <input matInput #postalcode maxlength="5" placeholder="Teste" id="postalcode" [(ngModel)]="user.postalcode" name="postalcode">
+                            <mat-hint align="end">
+                                {{postalcode.value.length}} / 5
+                            </mat-hint>
+                        </mat-input-container>
+                    </td>
+                </tr>
+            </table>
+
+            <p>
+                <button type="submit" mat-raised-button (click)="openDialog()">Submit</button>
+            </p>
+        </form>
+
     </mat-card-content>
 </mat-card>
