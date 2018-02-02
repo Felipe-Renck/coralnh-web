@@ -21,7 +21,7 @@ export class ContatoService {
       JSON.stringify(contato), this.httpOptions).toPromise().then(this.extractData).catch(this.handleError);
   }
 
-  private extractData(value: Response): any | PromiseLike<any>{
+  private extractData(value: Response): any | PromiseLike<any> {
     return Promise.resolve(value);
   }
 

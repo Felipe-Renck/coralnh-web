@@ -21,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 import { ContatoService } from './services/contato.service';
+import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
 import { JanovohamburgoComponent } from './janovohamburgo/janovohamburgo/janovohamburgo.component';
@@ -91,7 +92,7 @@ const appRoutes: Routes = [
     MatSelectModule, MatInputModule, MatSidenavModule, MatCardModule, MatIconModule, MatRadioModule,
     MatProgressSpinnerModule, MatTabsModule, MatListModule
   ],
-  providers: [ContatoService,
+  providers: [ContatoService, UserService,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]

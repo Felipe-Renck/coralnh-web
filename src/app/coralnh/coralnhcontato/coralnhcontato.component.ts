@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contato } from 'models/Contato';
-import { Http, Response } from "@angular/http";
+import { Http, Response } from '@angular/http';
 import { ContatoService } from 'app/services/contato.service';
 
 
