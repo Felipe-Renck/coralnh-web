@@ -33,6 +33,7 @@ import { CoralnhsobreComponent } from './coralnh/coralnhsobre/coralnhsobre.compo
 import { CoralnhcalendarioComponent } from 'app/coralnh/coralnhcalendario/coralnhcalendario.component';
 import { CoralnhcontatoComponent } from 'app/coralnh/coralnhcontato/coralnhcontato.component';
 import { InscricaoComponent } from './coralnh/inscricao/inscricao.component';
+import {DialogContentComponent } from './coralnh/inscricao/inscricao.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -62,7 +63,8 @@ const appRoutes: Routes = [
     CoralnhgaleriaComponent,
     JanovohamburgoComponent,
     VerticalMaisComponent,
-    InscricaoComponent
+    InscricaoComponent,
+    DialogContentComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -95,6 +97,7 @@ const appRoutes: Routes = [
   providers: [ContatoService, UserService,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
+  entryComponents: [DialogContentComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Contato } from 'models/Contato';
+import { Contato } from 'app/models/Contato';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { HttpRequest, HttpResponse, HttpHeaders, HttpParams, HttpClient } from '@angular/common/http';
@@ -17,6 +17,7 @@ export class ContatoService {
   constructor(private http: HttpClient) { }
 
   enviarEmail(contato: Contato): Promise<any> {
+    console.log("SERVICE");
     return this.http.post('http://localhost:3002/email',
       JSON.stringify(contato), this.httpOptions).toPromise().then(this.extractData).catch(this.handleError);
   }

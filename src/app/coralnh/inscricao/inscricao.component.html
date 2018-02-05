@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="card-inscricao">
     <mat-card-content>
         <h3>Inscrição</h3>
         <form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm">
@@ -32,22 +32,19 @@
                     </mat-input-container>
                 </td>
             </tr>
-
-            <table class="fullwidth" cellspacing="0">
-                <tr>
-                    <td>
-                        <mat-input-container class="fullwidth">
-                            <input matInput placeholder="Celular" id="Celular" [(ngModel)]="user.Celular" name="Celular">
-                        </mat-input-container>
-                    </td>
-                    <td>
-                        <mat-checkbox color="warn">WhatsApp</mat-checkbox>
-                    </td>
-                </tr>
-            </table>
+            <tr>
+                <td>
+                    <mat-input-container class="fullwidth">
+                        <input matInput placeholder="Celular" id="Celular" [(ngModel)]="user.Celular" name="Celular">
+                    </mat-input-container>
+                </td>
+                <td>
+                    <mat-checkbox color="primary">WhatsApp</mat-checkbox>
+                </td>
+            </tr>
 
             <p>
-                <button type="submit" mat-raised-button (click)="openDialog()">Submit</button>
+                <button type="submit" app-button mat-raised-button mat-primary color="primary">Enviar</button>
             </p>
         </form>
 

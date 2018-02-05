@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
-import { User } from 'models/User';
+import { User } from 'app/models/User';
 import { FormControl, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Http, Headers } from '@angular/http';
-import { UserService } from 'app/services/User.service';
+import { UserService } from 'app/services/user.service';
 
 import {
   MatAutocompleteModule,
@@ -74,12 +74,13 @@ export class InscricaoComponent implements OnInit {
     const user = JSON.stringify(this.user);
     console.log('Submit');
     this.saveUser(user);
-
+    console.log(user);
     alert('Thanks for submitting! Data: ' + JSON.stringify(this.user));
   }
 
   saveUser = function (user) {
     console.log('SaveUser');
+    console.log(user);
     return this.UserService.saveUser(user);
   }
   getErrorMessage() {
