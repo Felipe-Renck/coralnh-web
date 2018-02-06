@@ -1,5 +1,5 @@
 .card-inscricao {
-  width: 80vw;
+  width: 60%;
 }
 
 .align-center {
@@ -21,4 +21,7 @@
 
 mat-input-container {
   width: 100%!important;
+}
+.check-box-whats{
+  margin-top: 20px;
 }
