@@ -1,18 +1,24 @@
 .card-inscricao {
-    width: 80vw;
-  }
-
-  .align-center {
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    top: 20%;
-    bottom: 20%;
-    right: 0;
-    left:0;
-    position: absolute;
+  width: 80vw;
 }
 
-mat-input-container{
+.align-center {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  right: 0;
+  left: 0;
+  position: absolute;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-filter: drop-shadow(-2px 1px 0px white);
+  filter: drop-shadow(-2px 1px 0px white);
+}
+
+mat-input-container {
   width: 100%!important;
 }
