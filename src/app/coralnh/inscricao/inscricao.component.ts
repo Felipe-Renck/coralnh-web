@@ -81,7 +81,7 @@ export class InscricaoComponent implements OnInit {
   saveUser = function (user) {
     console.log('SaveUser');
     console.log(user);
-    return this.UserService.saveUser(user);
+    return this.userService.saveUser(user);
   }
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :

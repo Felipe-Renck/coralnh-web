@@ -1,3 +1,18 @@
 .card-inscricao {
-    width: 80%;
+    width: 80vw;
   }
+
+  .align-center {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    top: 20%;
+    bottom: 20%;
+    right: 0;
+    left:0;
+    position: absolute;
+}
+
+mat-input-container{
+  width: 100%!important;
+}
