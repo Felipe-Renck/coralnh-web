@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Contato } from 'app/models/Contato';
 import { Http, Response } from '@angular/http';
 import { ContatoService } from 'app/services/contato.service';
 
@@ -11,6 +12,8 @@ import { ContatoService } from 'app/services/contato.service';
 export class CoralnhcontatoComponent implements OnInit {
 
   message: string;
+
+  contato = new Contato(0, '', '', '', '', '');
 
   constructor(private http: Http, private contatoService: ContatoService) { }
 
