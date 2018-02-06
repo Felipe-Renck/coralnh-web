@@ -7,6 +7,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { Optional } from "@angular/core";
+import 'hammerjs';
+import 'mousetrap';
+import { ModalGalleryModule } from 'angular-modal-gallery';
 
 import { ContatoService } from "./services/contato.service";
 
@@ -26,7 +29,7 @@ const appRoutes: Routes = [
   {
     path: 'coralnh', component: CoralnhComponent,
     children:
-     [{ path: '', redirectTo: 'coralnhhome', pathMatch: 'full' },
+      [{ path: '', redirectTo: 'coralnhhome', pathMatch: 'full' },
       { path: 'coralnhhome', component: CoralnhhomeComponent },
       { path: 'coralnhsobre', component: CoralnhsobreComponent },
       { path: 'coralnhgaleria', component: CoralnhgaleriaComponent },
@@ -52,12 +55,13 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     HttpClientModule,
+    ModalGalleryModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }
     )
   ],
-  providers: [ ContatoService, HttpClientModule, HttpModule,
+  providers: [ContatoService, HttpClientModule, HttpModule,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]

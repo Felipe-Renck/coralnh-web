@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoralnhComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+
+  }
 
   ngOnInit() {
+
   }
 }
