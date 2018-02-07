@@ -26,7 +26,7 @@ export class CoralnhcontatoComponent implements OnInit {
 
   enviar = function () {
     console.log("ENVIAR");
-    return this.contatoService.enviarEmail(this.contato).then(x => this.checkEnvio(x)).catch(x => this.checkEnvio(x));
+    return this.contatoService.enviarEmail(this.contato).then(res => this.checkEnvio(res)).catch(res => this.checkEnvio(res));
   }
 
   checkEnvio = function (res) {
