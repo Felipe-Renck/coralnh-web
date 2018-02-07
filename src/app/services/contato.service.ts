@@ -18,16 +18,15 @@ export class ContatoService {
 
   enviarEmail(contato: Contato): Promise<any> {
     console.log("SERVICE");
-    return this.http.post('http://localhost:3002/email',
-      JSON.stringify(contato), this.httpOptions).toPromise().then(this.extractData).catch(this.handleError);
+    return this.http.post('http://localhost:3002/email', JSON.stringify(contato), this.httpOptions).toPromise();
   }
 
-  private extractData(value: Response): any | PromiseLike<any> {
-    return Promise.resolve(value);
-  }
+  // private extractData(value: Response): any | PromiseLike<any> {
+  //   return Promise.resolve(value);
+  // }
 
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error);
-    return Promise.reject(error.message || error);
-  }
+  // private handleError(error: any): Promise<any> {
+  //   console.error('An error occurred', error);
+  //   return Promise.reject(error.message || error);
+  // }
 }
