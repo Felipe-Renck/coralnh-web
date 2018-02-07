@@ -6,17 +6,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import { Http, Response } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class UserService {
-
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   saveUser(user: User) {
+
     console.log('SaveUserService');
     console.log(User);
     return this.http.post('http://localhost:3002/user', JSON.stringify(User), this.httpOptions).toPromise().then();

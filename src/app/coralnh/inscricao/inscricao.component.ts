@@ -8,14 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Http, Headers } from '@angular/http';
 import { UserService } from 'app/services/user.service';
 
+
 import {
   MatAutocompleteModule,
   MatButtonModule,
+  MatDatepickerModule,
   MatButtonToggleModule,
   MatCardModule,
   MatCheckboxModule,
   MatChipsModule,
-  MatDatepickerModule,
   MatDialogModule,
   MatFormField,
   MatExpansionModule,
@@ -54,6 +55,19 @@ export class InscricaoComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   lastDialogResult: string;
   private _dialog: MatDialog;
+  minDate = new Date(2005, 0, 1);
+  maxDate = new Date();
+
+  public types = [
+    { value: 'A+', viewValue: 'A+' },
+    { value: 'A-', viewValue: 'A-' },
+    { value: 'B+', viewValue: 'B+' },
+    { value: 'B-', viewValue: 'B-' },
+    { value: 'AB+', viewValue: 'AB+' },
+    { value: 'AB-', viewValue: 'AB-' },
+    { value: 'O+', viewValue: 'O+' },
+    { value: 'O-', viewValue: 'O-' }
+  ];
 
   constructor(private userService: UserService) {
 
@@ -75,7 +89,7 @@ export class InscricaoComponent implements OnInit {
     console.log('Submit');
     this.saveUser(user);
     console.log(user);
-    alert('Thanks for submitting! Data: ' + JSON.stringify(this.user));
+    alert('Sua inscrição foi confirmada ' + JSON.stringify(this.user));
   }
 
   saveUser = function (user) {

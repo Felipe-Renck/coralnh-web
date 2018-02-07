@@ -33,7 +33,9 @@ import { CoralnhsobreComponent } from './coralnh/coralnhsobre/coralnhsobre.compo
 import { CoralnhcalendarioComponent } from 'app/coralnh/coralnhcalendario/coralnhcalendario.component';
 import { CoralnhcontatoComponent } from 'app/coralnh/coralnhcontato/coralnhcontato.component';
 import { InscricaoComponent } from './coralnh/inscricao/inscricao.component';
-import {DialogContentComponent } from './coralnh/inscricao/inscricao.component';
+import { DialogContentComponent } from './coralnh/inscricao/inscricao.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, NativeDateAdapter, DateAdapter } from '@angular/material';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -81,6 +83,7 @@ const appRoutes: Routes = [
     MatSlideToggleModule, MatMenuModule, MatDialogModule,
     MatSnackBarModule, MatSelectModule, MatInputModule, MatSidenavModule,
     MatCardModule, MatIconModule, MatRadioModule, MatProgressSpinnerModule, MatTabsModule, MatListModule,
+    MatDatepickerModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }
@@ -92,7 +95,7 @@ const appRoutes: Routes = [
     MatChipsModule, MatOptionModule, MatGridListModule, MatProgressBarModule,
     MatSliderModule, MatSlideToggleModule, MatMenuModule, MatDialogModule, MatSnackBarModule,
     MatSelectModule, MatInputModule, MatSidenavModule, MatCardModule, MatIconModule, MatRadioModule,
-    MatProgressSpinnerModule, MatTabsModule, MatListModule
+    MatProgressSpinnerModule, MatTabsModule, MatListModule, MatDatepickerModule, MatDatepickerModule, MatNativeDateModule
   ],
   providers: [ContatoService, UserService,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
