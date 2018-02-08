@@ -6,7 +6,7 @@
 
         <mat-card-content>
             <h3>Inscrição</h3>
-            <form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm">
+            <form class="formwidth" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
                 <div class="row">
                     <div class="col-sm-4">
                         <mat-input-container class="fullwidth">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-sm-4">
                         <mat-input-container class="fullwidth">
-                            <input matInput [matDatepicker]="dp3" placeholder="Data de Nascimento" [max]="maxDate" disabled>
+                            <input matInput [matDatepicker]="dp3" placeholder="Data de Nascimento" [max]="maxDate" [(ngModel)]="user.DataNascimento" disabled>
                             <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
                             <mat-datepicker #dp3 disabled="false"></mat-datepicker>
                         </mat-input-container>
@@ -61,7 +61,7 @@
                         </mat-input-container>
                     </div>
                     <div class="col-sm-2 check-box-whats">
-                        <mat-checkbox color="primary">WhatsApp</mat-checkbox>
+                        <mat-checkbox id="check-box-whats" [checked]="isChecked" [(ngModel)]="user.Whatsapp" color="primary">WhatsApp</mat-checkbox>
                     </div>
                     <div class="col-sm-12">
                         <br>
