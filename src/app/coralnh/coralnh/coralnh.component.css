@@ -330,18 +330,28 @@ input, select, textarea {
 /* -------MEDIA QUERYS----------------------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width:320px) {
+    .container.body-content.c_container {
+        height: 200%!important;
+        min-height: 100%!important;
+    }
+    /* TODO:REMOVER ACIMA */
     body {
         height: auto!important;
+        background:none!important;
     }
-    body {
-        background-image: url(/assets/images/coralnh/background_1.1.jpg), linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
+    html {
+        /* background:black!important; */
+        background: url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed, linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
         /* height: auto!important; */
         background-position: unset!important;
-        background-size: cover!important;
-        background-position-x: center!important;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /* background-position: 50% top!important; */
     }
     .body-content {
         min-height: 100vh!important;
@@ -395,18 +405,27 @@ input, select, textarea {
 }
 
 @media only screen and (max-width:481px) {
+    .container.body-content.c_container {
+        height: 100%!important;
+        min-height: 100%!important;
+    }
+    /* TODO:REMOVER ACIMA */
     body {
         height: auto!important;
     }
-    body {
-        background-image: url(/assets/images/coralnh/background_1.1.jpg), linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
+    html {
+        /* background:black!important; */
+        background: url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed, linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
         /* height: auto!important; */
         background-position: unset!important;
-        background-size: cover!important;
-        background-position-x: center!important;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /* background-position: 50% top!important; */
     }
     .body-content {
         min-height: 100vh!important;
@@ -460,18 +479,27 @@ input, select, textarea {
 }
 
 @media only screen and (max-width:641px) {
+    .container.body-content.c_container {
+        height: 200%!important;
+        min-height: 100%!important;
+    }
+    /* TODO:REMOVER ACIMA */
     body {
         height: auto!important;
     }
-    body {
-        background-image: url(/assets/images/coralnh/background_1.1.jpg), linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
+    html {
+        /* background:black!important; */
+        background: url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed, linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
         /* height: auto!important; */
         background-position: unset!important;
-        background-size: cover!important;
-        background-position-x: center!important;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /* background-position: 50% top!important; */
     }
     .body-content {
         min-height: 100vh!important;
@@ -525,19 +553,28 @@ input, select, textarea {
 }
 
 @media only screen and (max-width:961px) {
+    .container.body-content.c_container {
+        height: 200%!important;
+        min-height: 100%!important;
+    }
+    /* TODO:REMOVER ACIMA */
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     body {
         height: auto!important;
     }
-    body {
-        background-image: url(/assets/images/coralnh/background_1.1.jpg), linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
+    html {
+        /* background:black!important; */
+        background: url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed, linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
         /* height: auto!important; */
         background-position: unset!important;
-        background-size: cover!important;
-        background-position-x: center!important;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /* background-position: 50% top!important; */
     }
     .body-content {
         min-height: 100vh!important;
