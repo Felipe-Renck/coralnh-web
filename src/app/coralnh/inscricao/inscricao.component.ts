@@ -99,10 +99,10 @@ export class InscricaoComponent implements OnInit {
 
   checkInscricao = function (res) {
     if (res.status == "200") {
-      alert("Mensagem enviada!");
+      alert("Inscrição realizada com sucesso!");
     }
     else {
-      alert("Ocorreu um problema ao tentar enviar o formulário. OBS: Por favor, tente mais tarde...");
+      alert("Não foi possível completar a sua inscrição, tente novamente");
     }
   }
   getErrorMessage() {

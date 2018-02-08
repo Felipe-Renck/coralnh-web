@@ -27,9 +27,9 @@ export class UserService {
   saveUser(user: User): Promise<any> {
 
     console.log('SaveUserService');
-    console.log(User);
+    console.log(user);
 
-    return this.http.post('http://localhost:3002/user', JSON.stringify(User), this.httpOptions).toPromise();
+    return this.http.post('http://localhost:3002/user', user, this.httpOptions).toPromise();
 
   }
 
