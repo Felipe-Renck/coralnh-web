@@ -10,11 +10,13 @@ import 'rxjs/add/operator/catch';
 import { Http, Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import { Router } from '@angular/router';
 
 
 
 @Injectable()
 export class UserService {
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -22,14 +24,12 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
-  saveUser(user: User): Observable<User> {
+  saveUser(user: User): Promise<any> {
 
     console.log('SaveUserService');
     console.log(User);
 
-    return this.http.post('http://localhost:3002/user', JSON.stringify(User), this.httpOptions) // ...using post request
-      .map((res: Response) => res.json()) // ...and calling .json() on the response to return data
-      .catch((error: any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+    return this.http.post('http://localhost:3002/user', JSON.stringify(User), this.httpOptions).toPromise();
 
   }
 

@@ -55,8 +55,7 @@ export class InscricaoComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   lastDialogResult: string;
   private _dialog: MatDialog;
-  minDate = new Date(2005, 0, 1);
-  maxDate = new Date();
+  maxDate = new Date(2005, 11, 31);
 
   public types = [
     { value: 'A+', viewValue: 'A+' },
@@ -95,7 +94,16 @@ export class InscricaoComponent implements OnInit {
   saveUser = function (user) {
     console.log('SaveUser');
     console.log(user);
-    return this.userService.saveUser(user);
+    return this.userService.saveUser(user).then(res => this.checkInscricao(res)).catch(res => this.checkInscricao(res));
+  }
+
+  checkInscricao = function (res) {
+    if (res.status == "200") {
+      alert("Mensagem enviada!");
+    }
+    else {
+      alert("Ocorreu um problema ao tentar enviar o formulário. OBS: Por favor, tente mais tarde...");
+    }
   }
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
