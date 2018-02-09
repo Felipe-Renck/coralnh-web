@@ -117,18 +117,15 @@ export class InscricaoComponent implements OnInit {
   saveUser = function (user) {
     console.log('SaveUser');
     console.log(user);
-    return this.userService.saveUser(user).then(res => this.checkSave(res)).catch(res => this.checkSave(res));
+    return this.userService.saveUser(user).then(res => this.checkEnvio(res)).catch(res => this.checkEnvio(res));
   }
 
-  checkSave = function (res) {
-    if (res.status === '200') {
-      alert('A sua inscrição foi efetuada com sucesso!');
-    }
-    if (res.status === '500') {
-      alert('Você já possui um usuário com esse CPF.Tente novamente');
+  checkEnvio = function (res) {
+    if (res.status == "200") {
+      alert("Cadastro Realizado!\n Seja bem vindo(a). \nFavor entrar em contato com o Coral para acertar o valor de sua inscrição!");
     }
     else {
-      alert('Não foi possível completar a sua inscrição. Tente novamente');
+      alert("Ocorreu um problema ao tentar fazer sua inscrição.\n OBS: Por favor, tente mais tarde...");
     }
   }
 

@@ -1,72 +1,96 @@
-<div class="row">
-    <div class="row">
+<div class="col-sm-12">
+    <div class="col-sm-12">
         <img class="logo" src="/assets/images/coralnh/logo-branco-e-azul.png" style="height:100px" />
     </div>
-    <mat-card class="card-inscricao align-center">
-        <mat-card-content>
-            <h3 class="text-center">Inscrição</h3>
-            <form class="formwidth" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
-                <div class="col-sm-7">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="user.Nome" name="Nome" required>
-                    </mat-input-container>
-                </div>
+    <div class="col-sm-12">
+        <mat-card class="card-inscricao align-center">
+            <mat-card-content>
+                <h3 class="text-center">Inscrição</h3>
+                <form class="formwidth" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+                    <div class="col-sm-7">
+                        <mat-input-container class="fullwidth">
+                            <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="user.Nome" name="Nome" required>
+                        </mat-input-container>
+                    </div>
 
-                <div class="col-sm-5">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="RG" id="RG" [(ngModel)]="user.RG" name="RG" maxlength="11" required>
-                    </mat-input-container>
-                </div>
+                    <div class="col-sm-5">
+                        <mat-input-container class="fullwidth">
+                            <input matInput placeholder="RG" id="RG" [(ngModel)]="user.RG" name="RG" maxlength="11" required>
+                        </mat-input-container>
+                    </div>
 
-                <div class="col-sm-2">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Órgão Emissor" maxlength="50" id="RG" [(ngModel)]="user.OrgaoEmissorRG" name="OrgaoEmissorRG"
-                            required>
-                    </mat-input-container>
-                </div>
+                    <div class="col-sm-2">
+                        <mat-input-container class="fullwidth">
+                            <input matInput placeholder="Órgão Emissor" maxlength="50" id="RG" [(ngModel)]="user.OrgaoEmissorRG" name="OrgaoEmissorRG"
+                                required>
+                        </mat-input-container>
+                    </div>
 
-                <div class="col-sm-4">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Email" maxlength="40" id="Email" [(ngModel)]="user.Email" name="Email" required>
-                    </mat-input-container>
-                </div>
+                    <div class="col-sm-4">
+                        <mat-input-container class="fullwidth">
+                            <input matInput placeholder="Email" maxlength="40" id="Email" [(ngModel)]="user.Email" name="Email" required>
+                        </mat-input-container>
+                    </div>
 
-                <div class="col-sm-4">
-                    <mat-input-container class="fullwidth">
-                        <input matInput [matDatepicker]="dp3" placeholder="Data de Nascimento" [max]="maxDate" name="DataNascimento" id="DataNascimento"
-                            [(ngModel)]="user.DataNascimento" disabled>
-                        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
-                        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
-                    </mat-input-container>
-                    <mat-datepicker #picker></mat-datepicker>
-                </div>
+                    <div class="col-sm-4">
+                        <mat-input-container class="fullwidth">
+                            <input matInput [matDatepicker]="dp3" placeholder="Data de Nascimento" [max]="maxDate" name="DataNascimento" id="DataNascimento"
+                                [(ngModel)]="user.DataNascimento" disabled>
+                            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                        </mat-input-container>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </div>
 
-                <div class="col-sm-2">
-                    <mat-input-container class="fullwidth">
-                        <mat-select placeholder="Tipo Sanguíneo" [(ngModel)]="user.TipoSanguineo" name="types">
-                            <mat-option *ngFor="let type of types" [value]="type.value">
-                                {{type.viewValue}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-input-container>
-                </div>
+                    <div class="col-sm-2">
+                        <mat-input-container class="fullwidth">
+                            <mat-select placeholder="Tipo Sanguíneo" [(ngModel)]="user.TipoSanguineo" name="types">
+                                <mat-option *ngFor="let type of types" [value]="type.value">
+                                    {{type.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-input-container>
+                    </div>
 
-                <div class="col-sm-3">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Telefone" maxlength="15" id="Telefone" [(ngModel)]="user.Telefone" name="Telefone" required>
-                    </mat-input-container>
-                </div>
+                    <div class="col-sm-3">
+                        <mat-input-container class="fullwidth">
+                            <input matInput placeholder="Telefone" maxlength="15" id="Telefone" [(ngModel)]="user.Telefone" name="Telefone" required>
+                        </mat-input-container>
+                    </div>
 
-                <div class="col-sm-3">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Celular" maxlength="15" id="Celular" [(ngModel)]="user.Celular" name="Celular" required>
-                    </mat-input-container>
-                </div>
+                    <div class="col-sm-3">
+                        <mat-input-container class="fullwidth">
+                            <input matInput placeholder="Celular" maxlength="15" id="Celular" [(ngModel)]="user.Celular" name="Celular" required>
+                        </mat-input-container>
+                    </div>
 
-                <div class="col-sm-2 check-box-whats">
-                    <mat-checkbox [(ngModel)]="user.Whatsapp" id="Whatsapp" name="Whatsapp" color="primary">WhatsApp</mat-checkbox>
-                </div>
-                <div class="row">
+                    <div class="col-sm-2 check-box-whats">
+                        <mat-checkbox [(ngModel)]="user.Whatsapp" id="Whatsapp" name="Whatsapp" color="primary">WhatsApp</mat-checkbox>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <br>
+                            <mat-card>
+                                <mat-card-content>
+                                    <h3 class="example-h2">Mensalidade:</h3>
+                                    <div>
+                                        <label class="example-margin">Selecione o quanto você está disposto a pagar de mensalidade</label>
+                                    </div>
+                                    <mat-radio-group [(ngModel)]="user.valorMensalidade" name="my_options" [disabled]="isDisabled" [required]="isRequired" [align]="isAlignEnd ? 'end' : 'start'">
+
+                                        <div *ngFor="let value of values">
+                                            <mat-radio-button value="{{value}}">{{value}}</mat-radio-button>
+                                        </div>
+
+                                    </mat-radio-group>
+                                    <div>
+                                        <label class="example-margin">OBS: Será cobrado R$25,00 de inscrição de cada integrante.</label>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+
                     <div class="col-sm-12">
                         <br>
                         <mat-card>
@@ -88,14 +112,9 @@
                             </mat-card-content>
                         </mat-card>
                     </div>
-                </div>
 
-                <div class="col-sm-12">
-                    <br>
-                    <button class="submit-button" type="submit" app-button mat-raised-button mat-primary color="primary">Enviar</button>
-                </div>
-
-            </form>
-        </mat-card-content>
-    </mat-card>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>
