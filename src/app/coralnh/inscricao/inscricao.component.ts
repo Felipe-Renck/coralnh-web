@@ -51,13 +51,7 @@ import {
   templateUrl: './inscricao.component.html',
   styleUrls: ['./inscricao.component.css'],
   providers: [
-    // The locale would typically be provided on the root module of your application. We do it at
-    // the component level here, due to limitations of our example generation script.
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
-
-    // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
-    // `MatMomentDateModule` in your applications root module. We provide it at the component level
-    // here, due to limitations of our example generation script.
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
     {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
   ],
@@ -81,6 +75,14 @@ export class InscricaoComponent implements OnInit {
     { value: 'O-', viewValue: 'O-' }
   ];
 
+  favoriteSeason: string;
+
+  values = [
+    'R$ 50,00',
+    'R$ 30,00',
+    'R$ 20,00'
+  ];
+
   constructor(private userService: UserService) {
 
   }
@@ -100,37 +102,28 @@ export class InscricaoComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-
     const user = JSON.stringify(this.user);
+    console.log(this.favoriteSeason);
     console.log('Submit');
     this.saveUser(user);
     console.log(user);
-    //alert('Sua inscrição foi confirmada ' + JSON.stringify(this.user));
+    //form.markAsUntouched();
+    form.reset();
   }
 
   saveUser = function (user) {
     console.log('SaveUser');
     console.log(user);
-    return this.userService.saveUser(user).then(res => this.checkInscricao(res)).catch(res => this.checkInscricao(res));
+    return this.userService.saveUser(user).then();
   }
 
-  checkInscricao = function (res) {
-    if (res.status == "200") {
-      alert("Inscrição realizada com sucesso!");
-    }
-    else {
-      alert("Não foi possível completar a sua inscrição, tente novamente");
-    }
-  }
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
       this.email.hasError('email') ? 'Not a valid email' :
         '';
   }
-
-
-
-  ngOnInit() {
+  
+ ngOnInit() {
   }
 }
 
