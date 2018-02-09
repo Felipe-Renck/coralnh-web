@@ -110,13 +110,24 @@ a:focus {
     color: white !important;
 }
 
-.body-content {
+/* TODO */
+/* .body-content {
     min-height: 415px;
+} */
+
+.body-content {
+    min-height: 100vh!important;
 }
 
-.c_container {
+/* TODO */
+/* .c_container {
     max-width: 940px !important;
+} */
+
+.c_container {
+    max-width: unset !important;
 }
+
 
 .navbar {
     color: white !important;
@@ -331,17 +342,19 @@ input, select, textarea {
 
 @media only screen and (max-width:320px) {
     .container.body-content.c_container {
-        height: 200%!important;
+        height: 230vh!important;
         min-height: 100%!important;
+        max-width: unset !important;
     }
+
     /* TODO:REMOVER ACIMA */
     body {
         height: auto!important;
-        background:none!important;
     }
-    html {
+    body {
         /* background:black!important; */
-        background: url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed, linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        background-image: url(/assets/images/coralnh/mobile_background_1.1.png) !important;
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
@@ -406,16 +419,20 @@ input, select, textarea {
 
 @media only screen and (max-width:481px) {
     .container.body-content.c_container {
-        height: 100%!important;
+        height: 230vh!important;
         min-height: 100%!important;
+        max-width: unset !important;
     }
+
+
     /* TODO:REMOVER ACIMA */
     body {
         height: auto!important;
     }
-    html {
+    body {
         /* background:black!important; */
-        background: url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed, linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        background-image: url(/assets/images/coralnh/mobile_background_1.1.png) !important;
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
@@ -480,16 +497,19 @@ input, select, textarea {
 
 @media only screen and (max-width:641px) {
     .container.body-content.c_container {
-        height: 200%!important;
+        height: 230vh!important;
         min-height: 100%!important;
+        max-width: unset !important;
     }
+    
     /* TODO:REMOVER ACIMA */
     body {
         height: auto!important;
     }
-    html {
+    body {
         /* background:black!important; */
-        background: url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed, linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        background-image: url(/assets/images/coralnh/mobile_background_1.1.png) !important;
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
@@ -554,17 +574,20 @@ input, select, textarea {
 
 @media only screen and (max-width:961px) {
     .container.body-content.c_container {
-        height: 200%!important;
+        height: 230vh!important;
         min-height: 100%!important;
+        max-width: unset !important;
     }
+
     /* TODO:REMOVER ACIMA */
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     body {
         height: auto!important;
     }
-    html {
+    body {
         /* background:black!important; */
-        background: url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed, linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        background-image: url(/assets/images/coralnh/mobile_background_1.1.png) !important;
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */

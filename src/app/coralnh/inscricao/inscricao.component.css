@@ -31,3 +31,6 @@ background-color: #1e5799;
 border-color: #1e5799;
 }
 
+.c_container {
+  max-width: unset !important;
+}
