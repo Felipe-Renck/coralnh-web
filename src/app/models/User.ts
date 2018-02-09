@@ -9,6 +9,7 @@ export class User {
         public Whatsapp?: boolean,
         public DataNascimento?: Date,
         public TipoSanguineo?: string,
+        public valorMensalidade?: string,
         public Observacoes?: string
     ) { }
 }
