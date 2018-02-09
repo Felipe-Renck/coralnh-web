@@ -7,8 +7,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Http, Headers } from '@angular/http';
 import { UserService } from 'app/services/user.service';
-import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-moment-adapter';
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 import {
@@ -51,9 +51,9 @@ import {
   templateUrl: './inscricao.component.html',
   styleUrls: ['./inscricao.component.css'],
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
-    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
-    {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
   ],
 })
 export class InscricaoComponent implements OnInit {
@@ -114,7 +114,16 @@ export class InscricaoComponent implements OnInit {
   saveUser = function (user) {
     console.log('SaveUser');
     console.log(user);
-    return this.userService.saveUser(user).then();
+    return this.userService.saveUser(user).then(res => this.checkEnvio(res)).catch(res => this.checkEnvio(res));
+  }
+
+  checkEnvio = function (res) {
+    if (res.status == "200") {
+      alert("Cadastro Realizado!\n Seja bem vindo(a). \nFavor entrar em contato com o Coral para acertar o valor de sua inscrição!");
+    }
+    else {
+      alert("Ocorreu um problema ao tentar fazer sua inscrição.\n OBS: Por favor, tente mais tarde...");
+    }
   }
 
   getErrorMessage() {
@@ -122,8 +131,8 @@ export class InscricaoComponent implements OnInit {
       this.email.hasError('email') ? 'Not a valid email' :
         '';
   }
-  
- ngOnInit() {
+
+  ngOnInit() {
   }
 }
 
