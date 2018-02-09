@@ -25,3 +25,9 @@ mat-input-container {
 .check-box-whats{
   margin-top: 20px;
 }
+
+.submit-button{
+background-color: #1e5799;
+border-color: #1e5799;
+}
+
