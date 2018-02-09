@@ -3,11 +3,9 @@
         <img class="logo" src="/assets/images/coralnh/logo-branco-e-azul.png" style="height:100px" />
     </div>
     <mat-card class="card-inscricao align-center">
-
         <mat-card-content>
-            <h3>Inscrição</h3>
-            <form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm">
-
+            <h3 class="text-center">Inscrição</h3>
+            <form class="formwidth" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
                 <div class="col-sm-7">
                     <mat-input-container class="fullwidth">
                         <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="user.Nome" name="Nome" required>
@@ -35,7 +33,8 @@
 
                 <div class="col-sm-4">
                     <mat-input-container class="fullwidth">
-                        <input matInput [matDatepicker]="dp3" placeholder="Data de Nascimento" [max]="maxDate" disabled>
+                        <input matInput [matDatepicker]="dp3" placeholder="Data de Nascimento" [max]="maxDate" name="DataNascimento" id="DataNascimento"
+                            [(ngModel)]="user.DataNascimento" disabled>
                         <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
                         <mat-datepicker #dp3 disabled="false"></mat-datepicker>
                     </mat-input-container>
@@ -54,7 +53,7 @@
 
                 <div class="col-sm-3">
                     <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Telefone" maxlength="15" id="Telefone" [(ngModel)]="user.Telefone" name="Telefone">
+                        <input matInput placeholder="Telefone" maxlength="15" id="Telefone" [(ngModel)]="user.Telefone" name="Telefone" required>
                     </mat-input-container>
                 </div>
 
@@ -65,7 +64,26 @@
                 </div>
 
                 <div class="col-sm-2 check-box-whats">
-                    <mat-checkbox color="primary">WhatsApp</mat-checkbox>
+                    <mat-checkbox [(ngModel)]="user.Whatsapp" id="Whatsapp" name="Whatsapp" color="primary">WhatsApp</mat-checkbox>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <br>
+                        <mat-card>
+                            <mat-card-content>
+                                <h3 class="example-h2">Mensalidade:</h3>
+                                <div>
+                                    <label class="example-margin">Selecione o quanto você está disposto a pagar de mensalidade</label>
+                                </div>
+                                <mat-radio-button color="primary" name="symbol">R$ 50,00</mat-radio-button>
+                                <mat-radio-button color="primary" name="symbol">R$ 30,00</mat-radio-button>
+                                <mat-radio-button color="primary" name="symbol">R$ 20,00</mat-radio-button>
+                                <div>
+                                    <label class="example-margin">OBS: Será cobrado R$25,00 de inscrição de cada integrante.</label>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
                 </div>
 
                 <div class="col-sm-12">
