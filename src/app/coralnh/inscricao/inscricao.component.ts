@@ -107,10 +107,8 @@ export class InscricaoComponent implements OnInit {
     console.log('Submit');
     this.saveUser(user);
     console.log(user);
-    //form.pristine = true
+
     form.reset();
-    form.markAsPristine();
-    form.markAsUntouched();
 
   }
 
