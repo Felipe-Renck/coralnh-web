@@ -7,8 +7,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Http, Headers } from '@angular/http';
 import { UserService } from 'app/services/user.service';
-import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-moment-adapter';
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 import {
@@ -51,9 +51,9 @@ import {
   templateUrl: './inscricao.component.html',
   styleUrls: ['./inscricao.component.css'],
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
-    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
-    {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
   ],
 })
 export class InscricaoComponent implements OnInit {
@@ -77,10 +77,10 @@ export class InscricaoComponent implements OnInit {
 
   favoriteSeason: string;
 
-  values = [
-    'R$ 50,00',
-    'R$ 30,00',
-    'R$ 20,00'
+  public data = [
+    { value: 50, text: 'R$50,00' },
+    { value: 30, text: 'R$30,00' },
+    { value: 20, text: 'R$20,00' },
   ];
 
   constructor(private userService: UserService) {
@@ -107,14 +107,29 @@ export class InscricaoComponent implements OnInit {
     console.log('Submit');
     this.saveUser(user);
     console.log(user);
-    //form.markAsUntouched();
+    //form.pristine = true
     form.reset();
+    form.markAsPristine();
+    form.markAsUntouched();
+
   }
 
   saveUser = function (user) {
     console.log('SaveUser');
     console.log(user);
-    return this.userService.saveUser(user).then();
+    return this.userService.saveUser(user).then(res => this.checkSave(res)).catch(res => this.checkSave(res));
+  }
+
+  checkSave = function (res) {
+    if (res.status === '200') {
+      alert('A sua inscrição foi efetuada com sucesso!');
+    }
+    if (res.status === '500') {
+      alert('Você já possui um usuário com esse CPF.Tente novamente');
+    }
+    else {
+      alert('Não foi possível completar a sua inscrição. Tente novamente');
+    }
   }
 
   getErrorMessage() {
@@ -122,8 +137,8 @@ export class InscricaoComponent implements OnInit {
       this.email.hasError('email') ? 'Not a valid email' :
         '';
   }
-  
- ngOnInit() {
+
+  ngOnInit() {
   }
 }
 

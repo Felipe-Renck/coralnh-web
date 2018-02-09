@@ -17,7 +17,6 @@ export class ContatoService {
   constructor(private http: HttpClient) { }
 
   enviarEmail(contato: Contato): Promise<any> {
-    console.log("SERVICE");
     return this.http.post('http://localhost:3002/email', JSON.stringify(contato), this.httpOptions).toPromise();
   }
 
