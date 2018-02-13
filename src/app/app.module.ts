@@ -4,7 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { LoadingModule } from 'ngx-loading';
+import { CommonModule } from '@angular/common';  
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { Optional } from '@angular/core';
@@ -38,6 +39,7 @@ import { DialogContentComponent } from './coralnh/inscricao/inscricao.component'
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, NativeDateAdapter, DateAdapter } from '@angular/material';
 
+
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'index', component: JanovohamburgoComponent, pathMatch: 'full' },
@@ -70,6 +72,8 @@ const appRoutes: Routes = [
     DialogContentComponent
   ],
   imports: [
+    CommonModule,
+    LoadingModule,
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,

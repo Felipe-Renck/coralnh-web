@@ -30,3 +30,7 @@ mat-input-container {
 background-color: #1e5799;
 border-color: #1e5799;
 }
+
+.backdrop.ng-star-inserted {
+  height: 200vh!important;
+}

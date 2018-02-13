@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
 import { User } from 'app/models/User';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,7 +9,6 @@ import { Http, Headers } from '@angular/http';
 import { UserService } from 'app/services/user.service';
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-
 
 import {
   MatAutocompleteModule,
@@ -57,12 +56,16 @@ import {
   ],
 })
 export class InscricaoComponent implements OnInit {
+  loading = false;
+  modalMessage : string = "";
+  hideLink :boolean = true;
 
   user = new User();
   email = new FormControl('', [Validators.required, Validators.email]);
   lastDialogResult: string;
   private _dialog: MatDialog;
-  maxDate = new Date(2005, 11, 31);
+  maxDate = new Date(2005, 11, 30);
+  minDate = new Date(1900, 11, 30);
 
   public types = [
     { value: 'A+', viewValue: 'A+' },
@@ -84,7 +87,6 @@ export class InscricaoComponent implements OnInit {
   ];
 
   constructor(private userService: UserService) {
-
   }
 
   openDialog() {
@@ -112,17 +114,41 @@ export class InscricaoComponent implements OnInit {
   }
 
   saveUser = function (user) {
+    this.loading = true;
     console.log('SaveUser');
     console.log(user);
-    return this.userService.saveUser(user).then(res => this.checkEnvio(res)).catch(res => this.checkEnvio(res));
+    this.userService.saveUser(user).then(res => {this.checkInscricao(res), this.loading = false}).catch(res => {this.checkInscricao(res), this.loading = false});
+    return;
   }
 
-  checkEnvio = function (res) {
-    if (res.status == "200") {
-      alert("Cadastro Realizado!\n Seja bem vindo(a). \nFavor entrar em contato com o Coral para acertar o valor de sua inscrição!");
+  checkInscricao = function (res) {
+    debugger;
+    if (res == 11000) {
+      this.createModal("duplicate");
+    }
+    else if (res == 200) {
+      this.createModal("success");
+     // alert("Cadastro Realizado!\n Seja bem vindo(a). \nFavor entrar em contato com o Coral para acertar o valor de sua inscrição!");
     }
     else {
-      alert("Ocorreu um problema ao tentar fazer sua inscrição.\n OBS: Por favor, tente mais tarde...");
+      this.createModal("error");
+      //alert("Ocorreu um problema ao tentar fazer sua inscrição.\n OBS: Por favor, tente mais tarde...");
+    }
+  }
+
+  createModal = function(result){
+    if(result=="duplicate"){
+      this.modalMessage = "O RG informado já consta em nosso banco de dados! \n Inscrição já realizada!";
+      jQuery('#modal-inscricao').modal('show');
+    }
+    else if(result=="success"){
+      this.modalMessage = "Inscrição realizada! \n Seja bem vindo(a)! \n No ensaio, entre em contato com a Diretoria para efetuar o pagamento da inscrição!";
+      jQuery('#modal-inscricao').modal('show');
+    }
+    else{
+      this.modalMessage = "Ocorreu um erro ao tentar realizar sua inscrição! \n Se o erro persistir, favor entrar em contato.";
+      this.hideLink = false;
+      jQuery('#modal-inscricao').modal('show');
     }
   }
 
