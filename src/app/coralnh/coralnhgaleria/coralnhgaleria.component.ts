@@ -12,47 +12,47 @@ import 'rxjs/add/operator/delay';
 })
 export class CoralnhgaleriaComponent implements OnInit {
 
-  imagesArray: Array<Image> = [
-    new Image('../assets/images/coralnh/galeria/DSC05166.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05074.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05082.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05087.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05106.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05111.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05120.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05125.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05142.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05143.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05144.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05145.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05146.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05149.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05150.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05157.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05158.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05161.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05162.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05163.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05081.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05167.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05173.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05176.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05180.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05183.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05187.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05194.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05199.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05212.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05215.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05217.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05218.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05228.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05247.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05255.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05258.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05274.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05276.jpg',null, null,null),
-    new Image('../assets/images/coralnh/galeria/DSC05282.jpg',null, null,null)    
+  imagesArray_Gramado_2018: Array<Image> = [
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05166.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05166_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05074.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05074_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05082.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05082_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05087.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05087_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05106.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05106_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05111.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05111_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05120.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05120_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05125.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05125_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05142.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05142_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05143.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05143_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05144.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05144_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05145.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05145_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05146.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05146_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05149.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05149_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05150.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05150_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05157.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05157_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05158.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05158_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05161.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05161_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05162.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05162_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05163.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05163_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05081.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05081_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05167.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05167_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05173.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05173_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05176.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05176_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05180.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05180_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05183.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05183_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05187.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05187_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05194.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05194_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05199.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05199_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05212.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05212_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05215.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05215_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05217.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05217_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05218.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05218_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05228.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05228_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05247.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05247_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05255.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05255_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05258.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05258_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05274.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05274_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05276.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05276_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05282.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05282_tn.jpg', null,null)    
   ];
 
   openModalWindow: boolean = false;
@@ -70,7 +70,7 @@ export class CoralnhgaleriaComponent implements OnInit {
 
   ngOnInit() {
     this.imagesArraySubscription = Observable.of(null).delay(500).subscribe(() => {
-      this.imagesArraySubscribed = this.imagesArray;
+      this.imagesArraySubscribed = this.imagesArray_Gramado_2018;
     });
   }
 }
