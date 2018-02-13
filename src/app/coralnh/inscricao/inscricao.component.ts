@@ -80,10 +80,10 @@ export class InscricaoComponent implements OnInit {
 
   favoriteSeason: string;
 
-  values = [
-    'R$ 50,00',
-    'R$ 30,00',
-    'R$ 20,00'
+  public data = [
+    { value: 50, text: 'R$50,00' },
+    { value: 30, text: 'R$30,00' },
+    { value: 20, text: 'R$20,00' },
   ];
 
   constructor(private userService: UserService) {
@@ -109,8 +109,9 @@ export class InscricaoComponent implements OnInit {
     console.log('Submit');
     this.saveUser(user);
     console.log(user);
-    //form.markAsUntouched();
+
     form.reset();
+
   }
 
   saveUser = function (user) {
