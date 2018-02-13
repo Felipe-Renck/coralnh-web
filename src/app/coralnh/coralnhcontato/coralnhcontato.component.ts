@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Contato } from 'models/Contato';
-import { Http, Response } from "@angular/http";
+import { Contato } from 'app/models/Contato';
+import { Http, Response } from '@angular/http';
 import { ContatoService } from 'app/services/contato.service';
 
 
@@ -15,7 +15,7 @@ export class CoralnhcontatoComponent implements OnInit {
 
   contato = new Contato(0, '', '', '', '', '');
 
-  constructor(private http: Http, private contatoService:ContatoService) { }
+  constructor(private http: Http, private contatoService: ContatoService) { }
 
   ngOnInit() {
   }
@@ -25,11 +25,12 @@ export class CoralnhcontatoComponent implements OnInit {
   }
 
   enviar = function () {
-     return this.contatoService.enviarEmail(this.contato).then(x=> this.checkEnvio(x)).catch(x=> this.checkEnvio(x));
+    console.log("ENVIAR");
+    return this.contatoService.enviarEmail(this.contato).then(res => this.checkEnvio(res)).catch(res => this.checkEnvio(res));
   }
 
-  checkEnvio = function(res){
-    if(res.status == "200"){
+  checkEnvio = function (res) {
+    if (res.status == "200") {
       alert("Mensagem enviada!");
     }
     else {

@@ -110,13 +110,24 @@ a:focus {
     color: white !important;
 }
 
-.body-content {
+/* TODO */
+/* .body-content {
     min-height: 415px;
+} */
+
+.body-content {
+    min-height: 100vh!important;
 }
 
-.c_container {
+/* TODO */
+/* .c_container {
     max-width: 940px !important;
+} */
+
+.c_container {
+    max-width: unset !important;
 }
+
 
 .navbar {
     color: white !important;
@@ -164,13 +175,13 @@ ul.nav.navbar-nav.navbar-right {
     margin-left: 40px !important;
 }
 
-.text-menu a{
-    color:#1e5799!important;
+.text-menu a {
+    color: #1e5799!important;
     font-family: 'Gloria Hallelujah', cursive !important;
 }
 
-.text-social-menu a{
-    color:white!important;
+.text-social-menu a {
+    color: white!important;
 }
 
 audio::-internal-media-controls-download-button {
@@ -279,7 +290,6 @@ img.capaCD {
     width: 100%;
     /* background-color: #0098db94; */
     background-color: rgb(84, 131, 194);
-    
 }
 
 body {
@@ -331,18 +341,31 @@ input, select, textarea {
 /* -------MEDIA QUERYS----------------------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width:320px) {
+    .container.body-content.c_container {
+        height: 230vh!important;
+        min-height: 100%!important;
+        max-width: unset !important;
+    }
+
+    /* TODO:REMOVER ACIMA */
     body {
         height: auto!important;
     }
-
     body {
-        background-image: url(/assets/images/coralnh/background_1.1.jpg), linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
-        background-position: 0% 0%, 50% 54%;
+        /* background:black!important; */
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        background-image: url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
-        background-attachment: fixed, fixed;
+        background-attachment: fixed, fixed; */
         /* height: auto!important; */
-    }    
-
+        background-position: unset!important;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /* background-position: 50% top!important; */
+    }
     .body-content {
         min-height: 100vh!important;
     }
@@ -358,11 +381,9 @@ input, select, textarea {
     img.capaCD {
         bottom: inherit!important;
     }
-
-    .navbar-collapse{
+    .navbar-collapse {
         max-height: unset!important;
     }
-
     .navbar-collapse.collapse.in {
         background-color: rgba(20, 56, 86, 0.78);
         padding-left: 0!important;
@@ -387,30 +408,42 @@ input, select, textarea {
         margin-bottom: 5px!important;
         border-radius: 0px 30px 30px 0px !important;
     }
-
     .navbar-left {
         margin-left: 0px !important;
     }
-
-    .text-menu a{
-        color:white!important;
+    .text-menu a {
+        color: white!important;
         font-family: 'Gloria Hallelujah', cursive !important;
     }
 }
 
 @media only screen and (max-width:481px) {
+    .container.body-content.c_container {
+        height: 230vh!important;
+        min-height: 100%!important;
+        max-width: unset !important;
+    }
+
+
+    /* TODO:REMOVER ACIMA */
     body {
         height: auto!important;
     }
-
     body {
-        background-image: url(/assets/images/coralnh/background_1.1.jpg), linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
-        background-position: 0% 0%, 50% 54%;
+        /* background:black!important; */
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        background-image: url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
-        background-attachment: fixed, fixed;
+        background-attachment: fixed, fixed; */
         /* height: auto!important; */
-    }    
-
+        background-position: unset!important;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /* background-position: 50% top!important; */
+    }
     .body-content {
         min-height: 100vh!important;
     }
@@ -426,11 +459,9 @@ input, select, textarea {
     img.capaCD {
         bottom: inherit!important;
     }
-
-    .navbar-collapse{
+    .navbar-collapse {
         max-height: unset!important;
     }
-
     .navbar-collapse.collapse.in {
         background-color: rgba(20, 56, 86, 0.78);
         padding-left: 0!important;
@@ -455,30 +486,41 @@ input, select, textarea {
         margin-bottom: 5px!important;
         border-radius: 0px 30px 30px 0px !important;
     }
-
     .navbar-left {
         margin-left: 0px !important;
     }
-
-    .text-menu a{
-        color:white!important;
+    .text-menu a {
+        color: white!important;
         font-family: 'Gloria Hallelujah', cursive !important;
     }
 }
 
 @media only screen and (max-width:641px) {
+    .container.body-content.c_container {
+        height: 230vh!important;
+        min-height: 100%!important;
+        max-width: unset !important;
+    }
+    
+    /* TODO:REMOVER ACIMA */
     body {
         height: auto!important;
     }
-
     body {
-        background-image: url(/assets/images/coralnh/background_1.1.jpg), linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
-        background-position: 0% 0%, 50% 54%;
+        /* background:black!important; */
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        background-image: url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
-        background-attachment: fixed, fixed;
+        background-attachment: fixed, fixed; */
         /* height: auto!important; */
-    }    
-    
+        background-position: unset!important;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /* background-position: 50% top!important; */
+    }
     .body-content {
         min-height: 100vh!important;
     }
@@ -494,8 +536,7 @@ input, select, textarea {
     img.capaCD {
         bottom: inherit!important;
     }
-
-    .navbar-collapse{
+    .navbar-collapse {
         max-height: unset!important;
     }
     .navbar-collapse.collapse.in {
@@ -522,31 +563,42 @@ input, select, textarea {
         margin-bottom: 5px!important;
         border-radius: 0px 30px 30px 0px !important;
     }
-
     .navbar-left {
         margin-left: 0px !important;
     }
-
-    .text-menu a{
-        color:white!important;
+    .text-menu a {
+        color: white!important;
         font-family: 'Gloria Hallelujah', cursive !important;
     }
 }
 
 @media only screen and (max-width:961px) {
+    .container.body-content.c_container {
+        height: 230vh!important;
+        min-height: 100%!important;
+        max-width: unset !important;
+    }
+
+    /* TODO:REMOVER ACIMA */
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     body {
         height: auto!important;
     }
-
     body {
-        background-image: url(/assets/images/coralnh/background_1.1.jpg), linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%);
-        background-position: 0% 0%, 50% 54%;
+        /* background:black!important; */
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        background-image: url(/assets/images/coralnh/mobile_background_1.1.png) !important;
+        /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
-        background-attachment: fixed, fixed;
+        background-attachment: fixed, fixed; */
         /* height: auto!important; */
-    }    
-
+        background-position: unset!important;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /* background-position: 50% top!important; */
+    }
     .body-content {
         min-height: 100vh!important;
     }
@@ -562,17 +614,14 @@ input, select, textarea {
     img.capaCD {
         bottom: inherit!important;
     }
-
-    .navbar-collapse{
+    .navbar-collapse {
         max-height: unset!important;
     }
-
     .navbar-collapse.collapse.in {
         background-color: rgba(20, 56, 86, 0.78);
         padding-left: 0!important;
         padding-right: 5%;
     }
-
     .navbar {
         border: none;
         background-color: unset!important;
@@ -592,13 +641,11 @@ input, select, textarea {
         margin-bottom: 5px!important;
         border-radius: 0px 30px 30px 0px !important;
     }
-    
     .navbar-left {
         margin-left: 0px !important;
     }
-
-    .text-menu a{
-        color:white!important;
+    .text-menu a {
+        color: white!important;
         font-family: 'Gloria Hallelujah', cursive !important;
     }
 }

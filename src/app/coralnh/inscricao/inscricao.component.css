@@ -1,0 +1,36 @@
+.card-inscricao {
+  width: 80vw!important;
+}
+
+.align-center {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  right: 0;
+  left: 0;
+  position: absolute;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-filter: drop-shadow(-2px 1px 0px white);
+  filter: drop-shadow(-2px 1px 0px white);
+}
+
+mat-input-container {
+  width: 100%!important;
+}
+.check-box-whats{
+  margin-top: 20px;
+}
+
+.submit-button{
+background-color: #1e5799;
+border-color: #1e5799;
+}
+
+.backdrop.ng-star-inserted {
+  height: 200vh!important;
+}

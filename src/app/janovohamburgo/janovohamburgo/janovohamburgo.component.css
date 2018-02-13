@@ -25,16 +25,19 @@ img, button {
 }
 
 #logocoral {
-    height: 100px;
+    height: 50px;
     float: right;
+    margin-top: 37px;
+    margin-bottom: 12px;
+    margin-left: 5px;
 }
 
 #logoescolasabatina {
     /* TODO: remover margin, pois os logos nao devem ter sobras */
-    height: 65px;
+    height: 50px;
     float: left;
-    margin-top: 20px;
-    margin-left: 5px;
+    margin-top: 35px;
+    margin-left: 12px;
 }
 
 #logoja {
