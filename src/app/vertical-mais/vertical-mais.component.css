@@ -1,0 +1,29 @@
+.modal-content{
+    background-color:rgba(61, 162, 28, 0.8);
+    color:white;
+}
+
+.modal-dialog{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    width: 90%;
+}
+
+.modal-body{
+    background-color:#ffffffd4;
+    color:black;
+    border-radius: 20px;
+    margin:10px;
+}
+
+.description-text{
+    text-align: center;
+}
+
+.title-text{
+    text-align: left;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom:10px;
+}
