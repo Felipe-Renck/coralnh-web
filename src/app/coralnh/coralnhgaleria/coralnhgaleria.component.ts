@@ -12,7 +12,7 @@ import 'rxjs/add/operator/delay';
 })
 export class CoralnhgaleriaComponent implements OnInit {
 
-  imagesArray_Gramado_2018: Array<Image> = [
+  imagesArray_Gramado_2017: Array<Image> = [
     new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05166.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05166_tn.jpg', null,null),
     new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05074.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05074_tn.jpg', null,null),
     new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05082.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05082_tn.jpg', null,null),
@@ -55,6 +55,26 @@ export class CoralnhgaleriaComponent implements OnInit {
     new Image('../assets/images/coralnh/galeria/gramado_2017/DSC05282.jpg','../assets/images/coralnh/galeria/gramado_2017/thumbnails/DSC05282_tn.jpg', null,null)    
   ];
 
+  imagesArray_Fenadoce_2017: Array<Image> = [
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02411.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02411_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02421.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02421_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02430.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02430_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02478.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02478_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02480.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02480_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02487.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02487_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02491.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02491_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02515.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02515_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02519.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02519_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02526.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02526_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02546.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02546_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02553.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02553_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02589.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02589_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02603.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02603_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02611.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02611_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02645.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02645_tn.jpg', null,null),
+    new Image('../assets/images/coralnh/galeria/fenadoce_2017/DSC02650.jpg','../assets/images/coralnh/galeria/fenadoce_2017/thumbnails/DSC02650_tn.jpg', null,null)
+  ];
+
   openModalWindow: boolean = false;
   imagePointer: number = 0;
 
@@ -70,7 +90,7 @@ export class CoralnhgaleriaComponent implements OnInit {
 
   ngOnInit() {
     this.imagesArraySubscription = Observable.of(null).delay(500).subscribe(() => {
-      this.imagesArraySubscribed = this.imagesArray_Gramado_2018;
+      this.imagesArraySubscribed = this.imagesArray_Gramado_2017;
     });
   }
 }

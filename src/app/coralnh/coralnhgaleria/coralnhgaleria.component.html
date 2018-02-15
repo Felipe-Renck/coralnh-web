@@ -1,8 +1,13 @@
-<div style="background-color:rgba(0, 0, 0, 0.674); border-radius:20px;" class="col-sm-12">
-    <div style="margin:20px;">
-        <label>Gramado 2017</label>
-        <modal-gallery [modalImages]="imagesArray_Gramado_2018"></modal-gallery>
+<div class="col-sm-12 gallery-body">
+    <div class="gallery-content">
+        <div class="title-content-custom">
+            <h2 style="margin-left:10px;color:white;">Galeria</h2>
+        </div>
         <br>
-        <modal-gallery [modalImages]="imagesArray"></modal-gallery>
+        <label>Natal Luz - Gramado - RS / 2017</label>
+        <modal-gallery id="mgallery" [modalImages]="imagesArray_Gramado_2017"></modal-gallery>
+        <div style="clear:both;margin:10px;"></div>
+        <label>FENADOCE - Pelotas - RS / 2017</label>
+        <modal-gallery id="mgallery" [modalImages]="imagesArray_Fenadoce_2017"></modal-gallery>
     </div>
 </div>
