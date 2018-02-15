@@ -5,7 +5,14 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingModule } from 'ngx-loading';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+import { DxSchedulerModule } from 'devextreme-angular'
+import { locale, loadMessages } from 'devextreme/localization';
+
+let messages = require('devextreme/localization/messages/pt-BR.json');
+loadMessages(messages);
+
+locale(navigator.language);
 
 import 'hammerjs';
 import 'mousetrap';
@@ -27,6 +34,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { ContatoService } from './services/contato.service';
 import { UserService } from './services/user.service';
+import { CalendarService } from './services/calendar.service'
 
 import { AppComponent } from './app.component';
 import { JanovohamburgoComponent } from './janovohamburgo/janovohamburgo/janovohamburgo.component';
@@ -82,6 +90,7 @@ const appRoutes: Routes = [
     FormsModule,
     MatFormFieldModule,
     HttpModule,
+    DxSchedulerModule,
     HttpClientModule,
     ModalGalleryModule.forRoot(),
     FormsModule,
@@ -106,7 +115,7 @@ const appRoutes: Routes = [
     MatSelectModule, MatInputModule, MatSidenavModule, MatCardModule, MatIconModule, MatRadioModule,
     MatProgressSpinnerModule, MatTabsModule, MatListModule, MatDatepickerModule, MatDatepickerModule, MatNativeDateModule
   ],
-  providers: [ContatoService, UserService, HttpModule,
+  providers: [ContatoService, UserService, CalendarService, HttpModule,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   entryComponents: [DialogContentComponent],
