@@ -5,7 +5,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingModule } from 'ngx-loading';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+
+
 
 import 'hammerjs';
 import 'mousetrap';
@@ -23,10 +25,13 @@ import {
 } from '@angular/material';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MdlModule } from '@angular-mdl/core';
+import { MdlDialogModule } from '@angular-mdl/core';
 
 
 import { ContatoService } from './services/contato.service';
 import { UserService } from './services/user.service';
+import { LoginService } from './services/login.service';
 
 import { AppComponent } from './app.component';
 import { JanovohamburgoComponent } from './janovohamburgo/janovohamburgo/janovohamburgo.component';
@@ -39,8 +44,10 @@ import { CoralnhcalendarioComponent } from 'app/coralnh/coralnhcalendario/coraln
 import { CoralnhcontatoComponent } from 'app/coralnh/coralnhcontato/coralnhcontato.component';
 import { InscricaoComponent } from './coralnh/inscricao/inscricao.component';
 import { DialogContentComponent } from './coralnh/inscricao/inscricao.component';
+
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, NativeDateAdapter, DateAdapter } from '@angular/material';
+import { LoginComponent } from './coralnh/login/login.component';
 
 
 const appRoutes: Routes = [
@@ -55,7 +62,8 @@ const appRoutes: Routes = [
       { path: 'coralnhgaleria', component: CoralnhgaleriaComponent },
       { path: 'coralnhcalendario', component: CoralnhcalendarioComponent },
       { path: 'coralnhcontato', component: CoralnhcontatoComponent },
-      { path: 'inscricao', component: InscricaoComponent }
+      { path: 'inscricao', component: InscricaoComponent },
+      { path: 'login', component: LoginComponent }
       ]
   },
 ];
@@ -72,10 +80,12 @@ const appRoutes: Routes = [
     JanovohamburgoComponent,
     VerticalMaisComponent,
     InscricaoComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
+    MdlDialogModule,
     LoadingModule,
     BrowserAnimationsModule,
     BrowserModule,
@@ -83,6 +93,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     HttpModule,
     HttpClientModule,
+    MdlModule,
     ModalGalleryModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
@@ -100,13 +111,14 @@ const appRoutes: Routes = [
   ],
   exports: [
     FormsModule, ReactiveFormsModule,
+    MdlModule,MdlDialogModule,
     MatButtonModule, MatCheckboxModule, MatToolbarModule,
     MatChipsModule, MatOptionModule, MatGridListModule, MatProgressBarModule,
     MatSliderModule, MatSlideToggleModule, MatMenuModule, MatDialogModule, MatSnackBarModule,
     MatSelectModule, MatInputModule, MatSidenavModule, MatCardModule, MatIconModule, MatRadioModule,
     MatProgressSpinnerModule, MatTabsModule, MatListModule, MatDatepickerModule, MatDatepickerModule, MatNativeDateModule
   ],
-  providers: [ContatoService, UserService, HttpModule,
+  providers: [ContatoService, UserService, LoginService, HttpModule,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   entryComponents: [DialogContentComponent],
