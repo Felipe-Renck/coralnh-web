@@ -183,7 +183,7 @@ audio::-webkit-media-controls-panel {
     margin-right: auto !important;
 }
 
-.sbv{
+.sbv {
     height: 400px;
 }
 
@@ -196,7 +196,6 @@ img.sbv {
     left: 0;
     margin: auto !important;
     position: absolute;
-
     -webkit-filter: drop-shadow(2px 3px 1px rgba(242, 255, 0, 0.6));
     filter: drop-shadow(2px 3px 1px rgba(242, 255, 0, 0.6));
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
@@ -304,9 +303,52 @@ input, select, textarea {
     width: 100%;
 }
 
+.background-text-home {
+    border-radius: 10px;
+    margin-top: -14px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100 */
+    background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0);
+    /* IE6-9 */
+}
+
+.text-welcome {
+    /* color: #407bca; */
+    color: white;
+    text-shadow: 5px -2px 15px black;
+    font-family: 'Quicksand', cursive !important;
+    font-weight: bold;
+    font-size: 60px;
+    margin: 10px;
+    text-align: right;
+}
+
+.content-home {
+    height: 100%;
+}
+
 /* -------MEDIA QUERYS----------------------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width:320px) {
+    .content-home {
+        height: auto!important;
+        margin-bottom: 25px;
+    }
+    #coluna-um-home {
+        height: 160px!important;
+    }
+    .background-text-home {
+        background: rgba(0, 0, 0, 0.63)!important;
+        margin-top: 20px!important;
+    }
+    .text-welcome {
+        text-align: center!important;
+    }
     body {
         height: auto!important;
     }
@@ -328,6 +370,20 @@ input, select, textarea {
 }
 
 @media only screen and (max-width:481px) {
+    .content-home {
+        height: auto!important;
+        margin-bottom: 25px;
+    }
+    #coluna-um-home {
+        height: 160px!important;
+    }
+    .background-text-home {
+        background: rgba(0, 0, 0, 0.63)!important;
+        margin-top: 20px!important;
+    }
+    .text-welcome {
+        text-align: center!important;
+    }
     body {
         height: auto!important;
     }
@@ -349,6 +405,20 @@ input, select, textarea {
 }
 
 @media only screen and (max-width:641px) {
+    .content-home {
+        height: auto!important;
+        margin-bottom: 25px;
+    }
+    #coluna-um-home {
+        height: 160px!important;
+    }
+    .background-text-home {
+        background: rgba(0, 0, 0, 0.63)!important;
+        margin-top: 20px!important;
+    }
+    .text-welcome {
+        text-align: center!important;
+    }
     body {
         height: auto!important;
     }
@@ -370,6 +440,20 @@ input, select, textarea {
 }
 
 @media only screen and (max-width:961px) {
+    .content-home {
+        height: auto!important;
+        margin-bottom: 25px;
+    }
+    #coluna-um-home {
+        height: 160px!important;
+    }
+    .background-text-home {
+        background: rgba(0, 0, 0, 0.63)!important;
+        margin-top: 20px!important;
+    }
+    .text-welcome {
+        text-align: center!important;
+    }
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     body {
         height: auto!important;

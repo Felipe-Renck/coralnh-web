@@ -116,7 +116,8 @@ a:focus {
 } */
 
 .body-content {
-    min-height: 100vh!important;
+    height: 400px;
+    min-height: 400px!important;
 }
 
 /* TODO */
@@ -294,6 +295,7 @@ img.capaCD {
 
 body {
     padding-top: 50px;
+    height: 100vh !important;
 }
 
 .body-content {
@@ -342,7 +344,7 @@ input, select, textarea {
 
 @media only screen and (max-width:320px) {
     .container.body-content.c_container {
-        height: 230vh!important;
+        height: auto!important;
         min-height: 100%!important;
         max-width: unset !important;
     }
@@ -419,7 +421,7 @@ input, select, textarea {
 
 @media only screen and (max-width:481px) {
     .container.body-content.c_container {
-        height: 230vh!important;
+        height: auto!important;
         min-height: 100%!important;
         max-width: unset !important;
     }
@@ -497,7 +499,7 @@ input, select, textarea {
 
 @media only screen and (max-width:641px) {
     .container.body-content.c_container {
-        height: 230vh!important;
+        height: auto!important;
         min-height: 100%!important;
         max-width: unset !important;
     }
@@ -574,7 +576,7 @@ input, select, textarea {
 
 @media only screen and (max-width:961px) {
     .container.body-content.c_container {
-        height: 230vh!important;
+        height: auto!important;
         min-height: 100%!important;
         max-width: unset !important;
     }
