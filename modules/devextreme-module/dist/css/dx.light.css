@@ -2405,6 +2405,7 @@
 .dx-scheduler-appointment-tooltip .dx-button-content .dx-icon {
   font-size: 16px;
 }
+.dx-scheduler-appointment-tooltip-content,
 .dx-scheduler-appointment-tooltip-date,
 .dx-scheduler-appointment-tooltip-title {
   overflow: hidden;
@@ -2413,6 +2414,18 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.dx-scheduler-appointment-tooltip-content{
+  white-space:normal!important;
+}
+
+.dx-scheduler-appointment-tooltip-content-description-label{
+  font-weight: bold;
+}
+
+.dx-scheduler-appointment-tooltip-content-location-label{
+  font-weight: bold;
+}
+
 .dx-scheduler-appointment-tooltip-title {
   font-size: 16px;
   font-weight: bold;

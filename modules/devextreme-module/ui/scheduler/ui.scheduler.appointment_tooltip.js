@@ -17,6 +17,7 @@ var $ = require("../../core/renderer"),
 var APPOINTMENT_TOOLTIP_CLASS = "dx-scheduler-appointment-tooltip",
     APPOINTMENT_TOOLTIP_TITLE_CLASS = "dx-scheduler-appointment-tooltip-title",
     APPOINTMENT_TOOLTIP_DATE_CLASS = "dx-scheduler-appointment-tooltip-date",
+	APPOINTMENT_TOOLTIP_CONTENT_CLASS = "dx-scheduler-appointment-tooltip-content",
     APPOINTMENT_TOOLTIP_BUTTONS_CLASS = "dx-scheduler-appointment-tooltip-buttons";
 var appointmentTooltip = {
     show: function(appointmentData, singleAppointmentData, $appointment, instance) {
@@ -81,11 +82,15 @@ var appointmentTooltip = {
         endDate = this.instance.fire("convertDateByTimezone", endDate, endDateTimeZone);
         $("<div>").text(text).addClass(APPOINTMENT_TOOLTIP_TITLE_CLASS).appendTo($tooltip);
         $("<div>").addClass(APPOINTMENT_TOOLTIP_DATE_CLASS).text(this._formatTooltipDate(startDate, endDate, isAllDay)).appendTo($tooltip);
+        $("<div>").addClass("dx-scheduler-appointment-tooltip-content-description-label").text("Descrição:").appendTo($tooltip);
+        $("<div>").addClass(APPOINTMENT_TOOLTIP_CONTENT_CLASS).text(singleAppointmentData.description ).appendTo($tooltip);
+        $("<div>").addClass("dx-scheduler-appointment-tooltip-content-location-label").text("Local:").appendTo($tooltip);
+        $("<div>").addClass(APPOINTMENT_TOOLTIP_CONTENT_CLASS).text(singleAppointmentData.location ).appendTo($tooltip);
         var $buttons = $("<div>").addClass(APPOINTMENT_TOOLTIP_BUTTONS_CLASS).appendTo($tooltip);
-        if (this.instance._editing.allowDeleting) {
-            this._getDeleteButton(appointmentData, singleAppointmentData).appendTo($buttons)
-        }
-        this._getOpenButton(appointmentData, singleAppointmentData).appendTo($buttons);
+        // if (this.instance._editing.allowDeleting) {
+            // this._getDeleteButton(appointmentData, singleAppointmentData).appendTo($buttons)
+        // }
+        // this._getOpenButton(appointmentData, singleAppointmentData).appendTo($buttons);
         return $tooltip
     },
     _formatTooltipDate: function(startDate, endDate, isAllDay) {

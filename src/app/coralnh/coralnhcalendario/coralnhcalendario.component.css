@@ -1,11 +1,10 @@
-/deep/ .note {
+.note {
     color: rgba(128, 128, 128, 0.75);
     float: right;
     margin-top: 20px;
     font-size: 12px;
 }
-
-/deep/ .long-title h3 {
+.long-title h3 {
     font-family: 'Segoe UI Light', 'Helvetica Neue Light', 'Segoe UI', 'Helvetica Neue', 'Trebuchet MS', Verdana;
     font-weight: 200;
     font-size: 28px;

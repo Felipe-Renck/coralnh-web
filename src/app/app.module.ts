@@ -7,7 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingModule } from 'ngx-loading';
 import { CommonModule } from '@angular/common';
 
-// import { DxSchedulerModule } from 'devextreme-angular'
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 import { locale } from 'devextreme/localization'
 
 locale(navigator.language);
@@ -122,3 +123,5 @@ const appRoutes: Routes = [
 })
 export class AppModule {
 }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
