@@ -5,7 +5,12 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingModule } from 'ngx-loading';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+
+// import { DxSchedulerModule } from 'devextreme-angular'
+import { locale } from 'devextreme/localization'
+
+locale(navigator.language);
 
 import 'hammerjs';
 import 'mousetrap';
@@ -27,6 +32,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { ContatoService } from './services/contato.service';
 import { UserService } from './services/user.service';
+import { CalendarService } from './services/calendar.service'
 
 import { AppComponent } from './app.component';
 import { JanovohamburgoComponent } from './janovohamburgo/janovohamburgo/janovohamburgo.component';
@@ -41,6 +47,7 @@ import { InscricaoComponent } from './coralnh/inscricao/inscricao.component';
 import { DialogContentComponent } from './coralnh/inscricao/inscricao.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, NativeDateAdapter, DateAdapter } from '@angular/material';
+import { DxSchedulerModule } from 'devextreme-angular';
 
 
 const appRoutes: Routes = [
@@ -82,6 +89,7 @@ const appRoutes: Routes = [
     FormsModule,
     MatFormFieldModule,
     HttpModule,
+    DxSchedulerModule,
     HttpClientModule,
     ModalGalleryModule.forRoot(),
     FormsModule,
@@ -106,7 +114,7 @@ const appRoutes: Routes = [
     MatSelectModule, MatInputModule, MatSidenavModule, MatCardModule, MatIconModule, MatRadioModule,
     MatProgressSpinnerModule, MatTabsModule, MatListModule, MatDatepickerModule, MatDatepickerModule, MatNativeDateModule
   ],
-  providers: [ContatoService, UserService, HttpModule,
+  providers: [ContatoService, UserService, CalendarService, HttpModule,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   entryComponents: [DialogContentComponent],

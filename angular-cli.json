@@ -18,7 +18,9 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../modules/devextreme-module/dist/css/dx.common.css",
+        "../modules/devextreme-module/dist/css/dx.light.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
