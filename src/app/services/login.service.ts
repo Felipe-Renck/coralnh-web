@@ -17,10 +17,8 @@ export class LoginService {
   constructor(private http: HttpClient) {
   }
 
-  public login(loggedUser: LoggedUser): Observable<any> {
+  public login(loggedUser: LoggedUser): Promise<any> {
     console.log('login for' + loggedUser);
-    return this.http.post('http://localhost:3002/login', loggedUser, this.httpOptions);
-    
-    //return Observable.of({ username: username }).delay(2000);
+    return this.http.post('http://localhost:3002/login', loggedUser, this.httpOptions).toPromise();
   }
 }

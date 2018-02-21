@@ -10,6 +10,7 @@ import { LoginService } from 'app/services/login.service';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { MdlDialogService, MdlDialogReference, MdlTextFieldComponent } from '@angular-mdl/core';
 import { LoggedUser } from 'app/models/LoggedUser';
+import { Http, Response } from '@angular/http';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
   @ViewChild('firstElement') private inputElement: MdlTextFieldComponent;
 
   public form: FormGroup;
-  public username = new FormControl('', Validators.required);
+  public email = new FormControl('', Validators.required);
   public password = new FormControl('', Validators.required);
   loggedUser = new LoggedUser();
 
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit {
 
   public ngOnInit() {
     this.form = this.fb.group({
-      'username': this.username,
+      'email': this.email,
       'password': this.password
     });
   }
@@ -63,17 +64,26 @@ export class LoginComponent implements OnInit {
     this.statusMessage = 'Validando as suas credenciais ...';
 
     console.log(this.loggedUser);
-    let obs = this.loginService.login(this.loggedUser);
-    obs.subscribe(user => {
+    this.loginService.login(this.loggedUser).then(res => this.validateAuthentication(res)).catch(res => this.validateAuthentication(res));
 
+  }
+
+  validateAuthentication = function (res) {
+
+    console.log(res);
+    console.log(res.status);
+
+    if (res.status == "401") {
+      this.processingLogin = false;
+      this.statusMessage = res.error.message;
+    }
+    else {
       this.processingLogin = false;
       this.statusMessage = 'Conectado!';
-
       setTimeout(() => {
-        this.dialog.hide(user);
+        this.dialog.hide();
       }, 500);
-
-    });
+    }
   }
 
   @HostListener('keydown.esc')
