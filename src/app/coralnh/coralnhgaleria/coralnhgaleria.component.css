@@ -16,6 +16,15 @@
     border-radius: 10px;
 }
 
+@media only screen and (width:320px) {
+    .gallery-content {
+        margin: 0px!important;
+        margin-left: 43px !important;
+        padding-top: 1px;
+        padding-bottom: 25px;
+    }
+}
+
 @media only screen and (width:360px) {
     .gallery-content {
         margin: 0px!important;
