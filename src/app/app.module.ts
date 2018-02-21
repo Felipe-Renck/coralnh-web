@@ -6,11 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingModule } from 'ngx-loading';
 import { CommonModule } from '@angular/common';
-import { DxSchedulerModule } from 'devextreme-angular'
-import { locale, loadMessages } from 'devextreme/localization';
 
-let messages = require('devextreme/localization/messages/pt-BR.json');
-loadMessages(messages);
+// import { DxSchedulerModule } from 'devextreme-angular'
+import { locale } from 'devextreme/localization'
 
 locale(navigator.language);
 
@@ -49,6 +47,7 @@ import { InscricaoComponent } from './coralnh/inscricao/inscricao.component';
 import { DialogContentComponent } from './coralnh/inscricao/inscricao.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, NativeDateAdapter, DateAdapter } from '@angular/material';
+import { DxSchedulerModule } from 'devextreme-angular';
 
 
 const appRoutes: Routes = [
