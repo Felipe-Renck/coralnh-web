@@ -1,114 +1,116 @@
 <ngx-loading [show]="loading"></ngx-loading>
-<div class="col-sm-12">
+<div style="display:block">
     <div class="col-sm-12">
-        <img class="logo" src="/assets/images/coralnh/logo-branco-e-azul.png" style="height:100px" />
+        <div class="col-sm-12">
+            <img class="logo" src="/assets/images/coralnh/logo-branco-e-azul.png" style="height:100px" />
+        </div>
+        <div class="col-sm-12">
+            <mat-card class="card-inscricao align-center">
+                <mat-card-content>
+                    <h3 class="text-center">Inscrição</h3>
+                    <form class="formwidth" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+                        <div class="col-sm-7">
+                            <mat-input-container class="fullwidth">
+                                <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="user.Nome" name="Nome" required>
+                            </mat-input-container>
+                        </div>
+
+                        <div class="col-sm-5">
+                            <mat-input-container class="fullwidth">
+                                <input matInput placeholder="RG" id="RG" [(ngModel)]="user.RG" name="RG" maxlength="11" required>
+                            </mat-input-container>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <mat-input-container class="fullwidth">
+                                <input matInput placeholder="Órgão Emissor" maxlength="50" id="RG" [(ngModel)]="user.OrgaoEmissorRG" name="OrgaoEmissorRG"
+                                    required>
+                            </mat-input-container>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <mat-input-container class="fullwidth">
+                                <input matInput placeholder="Email" maxlength="40" id="Email" [(ngModel)]="user.Email" name="Email" required>
+                            </mat-input-container>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <mat-input-container class="fullwidth">
+
+                                <input required matInput [matDatepicker]="dp3" placeholder="Data de Nascimento" [min]="minDate" [max]="maxDate" name="DataNascimento"
+                                    id="DataNascimento" [(ngModel)]="user.DataNascimento" readonly>
+                                <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                                <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+
+                            </mat-input-container>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <mat-input-container class="fullwidth">
+                                <mat-select placeholder="Tipo Sanguíneo" [(ngModel)]="user.TipoSanguineo" name="types">
+                                    <mat-option *ngFor="let type of types" [value]="type.value">
+                                        {{type.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-input-container>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <mat-input-container class="fullwidth">
+                                <input matInput placeholder="Telefone" maxlength="15" id="Telefone" [(ngModel)]="user.Telefone" name="Telefone" required>
+                            </mat-input-container>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <mat-input-container class="fullwidth">
+                                <input matInput placeholder="Celular" maxlength="15" id="Celular" [(ngModel)]="user.Celular" name="Celular" required>
+                            </mat-input-container>
+                        </div>
+
+                        <div class="col-sm-2 check-box-whats">
+                            <mat-checkbox [(ngModel)]="user.Whatsapp" id="Whatsapp" name="Whatsapp" color="primary">WhatsApp</mat-checkbox>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <br>
+                            <mat-card>
+                                <mat-card-content>
+                                    <h3 class="example-h2">Mensalidade:</h3>
+                                    <div>
+                                        <label class="example-margin">Selecione o quanto você está disposto a pagar de mensalidade</label>
+                                    </div>
+                                    <mat-radio-group [(ngModel)]="user.valorMensalidade" name="my_options">
+
+                                        <div *ngFor="let value of values">
+                                            <mat-radio-button required value="{{value.value}}">{{value.text}}</mat-radio-button>
+                                        </div>
+
+                                    </mat-radio-group>
+                                    <div>
+                                        <label class="example-margin">OBS: Será cobrado R$25,00 de inscrição de cada integrante.</label>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <br>
+                            <button class="submit-button" type="submit" app-button mat-raised-button mat-primary color="primary">Inscrever-se</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
-    <div class="col-sm-12">
-    <mat-card class="card-inscricao align-center">
-        <mat-card-content>
-            <h3 class="text-center">Inscrição</h3>
-            <form class="formwidth" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
-                <div class="col-sm-7">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="user.Nome" name="Nome" required>
-                    </mat-input-container>
+
+    <div id="modal-inscricao" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div style="color:black!important;text-align:center;" class="modal-body">
+                    <span>{{modalMessage}}</span>
                 </div>
-
-                <div class="col-sm-5">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="RG" id="RG" [(ngModel)]="user.RG" name="RG" maxlength="11" required>
-                    </mat-input-container>
-                </div>
-
-                <div class="col-sm-2">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Órgão Emissor" maxlength="50" id="RG" [(ngModel)]="user.OrgaoEmissorRG" name="OrgaoEmissorRG"
-                            required>
-                    </mat-input-container>
-                </div>
-
-                <div class="col-sm-4">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Email" maxlength="40" id="Email" [(ngModel)]="user.Email" name="Email" required>
-                    </mat-input-container>
-                </div>
-
-                <div class="col-sm-4">
-                    <mat-input-container class="fullwidth">
-
-                        <input required matInput [matDatepicker]="dp3" placeholder="Data de Nascimento" [min]="minDate" [max]="maxDate" name="DataNascimento"
-                            id="DataNascimento" [(ngModel)]="user.DataNascimento" readonly>
-                        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
-                        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
-
-                    </mat-input-container>
-                    <mat-datepicker #picker></mat-datepicker>
-                </div>
-
-                <div class="col-sm-2">
-                    <mat-input-container class="fullwidth">
-                        <mat-select placeholder="Tipo Sanguíneo" [(ngModel)]="user.TipoSanguineo" name="types">
-                            <mat-option *ngFor="let type of types" [value]="type.value">
-                                {{type.viewValue}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-input-container>
-                </div>
-
-                <div class="col-sm-3">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Telefone" maxlength="15" id="Telefone" [(ngModel)]="user.Telefone" name="Telefone" required>
-                    </mat-input-container>
-                </div>
-
-                <div class="col-sm-3">
-                    <mat-input-container class="fullwidth">
-                        <input matInput placeholder="Celular" maxlength="15" id="Celular" [(ngModel)]="user.Celular" name="Celular" required>
-                    </mat-input-container>
-                </div>
-
-                <div class="col-sm-2 check-box-whats">
-                    <mat-checkbox [(ngModel)]="user.Whatsapp" id="Whatsapp" name="Whatsapp" color="primary">WhatsApp</mat-checkbox>
-                </div>
-
-                <div class="col-sm-12">
-                    <br>
-                    <mat-card>
-                        <mat-card-content>
-                            <h3 class="example-h2">Mensalidade:</h3>
-                            <div>
-                                <label class="example-margin">Selecione o quanto você está disposto a pagar de mensalidade</label>
-                            </div>
-                            <mat-radio-group [(ngModel)]="user.valorMensalidade" name="my_options">
-
-                                <div *ngFor="let value of values">
-                                    <mat-radio-button required value="{{value.value}}">{{value.text}}</mat-radio-button>
-                                </div>
-
-                            </mat-radio-group>
-                            <div>
-                                <label class="example-margin">OBS: Será cobrado R$25,00 de inscrição de cada integrante.</label>
-                            </div>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-
-                <div class="col-sm-12">
-                    <br>
-                    <button class="submit-button" type="submit" app-button mat-raised-button mat-primary color="primary">Inscrever-se</button>
-                </div>
-            </form>
-        </mat-card-content>
-    </mat-card>
-    </div>
-</div>
-
-<div id="modal-inscricao" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div style="color:black!important;text-align:center;" class="modal-body">
-                <span>{{modalMessage}}</span>
             </div>
         </div>
     </div>

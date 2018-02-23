@@ -116,7 +116,8 @@ a:focus {
 } */
 
 .body-content {
-    height: 400px;
+    height: unset!important;
+    /* height: 400px; */
     min-height: 400px!important;
 }
 
@@ -129,6 +130,10 @@ a:focus {
     max-width: unset !important;
 }
 
+#social{
+    margin-right: 25px;
+    margin-top: 10px;
+}
 
 .navbar {
     color: white !important;
@@ -141,9 +146,26 @@ a:focus {
     max-width: 940px !important;
 }
 
-.navbar a {
-    /* color: rgb(255, 255, 255) !important; */
+.navbar-scroll{
+    border: none;
+    background-color: unset!important;
+    background-image: #1e5799!important;
+    background-image: -moz-linear-gradient(to bottom, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.7) 90%, rgba(0, 0, 0, 0.01) 100%)!important;
+    background-image: -webkit-linear-gradient(to bottom, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.7) 90%, rgba(0, 0, 0, 0.01) 100%)!important;
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.7) 90%, rgba(0, 0, 0, 0.01) 100%)!important;
+    background-image: -o-linear-gradient(to bottom, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.7) 90%, rgba(0, 0, 0, 0.01) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=0)!important;
+    color: white !important;
+    /* background-color: #fdfcfc !important; */
+    /* background: white !important; */
+    border-color: transparent !important;
+    min-height: 100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 940px !important;
+    /* box-shadow: 0px 0px 11px 7px grey; */
 }
+
 
 .navbar-default .navbar-nav>li>a {
     padding: 15px;
@@ -295,7 +317,8 @@ img.capaCD {
 
 body {
     padding-top: 50px;
-    height: 100vh !important;
+    /* height: 100vh !important; */
+    height: unset!important;
 }
 
 .body-content {

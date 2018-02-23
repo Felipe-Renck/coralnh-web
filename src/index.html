@@ -1,4 +1,5 @@
 <head>
+
   <!-- Stylesheets -->
   <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
@@ -26,19 +27,24 @@
     }
   </style>
 
+<script>
+    function Onscrollfnction(){
+      var top1 = $('#section-body').offset().top;
+      var scrollPos = $(document).scrollTop();
+      if (scrollPos > 50) {
+        $('.navbar').addClass('navbar-scroll');
+      }
+      else{
+        $('.navbar').removeClass('navbar-scroll');
+      }
+    };
+  </script>
+
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 </head>
 
 <app-root></app-root>
-
-
-<script>
-  function navBarCollapseHide() {
-    $('.navbar-collapse').collapse('hide');
-  };
-</script>
-
 <!-- TODO: REMOVER AO CONCLUIR O SITE, O QUE ESTÁ ABAIXO -->
 <!-- ***************************************************** -->
 <script>
