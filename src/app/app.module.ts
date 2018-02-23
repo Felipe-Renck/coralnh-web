@@ -111,7 +111,7 @@ const appRoutes: Routes = [
   ],
   exports: [
     FormsModule, ReactiveFormsModule,
-    MdlModule,MdlDialogModule,
+    MdlModule, MdlDialogModule,
     MatButtonModule, MatCheckboxModule, MatToolbarModule,
     MatChipsModule, MatOptionModule, MatGridListModule, MatProgressBarModule,
     MatSliderModule, MatSlideToggleModule, MatMenuModule, MatDialogModule, MatSnackBarModule,

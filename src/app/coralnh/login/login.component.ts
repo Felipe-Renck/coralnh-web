@@ -76,8 +76,7 @@ export class LoginComponent implements OnInit {
     if (res.status == "401") {
       this.processingLogin = false;
       this.statusMessage = res.error.message;
-    }
-    else {
+    } else {
       this.processingLogin = false;
       this.statusMessage = 'Conectado!';
       setTimeout(() => {
