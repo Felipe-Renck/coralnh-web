@@ -1,3 +1,16 @@
+.inscricao-body {
+  height: 100%;
+  color: black;
+  background-color: white;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.inscricao-content {
+  margin: 25px;
+  padding-top: 1px;
+  padding-bottom: 25px;
+}
+
 .card-inscricao {
   width: 80vw!important;
 }
@@ -22,15 +35,70 @@
 mat-input-container {
   width: 100%!important;
 }
-.check-box-whats{
+
+.check-box-whats {
   margin-top: 20px;
 }
 
-.submit-button{
-background-color: #1e5799;
-border-color: #1e5799;
+.submit-button {
+  background-color: #1e5799;
+  border-color: #1e5799;
 }
 
 .backdrop.ng-star-inserted {
   height: 200vh!important;
+}
+
+@media only screen and (width:320px) {
+  .inscricao-body {
+    height: unset!important;
+  }
+  .inscricao-content{
+    margin:0!important;
+  }
+}
+
+@media only screen and (width:360px) {
+  .inscricao-body {
+    height: unset!important;
+  }
+  .inscricao-content{
+    margin:0!important;
+  }
+}
+
+@media only screen and (width:375px) {
+  .inscricao-body {
+    height: unset!important;
+  }
+  .inscricao-content{
+    margin:0!important;
+  }
+}
+
+@media only screen and (width:384px) {
+  .inscricao-body {
+    height: unset!important;
+  }
+  .inscricao-content{
+    margin:0!important;
+  }
+}
+
+@media only screen and (width:414px) {
+  .inscricao-body {
+    height: unset!important;
+  }
+  .inscricao-content{
+    margin:0!important;
+  }
+}
+
+@media only screen and (width:640px) {
+  .inscricao-body {
+    height: unset!important;
+  }
+  .inscricao-content{
+    margin:0!important;
+  }
 }

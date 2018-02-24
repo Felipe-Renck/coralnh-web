@@ -597,7 +597,7 @@ input, select, textarea {
     }
 }
 
-@media only screen and (max-width:961px) {
+@media only screen and (max-width:767px) {
     .container.body-content.c_container {
         height: auto!important;
         min-height: 100%!important;
