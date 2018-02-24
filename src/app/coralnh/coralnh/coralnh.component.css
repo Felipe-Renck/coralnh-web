@@ -384,7 +384,7 @@ input, select, textarea {
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
         /* height: auto!important; */
-        background-position: unset!important;
+        background-position: top center !important;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -462,7 +462,7 @@ input, select, textarea {
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
         /* height: auto!important; */
-        background-position: unset!important;
+        background-position: top center !important;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -539,7 +539,7 @@ input, select, textarea {
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
         /* height: auto!important; */
-        background-position: unset!important;
+        background-position: top center !important;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -617,7 +617,7 @@ input, select, textarea {
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
         /* height: auto!important; */
-        background-position: unset!important;
+        background-position: top center !important;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
