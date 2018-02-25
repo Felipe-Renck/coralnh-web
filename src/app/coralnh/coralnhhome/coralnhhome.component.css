@@ -334,7 +334,43 @@ input, select, textarea {
 
 /* -------MEDIA QUERYS----------------------------------------------------------------------------------------------------------------- */
 
-@media only screen and (max-width:320px) {
+@media only screen and (min-width:320px) {
+    .content-home {
+        height: auto!important;
+        margin-bottom: 25px;
+    }
+    #coluna-um-home {
+        height: 160px!important;
+    }
+    .background-text-home {
+        background: rgba(0, 0, 0, 0.63)!important;
+        margin-top: 20px!important;
+    }
+    .text-welcome {
+        font-size: 45px;
+        text-align: center!important;
+    }
+    body {
+        height: auto!important;
+    }
+    .body-content {
+        min-height: 100vh!important;
+    }
+    #coluna-um-home {
+        height: 240px;
+    }
+    #coluna-dois-home {
+        height: 240px;
+    }
+    #coluna-tres-home {
+        height: auto;
+    }
+    img.capaCD {
+        bottom: inherit!important;
+    }
+}
+
+@media only screen and (min-width:481px) {
     .content-home {
         height: auto!important;
         margin-bottom: 25px;
@@ -369,7 +405,7 @@ input, select, textarea {
     }
 }
 
-@media only screen and (max-width:481px) {
+@media only screen and (min-width:641px) {
     .content-home {
         height: auto!important;
         margin-bottom: 25px;
@@ -404,42 +440,7 @@ input, select, textarea {
     }
 }
 
-@media only screen and (max-width:641px) {
-    .content-home {
-        height: auto!important;
-        margin-bottom: 25px;
-    }
-    #coluna-um-home {
-        height: 160px!important;
-    }
-    .background-text-home {
-        background: rgba(0, 0, 0, 0.63)!important;
-        margin-top: 20px!important;
-    }
-    .text-welcome {
-        text-align: center!important;
-    }
-    body {
-        height: auto!important;
-    }
-    .body-content {
-        min-height: 100vh!important;
-    }
-    #coluna-um-home {
-        height: 240px;
-    }
-    #coluna-dois-home {
-        height: 240px;
-    }
-    #coluna-tres-home {
-        height: auto;
-    }
-    img.capaCD {
-        bottom: inherit!important;
-    }
-}
-
-@media only screen and (max-width:961px) {
+@media only screen and (min-width:961px) {
     .content-home {
         height: auto!important;
         margin-bottom: 25px;

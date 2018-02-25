@@ -7,12 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingModule } from 'ngx-loading';
 import { CommonModule } from '@angular/common';
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { locale } from 'devextreme/localization'
-
-locale(navigator.language);
-
 import 'hammerjs';
 import 'mousetrap';
 import { ModalGalleryModule } from 'angular-modal-gallery';
@@ -123,5 +117,3 @@ const appRoutes: Routes = [
 })
 export class AppModule {
 }
-
-platformBrowserDynamic().bootstrapModule(AppModule);

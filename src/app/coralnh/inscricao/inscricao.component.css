@@ -49,12 +49,30 @@ mat-input-container {
   height: 200vh!important;
 }
 
+@media only screen and (width:319px) {
+  .inscricao-body {
+    height: unset!important;
+  }
+  .inscricao-content {
+    margin: 0!important;
+  }
+}
+
+@media only screen and (max-width:320px) {
+  .inscricao-body {
+    height: unset!important;
+  }
+  .inscricao-content {
+    margin: 0!important;
+  }
+}
+
 @media only screen and (width:320px) {
   .inscricao-body {
     height: unset!important;
   }
-  .inscricao-content{
-    margin:0!important;
+  .inscricao-content {
+    margin: 0!important;
   }
 }
 
@@ -62,8 +80,8 @@ mat-input-container {
   .inscricao-body {
     height: unset!important;
   }
-  .inscricao-content{
-    margin:0!important;
+  .inscricao-content {
+    margin: 0!important;
   }
 }
 
@@ -71,8 +89,8 @@ mat-input-container {
   .inscricao-body {
     height: unset!important;
   }
-  .inscricao-content{
-    margin:0!important;
+  .inscricao-content {
+    margin: 0!important;
   }
 }
 
@@ -80,8 +98,8 @@ mat-input-container {
   .inscricao-body {
     height: unset!important;
   }
-  .inscricao-content{
-    margin:0!important;
+  .inscricao-content {
+    margin: 0!important;
   }
 }
 
@@ -89,8 +107,8 @@ mat-input-container {
   .inscricao-body {
     height: unset!important;
   }
-  .inscricao-content{
-    margin:0!important;
+  .inscricao-content {
+    margin: 0!important;
   }
 }
 
@@ -98,7 +116,16 @@ mat-input-container {
   .inscricao-body {
     height: unset!important;
   }
-  .inscricao-content{
-    margin:0!important;
+  .inscricao-content {
+    margin: 0!important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .inscricao-body {
+    height: unset!important;
+  }
+  .inscricao-content {
+    margin: 0!important;
   }
 }

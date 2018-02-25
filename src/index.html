@@ -27,14 +27,14 @@
     }
   </style>
 
-<script>
-    function Onscrollfnction(){
+  <script>
+    function Onscrollfnction() {
       var top1 = $('#section-body').offset().top;
       var scrollPos = $(document).scrollTop();
       if (scrollPos > 50) {
         $('.navbar').addClass('navbar-scroll');
       }
-      else{
+      else {
         $('.navbar').removeClass('navbar-scroll');
       }
     };
@@ -45,11 +45,18 @@
 </head>
 
 <app-root></app-root>
+
+<script>
+  function navBarCollapseHide() {
+    $('.navbar-collapse').collapse('hide');
+  };
+</script>
+
 <!-- TODO: REMOVER AO CONCLUIR O SITE, O QUE ESTÁ ABAIXO -->
 <!-- ***************************************************** -->
 <script>
-  $(document).ready(function () {
-    $('nav').css('display', 'none');
-  })
+  // $(document).ready(function () {
+  //   $('nav').css('display', 'none');
+  // })
 </script>
 <!-- ***************************************************** -->
