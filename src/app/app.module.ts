@@ -21,9 +21,10 @@ import {
   MatSelectModule, MatInputModule, MatSidenavModule, MatCardModule, MatIconModule,
   MatRadioModule, MatProgressSpinnerModule, MatTabsModule, MatListModule
 } from '@angular/material';
-
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, NativeDateAdapter, DateAdapter } from '@angular/material';
+import { DxSchedulerModule } from 'devextreme-angular';
 
 import { ContatoService } from './services/contato.service';
 import { UserService } from './services/user.service';
@@ -40,14 +41,12 @@ import { CoralnhcalendarioComponent } from 'app/coralnh/coralnhcalendario/coraln
 import { CoralnhcontatoComponent } from 'app/coralnh/coralnhcontato/coralnhcontato.component';
 import { InscricaoComponent } from './coralnh/inscricao/inscricao.component';
 import { DialogContentComponent } from './coralnh/inscricao/inscricao.component';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule, NativeDateAdapter, DateAdapter } from '@angular/material';
-import { DxSchedulerModule } from 'devextreme-angular';
-
+import { PainelComponent } from './janovohamburgo/painel/painel.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'index', component: JanovohamburgoComponent, pathMatch: 'full' },
+  { path: 'painel', component: PainelComponent, pathMatch: 'full' },
   {
     path: 'coralnh', component: CoralnhComponent,
     children:
@@ -74,7 +73,8 @@ const appRoutes: Routes = [
     JanovohamburgoComponent,
     VerticalMaisComponent,
     InscricaoComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    PainelComponent
   ],
   imports: [
     CommonModule,

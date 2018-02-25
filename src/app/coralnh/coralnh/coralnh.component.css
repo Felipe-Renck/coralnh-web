@@ -367,7 +367,7 @@ input, select, textarea {
     }
     body {
         /* background:black!important; */
-        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed !important;
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.jpg) fixed !important;
         background-image: url(/assets/images/coralnh/mobile_background_1.1.jpg) !important;
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
@@ -381,6 +381,14 @@ input, select, textarea {
         background-repeat: no-repeat;
         background-attachment: fixed!important;
         /* background-position: 50% top!important; */
+    }
+    .body:before{
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed!important;
     }
     .body-content {
         min-height: 100vh!important;
@@ -445,7 +453,7 @@ input, select, textarea {
     }
     body {
         /* background:black!important; */
-        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed !important;
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.jpg) fixed !important;;
         background-image: url(/assets/images/coralnh/mobile_background_1.1.jpg) !important;
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
@@ -459,6 +467,14 @@ input, select, textarea {
         background-repeat: no-repeat;
         background-attachment: fixed!important;
         /* background-position: 50% top!important; */
+    }
+    .body:before{
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed!important;
     }
     .body-content {
         min-height: 100vh!important;
@@ -523,7 +539,7 @@ input, select, textarea {
     }
     body {
         /* background:black!important; */
-        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.jpg) no-repeat center center fixed !important;
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.jpg) fixed !important;;
         background-image: url(/assets/images/coralnh/mobile_background_1.1.jpg) !important;
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
@@ -537,6 +553,14 @@ input, select, textarea {
         background-repeat: no-repeat;
         background-attachment: fixed!important;
         /* background-position: 50% top!important; */
+    }
+    .body:before{
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed!important;
     }
     .body-content {
         min-height: 100vh!important;
