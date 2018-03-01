@@ -582,8 +582,8 @@ input, select, textarea {
     }
     .navbar-collapse.collapse.in {
         background-color: rgba(20, 56, 86, 0.78);
-        padding-left: 0!important;
-        padding-right: 5%;
+        /* padding-left: 0!important; */
+        /* padding-right: 5%; */
     }
     .navbar {
         border: none;
