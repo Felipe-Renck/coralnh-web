@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+      <h1 style="font-size:12px;font-weight:bold;">
+          Inscritos : {{usersArray.length}}
+      </h1>
+    </div>
+  </div>
+<div class="col-md-12">
+  <table class="table table-bordered  table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th style="font-size:10px">Nome</th>
+        <th style="font-size:10px">Celular</th>
+        <th style="font-size:10px">Whatsapp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersArray">
+        <td style="font-size:12px">{{user.Nome}}</td>
+        <td style="font-size:13px">{{user.Celular}}</td>
+        <td style="font-size:12px">{{user.Whatsapp == true ? "Sim" : "Não"}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

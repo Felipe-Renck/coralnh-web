@@ -11,6 +11,7 @@ import { Http, Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Router } from '@angular/router';
+import { promise } from 'selenium-webdriver';
 
 
 
@@ -29,8 +30,12 @@ export class UserService {
     console.log('SaveUserService');
     console.log(user);
 
-    return this.http.post('http://localhost:3002/user', user, this.httpOptions).toPromise();
+    return this.http.post('https://coralnh-server.herokuapp.com/user', user, this.httpOptions).toPromise();
 
+  }
+
+  getAllUsers(usuario: string, senha: string) {
+    return this.http.get('https://coralnh-server.herokuapp.com/list-users?usuario=' + usuario + '&senha=' + senha, this.httpOptions);
   }
 
   private handleError(error: any): Promise<any> {

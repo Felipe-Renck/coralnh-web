@@ -17,7 +17,7 @@ export class ContatoService {
   constructor(private http: HttpClient) { }
 
   enviarEmail(contato: Contato): Promise<any> {
-    return this.http.post('http://localhost:3002/email', JSON.stringify(contato), this.httpOptions).toPromise();
+    return this.http.post('https://coralnh-server.herokuapp.com/email', JSON.stringify(contato), this.httpOptions).toPromise();
   }
 
   // private extractData(value: Response): any | PromiseLike<any> {

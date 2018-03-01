@@ -42,11 +42,13 @@ import { CoralnhcontatoComponent } from 'app/coralnh/coralnhcontato/coralnhconta
 import { InscricaoComponent } from './coralnh/inscricao/inscricao.component';
 import { DialogContentComponent } from './coralnh/inscricao/inscricao.component';
 import { PainelComponent } from './janovohamburgo/painel/painel.component';
+import { ListaUsuariosStatusComponent } from './admin/lista-usuarios-status/lista-usuarios-status.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'index', component: JanovohamburgoComponent, pathMatch: 'full' },
   { path: 'painel', component: PainelComponent, pathMatch: 'full' },
+  { path: 'listausuarios', component: ListaUsuariosStatusComponent, pathMatch: 'full' },
   {
     path: 'coralnh', component: CoralnhComponent,
     children:
@@ -74,7 +76,8 @@ const appRoutes: Routes = [
     VerticalMaisComponent,
     InscricaoComponent,
     DialogContentComponent,
-    PainelComponent
+    PainelComponent,
+    ListaUsuariosStatusComponent
   ],
   imports: [
     CommonModule,
