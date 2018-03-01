@@ -4,9 +4,12 @@
 <head>
   <!-- Stylesheets -->
   <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/stylesheets/material.blue-amber.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Gloria+Hallelujah|Indie+Flower|Lobster|Pacifico|Sedgwick+Ave|Shadows+Into+Light|Boogaloo|Permanent+Marker|Quicksand|Pacifico|Quicksand"
     rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
   <!-- Scripts -->
   <!-- <script src="/assets/scripts/jquery-1.10.2.js"></script> -->
@@ -50,6 +53,13 @@
             <li class="menu-toggle-coral text-menu">
               <a routerLink="coralnhcontato" onclick="navBarCollapseHide()">Contato</a>
             </li>
+            <li class="menu-toggle-coral text-menu">
+              <a (click)="showDialog($event)">Login</a>
+            </li>
+
+            <!-- <li class="menu-toggle-coral text-menu">
+              <a routerLink="inscricao" onclick="navBarCollapseHide()">Faça sua inscrição</a>
+            </li> -->
           </ul>
           <div id="social" style="font-size:32px;float:right;" class="text-center text-social-menu">
             <a class="fa fa-spotify c_text-shadow_black" href="spotify:artist:7ec9N1DHWwqnjWX9vG0yhM"></a>
@@ -66,11 +76,12 @@
   <div class="background-shadow" data-ix="show-nav"></div>
 
   <section id="section-body">
-    <div class="container body-content c_container" style="margin-top:70px !important;  padding-bottom: 20px;">
-      <router-outlet></router-outlet>
-    </div>
+  <div class="container body-content c_container" style="margin-top:70px !important;">
+    <router-outlet></router-outlet>
+  </div>
   </section>
-
+  
+  <dialog-outlet></dialog-outlet>
 </body>
 <footer>
   <div id="footerDefault" class="footer-custom">

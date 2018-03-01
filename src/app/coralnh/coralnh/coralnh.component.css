@@ -1,4 +1,3 @@
-
 .animation-box {
     width: 100%;
     height: 27.5rem;
@@ -203,6 +202,7 @@ ul.nav.navbar-nav.navbar-right {
 .text-menu a {
     color: #1e5799!important;
     font-family: 'Gloria Hallelujah', cursive !important;
+    cursor: pointer;
 }
 
 .text-social-menu a {
@@ -311,7 +311,7 @@ img.capaCD {
     /* position: fixed; */
     /* margin-top: 10px; */
     bottom: 0;
-    height: 25px;
+    height: 35px;
     width: 100%;
     /* background-color: #0098db94; */
     background-color: rgb(84, 131, 194);
