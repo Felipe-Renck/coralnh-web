@@ -45,29 +45,49 @@ import { CoralnhcalendarioComponent } from 'app/coralnh/coralnhcalendario/coraln
 import { CoralnhcontatoComponent } from 'app/coralnh/coralnhcontato/coralnhcontato.component';
 import { InscricaoComponent } from './coralnh/inscricao/inscricao.component';
 import { DialogContentComponent } from './coralnh/inscricao/inscricao.component';
-import { PainelComponent } from './janovohamburgo/painel/painel.component';
+
 import { ListaUsuariosStatusComponent } from './admin/lista-usuarios-status/lista-usuarios-status.component';
 import { LoginComponent } from './coralnh/login/login.component';
 
+import { PainelLayoutComponent } from './janovohamburgo/coralnh-sistema/sistema/painel-layout/painel-layout.component';
+import { MateriaisComponent } from './janovohamburgo/coralnh-sistema/sistema/materiais/materiais.component';
+import { EventosComponent } from './janovohamburgo/coralnh-sistema/sistema/eventos/eventos.component';
+import { FinanceiroComponent } from './janovohamburgo/coralnh-sistema/sistema/financeiro/financeiro.component';
+import { ChamadaComponent } from './janovohamburgo/coralnh-sistema/sistema/chamada/chamada.component';
+
+import { PainelAdminComponent } from './janovohamburgo/coralnh-sistema/admin/painel-admin/painel-admin.component';
+import { PainelComponent } from 'app/janovohamburgo/coralnh-sistema/sistema/painel/painel.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'index', component: JanovohamburgoComponent, pathMatch: 'full' },
-  { path: 'painel', component: PainelComponent, pathMatch: 'full' },
   { path: 'listausuarios', component: ListaUsuariosStatusComponent, pathMatch: 'full' },
   {
     path: 'coralnh', component: CoralnhComponent,
     children:
-      [{ path: '', redirectTo: 'coralnhhome', pathMatch: 'full' },
-      { path: 'coralnhhome', component: CoralnhhomeComponent },
-      { path: 'coralnhsobre', component: CoralnhsobreComponent },
-      { path: 'coralnhgaleria', component: CoralnhgaleriaComponent },
-      { path: 'coralnhcalendario', component: CoralnhcalendarioComponent },
-      { path: 'coralnhcontato', component: CoralnhcontatoComponent },
-      { path: 'inscricao', component: InscricaoComponent },
-      { path: 'login', component: LoginComponent }
+      [
+        { path: '', redirectTo: 'home', pathMatch: 'full' },
+        { path: 'home', component: CoralnhhomeComponent },
+        { path: 'sobre', component: CoralnhsobreComponent },
+        { path: 'galeria', component: CoralnhgaleriaComponent },
+        { path: 'calendario', component: CoralnhcalendarioComponent },
+        { path: 'contato', component: CoralnhcontatoComponent },
+        { path: 'inscricao', component: InscricaoComponent },
+        { path: 'login', component: LoginComponent }
       ]
   },
+  {
+    path: 'painel', component: PainelLayoutComponent,
+    children:
+      [
+        { path: '', redirectTo: 'index', pathMatch: 'full' },
+        { path: 'index', component: PainelComponent },
+        { path: 'chamada', component: ChamadaComponent },
+        { path: 'eventos', component: EventosComponent },
+        { path: 'financeiro', component: FinanceiroComponent },
+        { path: 'materiais', component: MateriaisComponent }
+      ]
+  }
 ];
 
 @NgModule({
@@ -83,9 +103,15 @@ const appRoutes: Routes = [
     VerticalMaisComponent,
     InscricaoComponent,
     DialogContentComponent,
-    PainelComponent,
     ListaUsuariosStatusComponent,
-    LoginComponent
+    LoginComponent,
+    MateriaisComponent,
+    EventosComponent,
+    FinanceiroComponent,
+    ChamadaComponent,
+    PainelAdminComponent,
+    PainelLayoutComponent,
+    PainelComponent
   ],
   imports: [
     CommonModule,
