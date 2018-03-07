@@ -87,6 +87,15 @@ const appRoutes: Routes = [
         { path: 'financeiro', component: FinanceiroComponent },
         { path: 'materiais', component: MateriaisComponent }
       ]
+  },
+  {
+    path: 'admin', component: PainelAdminComponent,
+    children:
+      [
+        { path: '', redirectTo: 'index', pathMatch: 'full' },
+        { path: 'index', component: PainelAdminComponent },
+        { path: 'chamada', component: ChamadaComponent }
+      ]
   }
 ];
 
@@ -137,7 +146,7 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false }
+      { enableTracing: false, useHash:false }
     )
   ],
   exports: [
