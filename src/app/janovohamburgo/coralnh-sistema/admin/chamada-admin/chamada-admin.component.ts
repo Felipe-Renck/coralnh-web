@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChamadaAdminComponent implements OnInit {
 
+  chamadas: Chamada[] = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.chamadas.push({ Id: 1, Data: new Date()});
   }
 
 }
+
+export class Chamada {
+  Id: number;
+  Data: Date;
+};

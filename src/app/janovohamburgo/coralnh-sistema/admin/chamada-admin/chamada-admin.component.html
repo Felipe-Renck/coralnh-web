@@ -1,3 +1,73 @@
-<p>
-  chamada-admin works!
-</p>
+<body>
+  <div class="container" style="background:black;height:100%">
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+        <br>
+        <div class="panel panel-default">
+          <div class="panel-heading" style="font-size:10px;">Criar Chamadas</div>
+          <div class="panel-body">
+            <form>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <br>
+                    <label for="inputDate">Data da chamada:</label>
+                    <input type="date" class="form-control" id="inputDate" placeholder="Informe uma data">
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <input type="radio" id="radioTipo" name="radioTipo">
+                    <label class="custom-control-label">Ensaio</label>
+                    <br>
+                    <input type="radio" id="radioTipo" name="radioTipo">
+                    <label class="custom-control-label">Apresentação</label>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary">Criar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="panel panel-default">
+        <div class="panel-heading" style="font-size:10px;">Lista de Chamadas</div>
+        <div class="panel-body">
+          <table id="tabela-chamada" class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Data</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let chamada of chamadas">
+                <td class="tabela-chamada-td">{{chamada.Id}}</td>
+                <td class="tabela-chamada-td">{{chamada.Data | date: 'dd/MM/yyyy'}}</td>
+                <td class="tabela-chamada-td">
+                  <button type="button" [routerLink]="['/admin/formulariochamada']" [queryParams]="{IDChamada: chamada.Id}" style="margin-bottom:10px;"
+                    class="btn btn-sm btn-default">Iniciar chamada</button>
+                  <button type="button" style="margin-bottom:10px;" class="btn btn-sm btn-danger">Excluir chamada</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>

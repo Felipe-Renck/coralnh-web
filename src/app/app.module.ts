@@ -59,6 +59,7 @@ import { PainelAdminComponent } from './janovohamburgo/coralnh-sistema/admin/pai
 import { PainelComponent } from 'app/janovohamburgo/coralnh-sistema/sistema/painel/painel.component';
 import { ChamadaAdminComponent } from './janovohamburgo/coralnh-sistema/admin/chamada-admin/chamada-admin.component';
 import { HomeAdminComponent } from './janovohamburgo/coralnh-sistema/admin/home-admin/home-admin.component';
+import { ChamadaFormularioComponent } from './janovohamburgo/coralnh-sistema/admin/chamada-admin/chamada-formulario/chamada-formulario.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -96,7 +97,8 @@ const appRoutes: Routes = [
       [
         { path: '', redirectTo: 'index', pathMatch: 'full' },
         { path: 'index', component: HomeAdminComponent },
-        { path: 'chamada', component: ChamadaAdminComponent }
+        { path: 'chamada', component: ChamadaAdminComponent },
+        { path: 'formulariochamada', component: ChamadaFormularioComponent }
       ]
   }
 ];
@@ -124,7 +126,8 @@ const appRoutes: Routes = [
     PainelLayoutComponent,
     PainelComponent,
     ChamadaAdminComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    ChamadaFormularioComponent
   ],
   imports: [
     CommonModule,

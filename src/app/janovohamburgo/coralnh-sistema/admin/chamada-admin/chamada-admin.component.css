@@ -1,0 +1,13 @@
+body{
+    background: black;
+}
+
+.tabela-chamada-td{
+    text-align:center!important; 
+    vertical-align:middle!important;
+}
+
+.container{
+    width: 100% !important;
+ }
+ 
