@@ -83,7 +83,7 @@
 }
 
 body {
-    background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/background_1.1.jpg);
+    background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url('https://firebasestorage.googleapis.com/v0/b/jovens-adventistas-nh.appspot.com/o/imagens%2Fcoralnh%2Fbackground_1.1.jpg?alt=media&token=a5f156ce-b09a-4e34-8ed5-c3eb344c5b6f');
     background-position: 0% 0%, 50% 54%;
     background-size: cover;
     background-attachment: scroll!important;
@@ -367,8 +367,8 @@ input, select, textarea {
     }
     body {
         /* background:black!important; */
-        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.jpg) fixed !important;
-        background-image: url(/assets/images/coralnh/mobile_background_1.1.jpg) !important;
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url('https://firebasestorage.googleapis.com/v0/b/jovens-adventistas-nh.appspot.com/o/imagens%2Fcoralnh%2Fmobile_background_1.1.jpg?alt=media&token=932bdb96-3163-4b84-bc06-61915b703fbd') fixed !important;
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/jovens-adventistas-nh.appspot.com/o/imagens%2Fcoralnh%2Fmobile_background_1.1.jpg?alt=media&token=932bdb96-3163-4b84-bc06-61915b703fbd') !important;
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
@@ -453,8 +453,8 @@ input, select, textarea {
     }
     body {
         /* background:black!important; */
-        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.jpg) fixed !important;;
-        background-image: url(/assets/images/coralnh/mobile_background_1.1.jpg) !important;
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url('https://firebasestorage.googleapis.com/v0/b/jovens-adventistas-nh.appspot.com/o/imagens%2Fcoralnh%2Fmobile_background_1.1.jpg?alt=media&token=932bdb96-3163-4b84-bc06-61915b703fbd') fixed !important;;
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/jovens-adventistas-nh.appspot.com/o/imagens%2Fcoralnh%2Fmobile_background_1.1.jpg?alt=media&token=932bdb96-3163-4b84-bc06-61915b703fbd') !important;
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */
@@ -539,8 +539,8 @@ input, select, textarea {
     }
     body {
         /* background:black!important; */
-        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url(/assets/images/coralnh/mobile_background_1.1.jpg) fixed !important;;
-        background-image: url(/assets/images/coralnh/mobile_background_1.1.jpg) !important;
+        background-image: linear-gradient(180deg, #FFF, rgba(0, 0, 0, 0.2) 30%), url('https://firebasestorage.googleapis.com/v0/b/jovens-adventistas-nh.appspot.com/o/imagens%2Fcoralnh%2Fmobile_background_1.1.jpg?alt=media&token=932bdb96-3163-4b84-bc06-61915b703fbd') fixed !important;;
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/jovens-adventistas-nh.appspot.com/o/imagens%2Fcoralnh%2Fmobile_background_1.1.jpg?alt=media&token=932bdb96-3163-4b84-bc06-61915b703fbd') !important;
         /* background-position: 0% 0%, 50% 54%;
         background-size: auto,cover;
         background-attachment: fixed, fixed; */

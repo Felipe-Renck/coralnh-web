@@ -35,7 +35,7 @@ import { CalendarService } from './services/calendar.service'
 import { LoginService } from './services/login.service';
 
 import { AppComponent } from './app.component';
-import { JanovohamburgoComponent } from './janovohamburgo/janovohamburgo/janovohamburgo.component';
+import { JanovohamburgoComponent } from './janovohamburgo/janh-home-default-master/janovohamburgo.component'
 import { VerticalMaisComponent } from './vertical-mais/vertical-mais.component';
 import { CoralnhComponent } from './coralnh/coralnh/coralnh.component';
 import { CoralnhgaleriaComponent } from 'app/coralnh/coralnhgaleria/coralnhgaleria.component';
@@ -60,11 +60,13 @@ import { PainelComponent } from 'app/janovohamburgo/coralnh-sistema/sistema/pain
 import { ChamadaAdminComponent } from './janovohamburgo/coralnh-sistema/admin/chamada-admin/chamada-admin.component';
 import { HomeAdminComponent } from './janovohamburgo/coralnh-sistema/admin/home-admin/home-admin.component';
 import { ChamadaFormularioComponent } from './janovohamburgo/coralnh-sistema/admin/chamada-admin/chamada-formulario/chamada-formulario.component';
+import { TheVoiceChurchNhComponent } from './janovohamburgo/the-voice-church-nh/the-voice-church-nh.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'index', component: JanovohamburgoComponent, pathMatch: 'full' },
   { path: 'listausuarios', component: ListaUsuariosStatusComponent, pathMatch: 'full' },
+  { path: 'thevoicechurch', component: TheVoiceChurchNhComponent, pathMatch: 'full' },
   {
     path: 'coralnh', component: CoralnhComponent,
     children:
@@ -127,7 +129,8 @@ const appRoutes: Routes = [
     PainelComponent,
     ChamadaAdminComponent,
     HomeAdminComponent,
-    ChamadaFormularioComponent
+    ChamadaFormularioComponent,
+    TheVoiceChurchNhComponent
   ],
   imports: [
     CommonModule,
