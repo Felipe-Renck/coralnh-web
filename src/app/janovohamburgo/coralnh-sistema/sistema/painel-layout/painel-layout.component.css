@@ -1,5 +1,5 @@
 body{
-    background-image: url(/assets/images/janovohamburgo/administrativo/gplaypattern.png);
+    /* background-image: url(/assets/images/janovohamburgo/administrativo/gplaypattern.png); */
     background-repeat: repeat;
     background-attachment: fixed, fixed;
 }
@@ -36,4 +36,14 @@ body{
 .user-notifications{
     border-radius: 0px 0px 10px 10px;
     background-color: rgba(0, 0, 0, 0.6);
+}
+
+#logo{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.panel-heading{
+    font-family: 'Gloria Hallelujah', cursive !important;
+    font-size:16px;
 }
