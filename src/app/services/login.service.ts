@@ -21,4 +21,8 @@ export class LoginService {
     console.log('login for' + loggedUser);
     return this.http.post('http://localhost:3002/login', loggedUser, this.httpOptions).toPromise();
   }
+
+  public verifyToken(token): Promise<any> {
+    return this.http.get('http://localhost:3002/verifyToken', { params: { token : token }}).toPromise();
+  }
 }

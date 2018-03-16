@@ -11,6 +11,7 @@ import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms'
 import { MdlDialogService, MdlDialogReference, MdlTextFieldComponent } from '@angular-mdl/core';
 import { LoggedUser } from 'app/models/LoggedUser';
 import { Http, Response } from '@angular/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
   public statusMessage = '';
 
   constructor(
+    private router: Router,
     private dialog: MdlDialogReference,
     private fb: FormBuilder,
     private loginService: LoginService) {
@@ -47,9 +49,7 @@ export class LoginComponent implements OnInit {
       console.log('set focus');
       this.inputElement.setFocus();
     });
-
   }
-
 
   public ngOnInit() {
     this.form = this.fb.group({
@@ -58,30 +58,25 @@ export class LoginComponent implements OnInit {
     });
   }
 
-
   public login() {
     this.processingLogin = true;
     this.statusMessage = 'Validando as suas credenciais ...';
 
     console.log(this.loggedUser);
     this.loginService.login(this.loggedUser).then(res => this.validateAuthentication(res)).catch(res => this.validateAuthentication(res));
-
   }
 
   validateAuthentication = function (res) {
 
     console.log(res);
-    console.log(res.status);
+    console.log("Sucesso: " + res.success);
 
-    if (res.status == "401") {
+    if (res.success == false) {
       this.processingLogin = false;
       this.statusMessage = res.error.message;
     } else {
-      this.processingLogin = false;
-      this.statusMessage = 'Conectado!';
-      setTimeout(() => {
-        this.dialog.hide();
-      }, 500);
+      localStorage.setItem('token', res.token);
+      this.router.navigateByUrl('painel');
     }
   }
 
