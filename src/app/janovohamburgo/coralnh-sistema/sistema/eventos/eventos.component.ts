@@ -1,12 +1,12 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
-import { User } from 'app/models/User';
+import { InscricaoEvento } from 'app/models/Inscricao_Evento';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Http, Headers } from '@angular/http';
-import { UserService } from 'app/services/user.service';
+import { EventosService } from 'app/services/eventos.service';
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
@@ -53,16 +53,13 @@ import {
 export class EventosComponent implements OnInit {
 
   public values = [
-    { value: 1, text: 'Carro' },
-    { value: 2, text: 'Ônibus' }
+    { value: 'Carro', text: 'Carro' },
+    { value: 'Onibus', text: 'Ônibus' }
   ];
 
-  public nome;
-  public automovel;
-  public hideEvento = true;
-
-
-  constructor() {
+  inscricaoEvento = new InscricaoEvento();
+  public 
+  constructor(private eventoService: EventosService) {
   }
 
   ngOnInit() {
@@ -72,6 +69,19 @@ export class EventosComponent implements OnInit {
   showEvento = function () {
     this.hideEvento = !this.hideEvento;
     console.log(this.hideEvento);
-}
+  }
+
+  salvar = function (form: FormControl) {
+    console.log(form.invalid);
+    if (form.invalid) {
+      return;
+    }
+
+    this.inscricaoEvento.DataEvento = new Date('07/04/2018');
+    this.inscricaoEvento.LocalEvento = 'Gramado';
+    console.log(this.inscricaoEvento);
+    this.eventoService.inscricao(this.inscricaoEvento);
+
+  }
 
 }

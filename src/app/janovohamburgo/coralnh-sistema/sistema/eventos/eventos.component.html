@@ -3,38 +3,52 @@
     <br>
     <div class="panel" style="margin-bottom:0!important;background:none;">
       <div class="panel-heading">
-        <h3 class="text-center"><strong>Apresentações</strong></h3>
+        <h3 class="text-center">
+          <strong>Apresentações</strong>
+        </h3>
       </div>
     </div>
     <div class="panel panel-primary">
       <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">Gramado - 07/04/2018</div>
       <div class="panel-body" [hidden]="hideEvento">
         <div class="col-sm-4">
-          <h3><strong>Data: </strong>07/04/2018</h3>
-          <h3><strong>Horário: </strong>18:00h</h3>
-          <h3><strong>Local: </strong>Rua Coberta - Gramado</h3>
-          <h3><strong>Descrição: </strong>Cantata de páscoa.</h3>        
+          <h3 [(ngModel)]="" >
+            <strong>Data: </strong>07/04/2018</h3>
+          <h3>
+            <strong>Horário: </strong>18:00h</h3>
+          <h3>
+            <strong>Local: </strong>Rua Coberta - Gramado</h3>
+          <h3>
+            <strong>Descrição: </strong>Cantata de páscoa.</h3>
+          <h3>
+            <strong>Valor do ônibus: </strong>R$10,00</h3>
         </div>
-        <div class="col-sm-3">
+        <form class="formwidth" (ngSubmit)="salvar(myForm)" #myForm="ngForm">
+          <div class="col-sm-3">
             <mat-input-container class="fullwidth">
-                <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="nome" name="Nome" required></mat-input-container>
+              <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="inscricaoEvento.Nome" name="Nome" required>
+            </mat-input-container>
+            <mat-input-container class="fullwidth">
+              <input matInput placeholder="RG" id="RG" [(ngModel)]="inscricaoEvento.RG" name="RG" maxlength="11" required>
+          </mat-input-container>
           </div>
 
           <div class="col-sm-3">
-              <div>
-                  <label class="example-margin">Você pretende ir de:</label>
+            <div>
+              <label class="example-margin">Você pretende ir de:</label>
+            </div>
+            <mat-radio-group [(ngModel)]="inscricaoEvento.Automovel" name="my_options">
+
+              <div *ngFor="let value of values">
+                <mat-radio-button required value="{{value.value}}" color="primary">{{value.text}}</mat-radio-button>
               </div>
-              <mat-radio-group [(ngModel)]="automovel" name="my_options">
 
-                  <div *ngFor="let value of values">
-                      <mat-radio-button required value="{{value.value}}" color="primary">{{value.text}}</mat-radio-button>
-                  </div>
-
-              </mat-radio-group>   
+            </mat-radio-group>
           </div>
-        <div class="col-sm-2">
-          <a class="btn btn-md btn-block btn-primary center-block" target="_self">Inscrever</a>
-        </div>
+          <div class="col-sm-2">
+            <a class="btn btn-md btn-block btn-primary center-block"  (click)="salvar(myForm)" type="submit">Inscrever</a>
+          </div>
+        </form>
       </div>
     </div>
   </div>
