@@ -57,9 +57,14 @@ export class EventosComponent implements OnInit {
     { value: 'Onibus', text: 'Ônibus' }
   ];
 
+  public eventos = [
+    { local: 'Gramado', data: '07/04/2018' }
+  ];
+
+  modalMessage: string = "";
+
   inscricaoEvento = new InscricaoEvento();
-  public 
-  constructor(private eventoService: EventosService) {
+  public constructor(private eventoService: EventosService) {
   }
 
   ngOnInit() {
@@ -71,17 +76,40 @@ export class EventosComponent implements OnInit {
     console.log(this.hideEvento);
   }
 
-  salvar = function (form: FormControl) {
-    console.log(form.invalid);
+  salvar = function (form: FormControl, eventos) {
     if (form.invalid) {
       return;
     }
 
-    this.inscricaoEvento.DataEvento = new Date('07/04/2018');
-    this.inscricaoEvento.LocalEvento = 'Gramado';
+    this.inscricaoEvento.DataEvento = new Date(this.eventos[0].data);
+    this.inscricaoEvento.LocalEvento = this.eventos[0].local;
     console.log(this.inscricaoEvento);
-    this.eventoService.inscricao(this.inscricaoEvento);
+    this.eventoService.inscricao(this.inscricaoEvento).then(res => { this.checkInscricao(res), this.loading = false }).catch(res => { this.checkInscricao(res), this.loading = false });
 
+  }
+
+  createModal = function (result) {
+    if (result == "success") {
+      this.modalMessage = "Inscrição realizada com sucesso";
+      jQuery('#modal-evento').modal('show');
+    }
+    else {
+      this.modalMessage = "Ocorreu um erro ao tentar realizar sua inscrição! Favor entrar em contato com a Direção do coral.";
+      this.hideLink = false;
+      jQuery('#modal-evento').modal('show');
+    }
+  }
+
+  checkInscricao = function (res) {
+    console.log("RESPONSE" + res);
+    if (res == 200) {
+      this.createModal("success");
+      // Inscrição realizada com sucesso");
+    }
+    else {
+      this.createModal("error");
+      //alert("Ocorreu um erro ao tentar realizar sua inscrição! Favor entrar em contato com a Direção do coral.");
+    }
   }
 
 }

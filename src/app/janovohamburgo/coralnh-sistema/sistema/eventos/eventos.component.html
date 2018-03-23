@@ -3,17 +3,17 @@
     <br>
     <div class="panel" style="margin-bottom:0!important;background:none;">
       <div class="panel-heading">
-        <h3 class="text-center">
+        <h1 class="text-center" id="title">
           <strong>Apresentações</strong>
-        </h3>
+        </h1>
       </div>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">Gramado - 07/04/2018</div>
+      <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">{{ eventos[0].local }} - {{ eventos[0].data }}</div>
       <div class="panel-body" [hidden]="hideEvento">
-        <div class="col-sm-4">
-          <h3 [(ngModel)]="" >
-            <strong>Data: </strong>07/04/2018</h3>
+        <div class="col-sm-4"id="descricao" >
+          <h3>
+            <strong>Data: </strong>{{ eventos[0].data }}</h3>
           <h3>
             <strong>Horário: </strong>18:00h</h3>
           <h3>
@@ -33,7 +33,7 @@
           </mat-input-container>
           </div>
 
-          <div class="col-sm-3">
+          <div class="col-sm-3" id="locomocao">
             <div>
               <label class="example-margin">Você pretende ir de:</label>
             </div>
@@ -46,9 +46,19 @@
             </mat-radio-group>
           </div>
           <div class="col-sm-2">
-            <a class="btn btn-md btn-block btn-primary center-block"  (click)="salvar(myForm)" type="submit">Inscrever</a>
+            <a class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" type="submit">Inscrever</a>
           </div>
         </form>
       </div>
     </div>
+    <div id="modal-evento" class="modal fade close" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+              <div style="color:black!important;text-align:center;" class="modal-body">
+                  <span>{{modalMessage}}</span>
+              </div>
+          </div>
+      </div>
+  </div>
   </div>
