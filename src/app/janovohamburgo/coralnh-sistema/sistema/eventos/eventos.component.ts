@@ -64,7 +64,7 @@ export class EventosComponent implements OnInit {
 
   modalMessage: string = "";
   hideEvento = false;
-  
+
   inscricaoEvento = new InscricaoEvento();
   public constructor(private eventoService: EventosService) {
   }
@@ -78,7 +78,7 @@ export class EventosComponent implements OnInit {
     console.log(this.hideEvento);
   }
 
-  salvar = function (form: FormControl, eventos) {
+  salvar = function (form: FormControl) {
     if (form.invalid) {
       return;
     }
