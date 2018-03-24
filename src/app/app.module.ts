@@ -33,6 +33,7 @@ import { ContatoService } from './services/contato.service';
 import { UserService } from './services/user.service';
 import { CalendarService } from './services/calendar.service'
 import { LoginService } from './services/login.service';
+import { EventosService } from './services/eventos.service'
 
 import { AppComponent } from './app.component';
 import { JanovohamburgoComponent } from './janovohamburgo/janh-home-default-master/janovohamburgo.component'
@@ -158,7 +159,7 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false, useHash:false }
+      { enableTracing: false, useHash: false }
     )
   ],
   exports: [
@@ -170,7 +171,7 @@ const appRoutes: Routes = [
     MatSelectModule, MatInputModule, MatSidenavModule, MatCardModule, MatIconModule, MatRadioModule,
     MatProgressSpinnerModule, MatTabsModule, MatListModule, MatDatepickerModule, MatDatepickerModule, MatNativeDateModule
   ],
-  providers: [ContatoService, UserService, CalendarService, LoginService, HttpModule,
+  providers: [ContatoService, UserService, CalendarService, LoginService, EventosService, HttpModule,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   entryComponents: [DialogContentComponent],
