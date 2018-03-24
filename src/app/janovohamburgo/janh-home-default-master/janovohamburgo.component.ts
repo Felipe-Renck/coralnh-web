@@ -22,4 +22,5 @@ export class JanovohamburgoComponent implements OnInit {
   BtnCoralClick = function(){
       this.router.navigateByUrl('/coralnh');
   }
+  
 }
