@@ -52,6 +52,7 @@ import {
 })
 export class EventosComponent implements OnInit {
 
+  
   public values = [
     { value: 'Carro', text: 'Carro' },
     { value: 'Onibus', text: 'Ônibus' }
@@ -62,7 +63,8 @@ export class EventosComponent implements OnInit {
   ];
 
   modalMessage: string = "";
-
+  hideEvento = false;
+  
   inscricaoEvento = new InscricaoEvento();
   public constructor(private eventoService: EventosService) {
   }
