@@ -71,8 +71,8 @@ const appRoutes: Routes = [
     path: 'coralnh', component: CoralnhComponent,
     children:
       [
-        { path: '', redirectTo: 'home', pathMatch: 'full' },
-        // { path: '', redirectTo: 'inscricao', pathMatch: 'full' },
+        // { path: '', redirectTo: 'home', pathMatch: 'full' },
+        { path: '', redirectTo: 'inscricao', pathMatch: 'full' },
         { path: 'home', component: CoralnhhomeComponent },
         { path: 'sobre', component: CoralnhsobreComponent },
         { path: 'galeria', component: CoralnhgaleriaComponent },
@@ -86,8 +86,8 @@ const appRoutes: Routes = [
     path: 'painel', component: PainelLayoutComponent,
     children:
       [
-        { path: '', redirectTo: 'index', pathMatch: 'full' },
-        // { path: '', redirectTo: 'materiais', pathMatch: 'full' },
+        // { path: '', redirectTo: 'index', pathMatch: 'full' },
+        { path: '', redirectTo: 'materiais', pathMatch: 'full' },
         { path: 'index', component: PainelComponent },
         { path: 'chamada', component: ChamadaComponent },
         { path: 'eventos', component: EventosComponent },

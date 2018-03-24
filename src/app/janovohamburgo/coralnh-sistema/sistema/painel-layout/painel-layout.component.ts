@@ -10,11 +10,13 @@ import { Router } from '@angular/router';
 export class PainelLayoutComponent implements OnInit {
 
   isValid: boolean;
+  username: string;
 
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     this.loginService.verifyToken(localStorage.getItem('token')).then(res => this.verifyIfTokenIsValid(res)).catch(res => this.verifyIfTokenIsValid(res));
+    this.username = localStorage.getItem('username');
   }
 
   verifyIfTokenIsValid = function(res){

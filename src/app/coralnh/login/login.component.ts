@@ -76,6 +76,7 @@ export class LoginComponent implements OnInit {
       this.statusMessage = res.error.message;
     } else {
       localStorage.setItem('token', res.token);
+      localStorage.setItem('username', res.username);
       this.router.navigateByUrl('painel');
     }
   }
