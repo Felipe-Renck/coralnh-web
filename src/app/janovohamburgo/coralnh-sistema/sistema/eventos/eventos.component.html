@@ -46,7 +46,7 @@
             </mat-radio-group>
           </div>
           <div class="col-sm-2">
-            <a class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" type="submit">Inscrever</a>
+            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" [disabled]="disableButton" type="submit">{{buttonText}}</button>
           </div>
         </form>
       </div>

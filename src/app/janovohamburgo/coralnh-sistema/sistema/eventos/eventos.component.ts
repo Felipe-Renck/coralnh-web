@@ -52,7 +52,7 @@ import {
 })
 export class EventosComponent implements OnInit {
 
-  
+
   public values = [
     { value: 'Carro', text: 'Carro' },
     { value: 'Onibus', text: 'Ônibus' }
@@ -64,6 +64,8 @@ export class EventosComponent implements OnInit {
 
   modalMessage: string = "";
   hideEvento = false;
+  disableButton = false;
+  buttonText = "Inscrever";
 
   inscricaoEvento = new InscricaoEvento();
   public constructor(private eventoService: EventosService) {
@@ -83,11 +85,11 @@ export class EventosComponent implements OnInit {
       return;
     }
 
+    this.buttonText = "Carregando...";
+    this.disableButton = true;
     this.inscricaoEvento.DataEvento = new Date(this.eventos[0].data);
     this.inscricaoEvento.LocalEvento = this.eventos[0].local;
-    console.log(this.inscricaoEvento);
-    this.eventoService.inscricao(this.inscricaoEvento).then(res => { this.checkInscricao(res), this.loading = false }).catch(res => { this.checkInscricao(res), this.loading = false });
-
+    this.eventoService.inscricao(this.inscricaoEvento).then(res => {this.checkInscricao(res) }).catch(res => {this.checkInscricao(res) });
   }
 
   createModal = function (result) {
@@ -103,7 +105,8 @@ export class EventosComponent implements OnInit {
   }
 
   checkInscricao = function (res) {
-    console.log("RESPONSE" + res);
+    this.disableButton = false;
+    this.buttonText = "Inscrever";
     if (res == 200) {
       this.createModal("success");
       // Inscrição realizada com sucesso");
