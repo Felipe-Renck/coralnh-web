@@ -20,7 +20,7 @@ export class EventosService {
     console.log('Service');
     console.log(inscricaoEvento);
 
-    return this.http.post('http://localhost:3002/evento', inscricaoEvento, this.httpOptions).toPromise();
+    return this.http.post('https://coralnh-server.herokuapp.com/evento', inscricaoEvento, this.httpOptions).toPromise();
 
   };
 
