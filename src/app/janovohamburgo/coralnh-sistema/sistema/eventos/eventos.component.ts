@@ -65,6 +65,7 @@ export class EventosComponent implements OnInit {
   modalMessage: string = "";
   hideEvento = false;
   disableButton = false;
+  disableEsgotado = false;
   buttonText = "Inscrever";
 
   inscricaoEvento = new InscricaoEvento();
@@ -72,6 +73,8 @@ export class EventosComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.eventoService.checkInscritos().then(res => { this.checkInscritos(res) }).catch(res => { this.checkInscritos(res) });
 
   }
 
@@ -89,7 +92,7 @@ export class EventosComponent implements OnInit {
     this.disableButton = true;
     this.inscricaoEvento.DataEvento = new Date(this.eventos[0].data);
     this.inscricaoEvento.LocalEvento = this.eventos[0].local;
-    this.eventoService.inscricao(this.inscricaoEvento).then(res => {this.checkInscricao(res) }).catch(res => {this.checkInscricao(res) });
+    this.eventoService.inscricao(this.inscricaoEvento).then(res => { this.checkInscricao(res) }).catch(res => { this.checkInscricao(res) });
   }
 
   createModal = function (result) {
@@ -101,6 +104,12 @@ export class EventosComponent implements OnInit {
       this.modalMessage = "Ocorreu um erro ao tentar realizar sua inscrição! Favor entrar em contato com a Direção do coral.";
       this.hideLink = false;
       jQuery('#modal-evento').modal('show');
+    }
+  }
+
+  checkInscritos = function (res) {
+    if (res >= 90) {
+      this.disableEsgotado = true;
     }
   }
 

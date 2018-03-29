@@ -11,7 +11,7 @@
     <div class="panel panel-primary">
       <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">{{ eventos[0].local }} - {{ eventos[0].data }}</div>
       <div class="panel-body" [hidden]="hideEvento">
-        <div class="col-sm-4"id="descricao" >
+        <div class="col-sm-4" id="descricao">
           <h3>
             <strong>Data: </strong>{{ eventos[0].data }}</h3>
           <h3>
@@ -30,7 +30,7 @@
             </mat-input-container>
             <mat-input-container class="fullwidth">
               <input matInput placeholder="RG" id="RG" [(ngModel)]="inscricaoEvento.RG" name="RG" maxlength="11" required>
-          </mat-input-container>
+            </mat-input-container>
           </div>
 
           <div class="col-sm-3" id="locomocao">
@@ -38,27 +38,28 @@
               <label class="example-margin">Você pretende ir de:</label>
             </div>
             <mat-radio-group [(ngModel)]="inscricaoEvento.Automovel" name="my_options">
-
-              <div *ngFor="let value of values">
-                <mat-radio-button required value="{{value.value}}" color="primary">{{value.text}}</mat-radio-button>
+              <div>
+                <mat-radio-button required value="{{values[0].value}}" color="primary">{{values[0].text}}</mat-radio-button>
+                <mat-radio-button required value="{{values[1].value}}" color="primary" [disabled]="disableEsgotado">{{values[1].text}}</mat-radio-button>
               </div>
-
             </mat-radio-group>
+            <div class="esgotado" [hidden]="!disableEsgotado">Ônibus esgotado</div>
           </div>
           <div class="col-sm-2">
-            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" [disabled]="disableButton" type="submit">{{buttonText}}</button>
+            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" [disabled]="disableButton"
+              type="submit">{{buttonText}}</button>
           </div>
         </form>
       </div>
     </div>
     <div id="modal-evento" class="modal fade close" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-              <div style="color:black!important;text-align:center;" class="modal-body">
-                  <span>{{modalMessage}}</span>
-              </div>
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div style="color:black!important;text-align:center;" class="modal-body">
+            <span>{{modalMessage}}</span>
           </div>
+        </div>
       </div>
-  </div>
+    </div>
   </div>

@@ -13,3 +13,8 @@
 #title{
     font-size:26px;
 }
+
+.esgotado{
+    color: red;
+    font-size: 14px;
+}

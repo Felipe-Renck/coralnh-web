@@ -24,6 +24,11 @@ export class EventosService {
 
   };
 
+  public checkInscritos(): Promise<any> {
+
+    return this.http.get('http://localhost:3002/inscritos', this.httpOptions).toPromise();
+  }
+
   constructor(private http: HttpClient) {
   }
 
