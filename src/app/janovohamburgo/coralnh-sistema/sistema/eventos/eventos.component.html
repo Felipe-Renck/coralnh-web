@@ -40,10 +40,10 @@
             <mat-radio-group [(ngModel)]="inscricaoEvento.Automovel" name="my_options">
               <div>
                 <mat-radio-button required value="{{values[0].value}}" color="primary">{{values[0].text}}</mat-radio-button>
-                <mat-radio-button required value="{{values[1].value}}" color="primary" [disabled]="disableEsgotado">{{values[1].text}}</mat-radio-button>
+                <mat-radio-button required value="{{values[1].value}}" color="primary" [disabled]="true">{{values[1].text}}</mat-radio-button>
               </div>
             </mat-radio-group>
-            <div class="esgotado" [hidden]="!disableEsgotado">Ônibus esgotado</div>
+            <div class="esgotado" [hidden]="false">Ônibus esgotado</div>
           </div>
           <div class="col-sm-2">
             <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" [disabled]="disableButton"
