@@ -38,6 +38,12 @@ export class UserService {
     return this.http.get('https://coralnh-server.herokuapp.com/list-users?usuario=' + usuario + '&senha=' + senha, this.httpOptions);
   }
 
+  getUserData(RG: string) {
+    console.log("USER SERVICE");
+    console.log("RG" + RG);
+    return this.http.get('https://localhost:3002/userData', { params: { RG: RG } }).toPromise();
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);

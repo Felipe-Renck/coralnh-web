@@ -7,6 +7,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Http, Headers } from '@angular/http';
 import { EventosService } from 'app/services/eventos.service';
+import { UserService } from 'app/services/user.service';
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
@@ -58,22 +59,39 @@ export class EventosComponent implements OnInit {
     { value: 'Onibus', text: 'Ônibus' }
   ];
 
+  seasons = [
+    'Winter',
+    'Spring',
+    'Summer',
+    'Autumn',
+  ];
+
+  pagamentos = [
+    { value: '1', text: 'À vista' },
+    { value: '2', text: '2x sem juros' },
+    { value: '3', text: '3x sem juros' },
+  ];
+
+
   public eventos = [
-    { local: 'Gramado', data: '07/04/2018' }
+    { local: 'Gramado', data: '07/04/2018', hidden: true },
+    { local: 'Punta Del Leste', data: '12/10/2018', descricao: 'Viagem para Punta Del Leste - Uruguai', hidden: false }
   ];
 
   modalMessage: string = "";
   hideEvento = false;
   disableButton = false;
   disableEsgotado = false;
-  buttonText = "Inscrever";
+  saveButtonText = "";
+  validationButtonText = "";
 
   inscricaoEvento = new InscricaoEvento();
-  public constructor(private eventoService: EventosService) {
+  public constructor(private eventoService: EventosService, private userService: UserService) {
   }
 
   ngOnInit() {
-
+    this.validationButtonText = 'Validar';
+    this.saveButtonText = 'Inscrever';
     this.eventoService.checkInscritos().then(res => { this.checkInscritos(res) }).catch(res => { this.checkInscritos(res) });
 
   }
@@ -88,12 +106,25 @@ export class EventosComponent implements OnInit {
       return;
     }
 
-    this.buttonText = "Carregando...";
+    this.saveButtonText = "Carregando...";
     this.disableButton = true;
     this.inscricaoEvento.DataEvento = new Date(this.eventos[0].data);
     this.inscricaoEvento.LocalEvento = this.eventos[0].local;
     this.eventoService.inscricao(this.inscricaoEvento).then(res => { this.checkInscricao(res) }).catch(res => { this.checkInscricao(res) });
   }
+
+  validar = function (formValidation: FormControl) {
+    if (formValidation.invalid) {
+      console.log("Invalid: " + formValidation.invalid);
+      return;
+    }
+
+    console.log(formValidation.value.RG);
+
+    this.userService.getUserData(formValidation.value.RG);
+
+  }
+
 
   createModal = function (result) {
     if (result == "success") {
