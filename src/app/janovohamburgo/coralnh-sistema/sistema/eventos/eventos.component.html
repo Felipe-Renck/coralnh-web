@@ -37,7 +37,7 @@
             <div>
               <label class="example-margin">Você pretende ir de:</label>
             </div>
-            <mat-radio-group [(ngModel)]="inscricaoEvento.Automovel" name="my_options">
+            <mat-radio-group [(ngModel)]="inscricaoEvento.Automovel" name="automovel_1">
               <div>
                 <mat-radio-button required value="{{values[0].value}}" color="primary">{{values[0].text}}</mat-radio-button>
                 <mat-radio-button required value="{{values[1].value}}" color="primary" [disabled]="true">{{values[1].text}}</mat-radio-button>
@@ -47,7 +47,7 @@
           </div>
           <div class="col-sm-2">
             <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" [disabled]="disableButton"
-              type="submit">{{validationButtonText}}</button>
+              type="submit">{{saveButtonText}}</button>
           </div>
         </form>
       </div>
@@ -63,13 +63,69 @@
       </div>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">{{ eventos[1].local }} - {{ eventos[1].data }}</div>
+      <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">{{ eventos[1].local }} - {{eventos[1].data | date:'dd/MM/yyyy'}}</div>
       <div class="panel-body" [hidden]="eventos[1].hidden">
         <div class="col-sm-4" id="descricao">
           <h3>
-            <strong>Data: </strong>{{ eventos[1].data }}</h3>
+            <strong>Data: </strong>{{eventos[1].data | date:'dd/MM/yyyy'}}</h3>
           <h3>
-            <strong>Descrição: </strong>{{ eventos[1].descricao }}</h3>
+            <strong>Horário: </strong>{{ eventos[1].horario }}</h3>
+          <h3>
+            <strong>Local: </strong>Igreja Adventista Central de São Leopoldo</h3>
+          <h3>
+            <strong>Endereço: </strong><a href="https://goo.gl/maps/a56PCWjvo5M2" target="_blank">{{ eventos[1].endereco }}</a></h3>
+          <h3>
+            <strong>Valor do ônibus: </strong>{{ eventos[1].valor }}</h3>
+        </div>
+        <form class="formwidth" (ngSubmit)="salvar(myForm)" #myForm="ngForm">
+          <div class="col-sm-3">
+            <mat-input-container class="fullwidth">
+              <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="inscricaoEvento.Nome" name="Nome" required>
+            </mat-input-container>
+            <mat-input-container class="fullwidth">
+              <input matInput placeholder="RG" id="RG" [(ngModel)]="inscricaoEvento.RG" name="RG" maxlength="11" required>
+            </mat-input-container>
+          </div>
+
+          <div class="col-sm-3" id="locomocao">
+            <div>
+              <label class="example-margin">Você pretende ir de:</label>
+            </div>
+            <mat-radio-group [(ngModel)]="inscricaoEvento.Automovel" name="automovel_2">
+              <div>
+                <mat-radio-button required value="{{values[0].value}}" color="primary">{{values[0].text}}</mat-radio-button>
+                <mat-radio-button required value="{{values[1].value}}" color="primary" [disabled]="!flagEsgotado">{{values[1].text}}</mat-radio-button>
+              </div>
+            </mat-radio-group>
+            <div class="esgotado" [hidden]="flagEsgotado">Ônibus esgotado</div>
+          </div>
+          <div class="col-sm-2">
+            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" [disabled]="disableButton"
+              type="submit">{{saveButtonText}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="modal-evento" class="modal fade close" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div style="color:black!important;text-align:center;" class="modal-body">
+            <span>{{modalMessage}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">{{ eventos[2].local }} - {{ eventos[2].data }} Em breve</div>
+      <div class="panel-body" [hidden]="eventos[2].hidden">
+        <div class="col-sm-4" id="descricao">
+          <h3>
+            <strong>Data: </strong>{{ eventos[2].data }}</h3>
+          <h3>
+            <strong>Descrição: </strong>{{ eventos[2].descricao }}</h3>
+            <h3>
+              <strong>Valor: </strong>{{ eventos[2].valor }}</h3>
         </div>
         <form class="formwidth" #formValidation="ngForm">
           <div class="col-sm-3">
@@ -79,17 +135,6 @@
                 <strong>Digite o seu RG para validar os seus dados</strong>
               </mat-hint>
             </mat-input-container>
-          </div>
-          <div class="col-sm-3" id="locomocao">
-            <div>
-              <label class="example-margin">Forma de Pagamento:</label>
-            </div>
-            <mat-radio-group class="radio-group-pagamento" [(ngModel)]="pagamento" name="radio-group-pagamento">
-              <mat-radio-button color="primary" *ngFor="let pagamento of pagamentos" [value]="pagamento.value">
-                {{pagamento.text}}
-              </mat-radio-button>
-            </mat-radio-group>
-            <div class="esgotado" [hidden]="true">Ônibus esgotado</div>
           </div>
           <div class="col-sm-2">
             <button class="btn btn-md btn-block btn-primary center-block" id="botao_validar" (click)="validar(formValidation)" [disabled]="disableButton"
@@ -106,17 +151,17 @@
             <div class="row">
               <div class="col-sm-3">
                 <mat-input-container class="fullwidth">
-                  <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="Email" name="Nome">
+                  <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="userNome" name="Nome">
                 </mat-input-container>
               </div>
               <div class="col-sm-3">
               <mat-input-container class="fullwidth">
-                <input matInput placeholder="Email" maxlength="40" id="Email" [(ngModel)]="Email" name="Email">
+                <input matInput placeholder="Email" maxlength="40" id="Email" [(ngModel)]="userEmail" name="Email">
               </mat-input-container>
             </div>
             <div class="col-sm-3">
                 <mat-input-container class="fullwidth">
-                  <input matInput placeholder="Celular" maxlength="15" id="Celular" [(ngModel)]="Celular" name="Celular">
+                  <input matInput placeholder="Celular" maxlength="15" id="Celular" [(ngModel)]="userCelular" name="Celular">
                 </mat-input-container>
               </div>
               <div class="col-sm-3">
@@ -124,11 +169,35 @@
                   type="submit">{{saveButtonText}}</button>
                 </div>
             </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div>
+                  <label class="example-margin">Forma de Pagamento:</label>
+                </div>
+                <mat-form-field>
+                  <mat-select (change)="onChange($event)">
+                    <mat-option *ngFor="let item of forma_pagamento" [value]="item.value">
+                      {{ item.text }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-sm-3" id="forma_pagamentos">
+                  <div>
+                      <label class="example-margin">Parcelas:</label>
+                  </div>
+                <mat-radio-group class="radio-group-pagamento" [(ngModel)]="pagamento"  name="radio-group-pagamento">
+                  <mat-radio-button color="primary" *ngFor="let pagamento of pagamentos" [value]="pagamento.value">
+                    {{pagamento.text}}
+                  </mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="modal-evento" class="modal fade close" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+    <div id="modal-evento" class="modal fade +,close" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">

@@ -27,6 +27,12 @@
     flex-direction: column;
   }
 
-  .dados-user{
+.dados-user{
       margin-top: 20px;
   }
+a {
+    color: blue !important;
+}
+a:hover {
+    color: blue;
+}
