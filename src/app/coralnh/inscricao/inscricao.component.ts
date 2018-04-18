@@ -123,7 +123,6 @@ export class InscricaoComponent implements OnInit {
   }
 
   checkInscricao = function (res) {
-    debugger;
     if (res == 11000) {
       this.createModal("duplicate");
     }

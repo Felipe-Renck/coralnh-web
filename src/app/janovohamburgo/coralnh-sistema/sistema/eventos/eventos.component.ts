@@ -7,8 +7,12 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Http, Headers } from '@angular/http';
 import { EventosService } from 'app/services/eventos.service';
+import { UserService } from 'app/services/user.service';
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { User } from 'app/models/User';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import {
   MatAutocompleteModule,
@@ -44,6 +48,7 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
+import { DeclareFunctionStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-eventos',
@@ -58,22 +63,52 @@ export class EventosComponent implements OnInit {
     { value: 'Onibus', text: 'Ônibus' }
   ];
 
+  seasons = [
+    'Winter',
+    'Spring',
+    'Summer',
+    'Autumn',
+  ];
+
+  pagamentos = [
+  ];
+
+  forma_pagamento = [
+    { value: 'dinheiro', text: 'Dinheiro' },
+    { value: 'cartao', text: 'Cartão de Crédito' },
+  ];
+
+
   public eventos = [
-    { local: 'Gramado', data: '07/04/2018' }
+    { local: 'Gramado', data: '07/04/2018', hidden: true },
+    { local: 'São Leopoldo', data: new Date('2018/4/21'), horario: '8:00h', endereco: 'Rua São Pedro,621 - Centro', valor: 'R$10,00', hidden: false },
+    {
+      local: 'Punta Del Leste',
+      data: '12/10/2018 a 14/10/2018',
+      descricao: 'Viagem Punta Del Leste / Chuy',
+      valor: 'R$450,00', hidden: true
+    }
   ];
 
   modalMessage: string = "";
-  hideEvento = false;
   disableButton = false;
-  disableEsgotado = false;
-  buttonText = "Inscrever";
+  flagEsgotado = true;
+  saveButtonText = "";
+  validationButtonText = "";
+
+  user = new User();
+
+  userEmail = "";
+  userCelular = "";
+  userNome = "";
 
   inscricaoEvento = new InscricaoEvento();
-  public constructor(private eventoService: EventosService) {
+  public constructor(private eventoService: EventosService, private userService: UserService) {
   }
 
   ngOnInit() {
-
+    this.validationButtonText = 'Validar';
+    this.saveButtonText = 'Inscrever';
     this.eventoService.checkInscritos().then(res => { this.checkInscritos(res) }).catch(res => { this.checkInscritos(res) });
 
   }
@@ -88,16 +123,40 @@ export class EventosComponent implements OnInit {
       return;
     }
 
-    this.buttonText = "Carregando...";
+    //console.log(form.value.Nome);
+    this.saveButtonText = "Carregando...";
     this.disableButton = true;
-    this.inscricaoEvento.DataEvento = new Date(this.eventos[0].data);
-    this.inscricaoEvento.LocalEvento = this.eventos[0].local;
+    this.inscricaoEvento.DataEvento = this.eventos[1].data;
+    this.inscricaoEvento.LocalEvento = this.eventos[1].local;
+    console.log(this.eventos[1].data);
+    console.log(this.inscricaoEvento.DataEvento);
     this.eventoService.inscricao(this.inscricaoEvento).then(res => { this.checkInscricao(res) }).catch(res => { this.checkInscricao(res) });
   }
+
+  validar = function (formValidation: FormControl) {
+    if (formValidation.invalid) {
+      console.log("Invalid: " + formValidation.invalid);
+      this.pagamentos = [
+        { value: '1', text: 'À vista' },
+        { value: '2', text: '2x sem juros' },
+        { value: '3', text: '3x sem juros' },
+      ];
+      return;
+    }
+
+    console.log(formValidation.value.RG);
+
+    this.userService.getUserData(formValidation.value.RG).then(res => this.populateFields(res));
+  }
+
 
   createModal = function (result) {
     if (result == "success") {
       this.modalMessage = "Inscrição realizada com sucesso";
+      jQuery('#modal-evento').modal('show');
+    }
+    else if (result == "duplicate") {
+      this.modalMessage = "Usuário já cadastrado";
       jQuery('#modal-evento').modal('show');
     }
     else {
@@ -108,22 +167,57 @@ export class EventosComponent implements OnInit {
   }
 
   checkInscritos = function (res) {
-    if (res >= 90) {
-      this.disableEsgotado = true;
+    if (res >= 46) {
+      this.flagEsgotado = false;
     }
   }
 
   checkInscricao = function (res) {
     this.disableButton = false;
     this.buttonText = "Inscrever";
+    console.log(res);
     if (res == 200) {
       this.createModal("success");
       // Inscrição realizada com sucesso");
+      console.log(1);
     }
     else {
+      console.log(1);
       this.createModal("error");
-      //alert("Ocorreu um erro ao tentar realizar sua inscrição! Favor entrar em contato com a Direção do coral.");
     }
   }
 
+  populateFields = function (res) {
+
+    this.user = res;
+    console.log(this.user);
+    console.log(this.user.email);
+    console.log(res.user);
+    this.userNome = this.user[0].nome;
+    this.userCelular = this.user[0].celular;
+    this.userEmail = this.user[0].email;
+  }
+
+  onChange = function (element) {
+    console.log(element.value);
+
+    if (element.value == this.forma_pagamento[0].value) {
+      this.pagamentos = [
+        { value: '1', text: 'À vista' },
+        { value: '2', text: '2x sem juros' },
+        { value: '3', text: '3x sem juros' },
+      ];
+    }
+    if (element.value == this.forma_pagamento[1].value) {
+      this.pagamentos = [
+        { value: '1', text: 'À vista' },
+        { value: '2', text: '2x sem juros' },
+        { value: '3', text: '3x sem juros' },
+        { value: '4', text: '4x sem juros' },
+        { value: '5', text: '5x sem juros' },
+        { value: '6', text: '6x sem juros' },
+      ];
+    }
+  }
 }
+
