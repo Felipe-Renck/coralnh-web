@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { HttpRequest, HttpResponse, HttpHeaders, HttpParams, HttpClient } from '@angular/common/http';
 import { InscricaoEvento } from 'app/models/Inscricao_Evento';
+import { InscricaoViagem } from 'app/models/Inscricao_Viagem';
 import { InscricaoComponent } from '../coralnh/inscricao/inscricao.component';
 
 @Injectable()
@@ -21,6 +22,15 @@ export class EventosService {
     console.log(inscricaoEvento);
 
     return this.http.post('http://localhost:3002/evento', inscricaoEvento, this.httpOptions).toPromise();
+
+  };
+
+  public inscricaoViagem(inscricaoViagem: InscricaoViagem): Promise<any> {
+
+    console.log('inscricaoViagem');
+    console.log(inscricaoViagem);
+
+    return this.http.post('http://localhost:3002/viagem', inscricaoViagem, this.httpOptions).toPromise();
 
   };
 

@@ -73,7 +73,9 @@
           <h3>
             <strong>Local: </strong>Igreja Adventista Central de São Leopoldo</h3>
           <h3>
-            <strong>Endereço: </strong><a href="https://goo.gl/maps/a56PCWjvo5M2" target="_blank">{{ eventos[1].endereco }}</a></h3>
+            <strong>Endereço: </strong>
+            <a href="https://goo.gl/maps/a56PCWjvo5M2" target="_blank">{{ eventos[1].endereco }}</a>
+          </h3>
           <h3>
             <strong>Valor do ônibus: </strong>{{ eventos[1].valor }}</h3>
         </div>
@@ -117,20 +119,20 @@
       </div>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">{{ eventos[2].local }} - {{ eventos[2].data }} Em breve</div>
+      <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">{{ eventos[2].local }} - {{ eventos[2].data }} - Em breve</div>
       <div class="panel-body" [hidden]="eventos[2].hidden">
         <div class="col-sm-4" id="descricao">
           <h3>
             <strong>Data: </strong>{{ eventos[2].data }}</h3>
           <h3>
             <strong>Descrição: </strong>{{ eventos[2].descricao }}</h3>
-            <h3>
-              <strong>Valor: </strong>{{ eventos[2].valor }}</h3>
+          <h3>
+            <strong>Valor: </strong>{{ eventos[2].valor }}</h3>
         </div>
         <form class="formwidth" #formValidation="ngForm">
           <div class="col-sm-3">
             <mat-input-container class="fullwidth">
-              <input matInput placeholder="RG" id="RG" [(ngModel)]="RG" name="RG" minlength="10" maxlength="10" required>
+              <input matInput placeholder="RG" id="RG" [(ngModel)]="inscricaoViagem.RG" name="RG" minlength="10" maxlength="10" required>
               <mat-hint align="start">
                 <strong>Digite o seu RG para validar os seus dados</strong>
               </mat-hint>
@@ -151,22 +153,23 @@
             <div class="row">
               <div class="col-sm-3">
                 <mat-input-container class="fullwidth">
-                  <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="userNome" name="Nome">
+                  <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="inscricaoViagem.Nome" name="Nome">
                 </mat-input-container>
               </div>
               <div class="col-sm-3">
-              <mat-input-container class="fullwidth">
-                <input matInput placeholder="Email" maxlength="40" id="Email" [(ngModel)]="userEmail" name="Email">
-              </mat-input-container>
-            </div>
-            <div class="col-sm-3">
                 <mat-input-container class="fullwidth">
-                  <input matInput placeholder="Celular" maxlength="15" id="Celular" [(ngModel)]="userCelular" name="Celular">
+                  <input matInput placeholder="Email" maxlength="40" id="Email" [(ngModel)]="inscricaoViagem.Email" name="Email">
                 </mat-input-container>
               </div>
               <div class="col-sm-3">
-                  <button class="btn btn-md btn-block btn-primary center-block" (click)="salvar(formValidation)" [disabled]="disableButton"
-                  type="submit">{{saveButtonText}}</button>
+                <mat-input-container class="fullwidth">
+                  <input matInput placeholder="Celular" maxlength="15" id="Celular" [(ngModel)]="inscricaoViagem.Celular" name="Celular">
+                </mat-input-container>
+              </div>
+              <div class="col-sm-3">
+                  <mat-input-container class="fullwidth">
+                    <input matInput placeholder="CPF" maxlength="11" id="CPF" [(ngModel)]="inscricaoViagem.CPF" name="CPF" required>
+                  </mat-input-container>
                 </div>
             </div>
             <div class="row">
@@ -175,7 +178,7 @@
                   <label class="example-margin">Forma de Pagamento:</label>
                 </div>
                 <mat-form-field>
-                  <mat-select (change)="onChange($event)">
+                  <mat-select placeholder="Selecione uma opção" [(ngModel)]="inscricaoViagem.Pagamento" (change)="onChange($event)">
                     <mat-option *ngFor="let item of forma_pagamento" [value]="item.value">
                       {{ item.text }}
                     </mat-option>
@@ -183,15 +186,27 @@
                 </mat-form-field>
               </div>
               <div class="col-sm-3" id="forma_pagamentos">
-                  <div>
-                      <label class="example-margin">Parcelas:</label>
-                  </div>
-                <mat-radio-group class="radio-group-pagamento" [(ngModel)]="pagamento"  name="radio-group-pagamento">
+                <div>
+                  <label class="example-margin">Parcelas:</label>
+                </div>
+                <mat-radio-group class="radio-group-pagamento" [(ngModel)]="inscricaoViagem.Parcela" name="radio-group-pagamento">
                   <mat-radio-button color="primary" *ngFor="let pagamento of pagamentos" [value]="pagamento.value">
                     {{pagamento.text}}
                   </mat-radio-button>
                 </mat-radio-group>
               </div>
+              <div class="col-sm-3">
+                <mat-input-container class="fullwidth">
+                  <input matInput placeholder="Responsável" maxlength="100" id="responsvel" [(ngModel)]="inscricaoViagem.Responsavel" name="Responsavel">
+                  <mat-hint align="start">
+                    <strong>Somente para menores de 18 anos</strong>
+                  </mat-hint>
+                </mat-input-container>
+              </div>
+              <div class="col-sm-3">
+                  <button class="btn btn-md btn-block btn-primary center-block" (click)="salvarViagem(formValidation)" [disabled]="disableButton"
+                    type="submit">{{saveButtonText}}</button>
+                </div>
             </div>
           </div>
         </div>
