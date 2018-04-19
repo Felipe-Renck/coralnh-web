@@ -9,5 +9,6 @@ export class InscricaoViagem {
         public Pagamento?: string,
         public Parcela?: number,
         public Responsavel?: string,
+        public LocalEvento?: string,
     ) { }
 }

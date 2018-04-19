@@ -119,7 +119,7 @@
       </div>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">{{ eventos[2].local }} - {{ eventos[2].data }} - Em breve</div>
+      <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">{{ eventos[2].local }} - {{ eventos[2].data }} </div>
       <div class="panel-body" [hidden]="eventos[2].hidden">
         <div class="col-sm-4" id="descricao">
           <h3>
@@ -167,10 +167,10 @@
                 </mat-input-container>
               </div>
               <div class="col-sm-3">
-                  <mat-input-container class="fullwidth">
-                    <input matInput placeholder="CPF" maxlength="11" id="CPF" [(ngModel)]="inscricaoViagem.CPF" name="CPF" required>
-                  </mat-input-container>
-                </div>
+                <mat-input-container class="fullwidth">
+                  <input matInput placeholder="CPF" maxlength="11" id="CPF" [(ngModel)]="inscricaoViagem.CPF" name="CPF" required>
+                </mat-input-container>
+              </div>
             </div>
             <div class="row">
               <div class="col-sm-3">
@@ -203,10 +203,10 @@
                   </mat-hint>
                 </mat-input-container>
               </div>
-              <div class="col-sm-3">
-                  <button class="btn btn-md btn-block btn-primary center-block" (click)="salvarViagem(formValidation)" [disabled]="disableButton"
-                    type="submit">{{saveButtonText}}</button>
-                </div>
+              <div class="col-sm-2">
+                <button class="btn btn-md btn-block btn-primary center-block" id="saveViagemButton" (click)="salvarViagem(formValidation)"
+                  [disabled]="disableButton" type="submit">{{saveButtonText}}</button>
+              </div>
             </div>
           </div>
         </div>
