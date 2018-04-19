@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
 import { InscricaoEvento } from 'app/models/Inscricao_Evento';
+import { InscricaoViagem } from 'app/models/Inscricao_Viagem';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -81,7 +82,7 @@ export class EventosComponent implements OnInit {
 
   public eventos = [
     { local: 'Gramado', data: '07/04/2018', hidden: true },
-    { local: 'São Leopoldo', data: new Date('2018/4/21'), horario: '8:00h', endereco: 'Rua São Pedro,621 - Centro', valor: 'R$10,00', hidden: false },
+    { local: 'São Leopoldo', data: new Date('2018/4/21'), horario: '8:00h', endereco: 'Rua São Pedro,621 - Centro', valor: 'R$5,00', hidden: false },
     {
       local: 'Punta Del Leste',
       data: '12/10/2018 a 14/10/2018',
@@ -103,6 +104,7 @@ export class EventosComponent implements OnInit {
   userNome = "";
 
   inscricaoEvento = new InscricaoEvento();
+  inscricaoViagem = new InscricaoViagem();
   public constructor(private eventoService: EventosService, private userService: UserService) {
   }
 
@@ -133,17 +135,25 @@ export class EventosComponent implements OnInit {
     this.eventoService.inscricao(this.inscricaoEvento).then(res => { this.checkInscricao(res) }).catch(res => { this.checkInscricao(res) });
   }
 
-  validar = function (formValidation: FormControl) {
-    if (formValidation.invalid) {
-      console.log("Invalid: " + formValidation.invalid);
-      this.pagamentos = [
-        { value: '1', text: 'À vista' },
-        { value: '2', text: '2x sem juros' },
-        { value: '3', text: '3x sem juros' },
-      ];
+  salvarViagem = function (form: FormControl) {
+    if (form.invalid) {
+      console.log(form.invalid);
       return;
     }
 
+    this.saveButtonText = "Carregando...";
+
+    console.log(this.inscricaoViagem);
+    this.eventoService.inscricaoViagem(this.inscricaoViagem).then(res => { this.checkInscricao(res) }).catch(res => { this.checkInscricao(res) });
+  }
+
+  validar = function (formValidation: FormControl) {
+    if (formValidation.invalid) {
+      console.log("Invalid: " + formValidation.invalid);
+      return;
+    }
+    this.validationButtonText = "Carregando...";
+    this.disableButton = true;
     console.log(formValidation.value.RG);
 
     this.userService.getUserData(formValidation.value.RG).then(res => this.populateFields(res));
@@ -189,13 +199,17 @@ export class EventosComponent implements OnInit {
 
   populateFields = function (res) {
 
+    console.log("POPULATE FIELDS: " + res);
+    this.validationButtonText = "Validar";
+    this.disableButton = false;
     this.user = res;
-    console.log(this.user);
-    console.log(this.user.email);
-    console.log(res.user);
     this.userNome = this.user[0].nome;
     this.userCelular = this.user[0].celular;
     this.userEmail = this.user[0].email;
+
+    this.inscricaoViagem.Nome = this.user[0].nome;
+    this.inscricaoViagem.Email = this.user[0].email;
+    this.inscricaoViagem.Celular = this.user[0].celular;
   }
 
   onChange = function (element) {
