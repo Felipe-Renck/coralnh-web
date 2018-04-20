@@ -36,7 +36,7 @@ export class EventosService {
 
   public checkInscritos(): Promise<any> {
 
-    return this.http.get('http://localhost:3002/inscritos', this.httpOptions).toPromise();
+    return this.http.get('https://coralnh-server.herokuapp.com/inscritos', this.httpOptions).toPromise();
   }
 
   constructor(private http: HttpClient) {
