@@ -94,7 +94,8 @@ export class EventosComponent implements OnInit {
   modalMessage: string = "";
   disableButton = false;
   flagEsgotado = true;
-  saveButtonText = "";
+  saveButtonEventosText = "";
+  saveButtonViagemText ="";
   validationButtonText = "";
 
   user = new User();
@@ -110,7 +111,8 @@ export class EventosComponent implements OnInit {
 
   ngOnInit() {
     this.validationButtonText = 'Validar';
-    this.saveButtonText = 'Inscrever';
+    this.saveButtonEventosText = 'Inscrever';
+    this.saveButtonViagemText = 'Inscrever';
     this.eventoService.checkInscritos().then(res => { this.checkInscritos(res) }).catch(res => { this.checkInscritos(res) });
 
   }
@@ -125,8 +127,7 @@ export class EventosComponent implements OnInit {
       return;
     }
 
-    //console.log(form.value.Nome);
-    this.saveButtonText = "Carregando...";
+    this.saveButtonEventosText = "Carregando...";
     this.disableButton = true;
     this.inscricaoEvento.DataEvento = this.eventos[1].data;
     this.inscricaoEvento.LocalEvento = this.eventos[1].local;
@@ -141,8 +142,8 @@ export class EventosComponent implements OnInit {
       return;
     }
 
-    this.saveButtonText = "Carregando...";
-
+    this.saveButtonViagemText = "Carregando...";
+    this.disableButton = true;
     this.inscricaoViagem.DataEvento = this.eventos[2].data;
     this.inscricaoViagem.LocalEvento = this.eventos[2].local;
 

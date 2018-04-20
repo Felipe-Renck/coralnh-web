@@ -21,7 +21,7 @@ export class EventosService {
     console.log('Service');
     console.log(inscricaoEvento);
 
-    return this.http.post('http://localhost:3002/evento', inscricaoEvento, this.httpOptions).toPromise();
+    return this.http.post('https://coralnh-server.herokuapp.com/evento', inscricaoEvento, this.httpOptions).toPromise();
 
   };
 
@@ -30,13 +30,13 @@ export class EventosService {
     console.log('inscricaoViagem');
     console.log(inscricaoViagem);
 
-    return this.http.post('http://localhost:3002/viagem', inscricaoViagem, this.httpOptions).toPromise();
+    return this.http.post('https://coralnh-server.herokuapp.com/viagem', inscricaoViagem, this.httpOptions).toPromise();
 
   };
 
   public checkInscritos(): Promise<any> {
 
-    return this.http.get('http://localhost:3002/inscritos', this.httpOptions).toPromise();
+    return this.http.get('https://coralnh-server.herokuapp.com/inscritos', this.httpOptions).toPromise();
   }
 
   constructor(private http: HttpClient) {
