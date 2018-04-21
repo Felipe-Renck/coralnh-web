@@ -87,14 +87,15 @@ export class EventosComponent implements OnInit {
       local: 'Punta Del Leste',
       data: '12/10/2018 a 14/10/2018',
       descricao: 'Viagem Punta Del Leste / Chuy',
-      valor: 'R$450,00', hidden: true
+      valor: 'R$450,00', hidden: false
     }
   ];
 
   modalMessage: string = "";
   disableButton = false;
   flagEsgotado = true;
-  saveButtonText = "";
+  saveButtonEventosText = "";
+  saveButtonViagemText ="";
   validationButtonText = "";
 
   user = new User();
@@ -110,7 +111,8 @@ export class EventosComponent implements OnInit {
 
   ngOnInit() {
     this.validationButtonText = 'Validar';
-    this.saveButtonText = 'Inscrever';
+    this.saveButtonEventosText = 'Inscrever';
+    this.saveButtonViagemText = 'Inscrever';
     this.eventoService.checkInscritos().then(res => { this.checkInscritos(res) }).catch(res => { this.checkInscritos(res) });
 
   }
@@ -125,8 +127,7 @@ export class EventosComponent implements OnInit {
       return;
     }
 
-    //console.log(form.value.Nome);
-    this.saveButtonText = "Carregando...";
+    this.saveButtonEventosText = "Carregando...";
     this.disableButton = true;
     this.inscricaoEvento.DataEvento = this.eventos[1].data;
     this.inscricaoEvento.LocalEvento = this.eventos[1].local;
@@ -141,7 +142,10 @@ export class EventosComponent implements OnInit {
       return;
     }
 
-    this.saveButtonText = "Carregando...";
+    this.saveButtonViagemText = "Carregando...";
+    this.disableButton = true;
+    this.inscricaoViagem.DataEvento = this.eventos[2].data;
+    this.inscricaoViagem.LocalEvento = this.eventos[2].local;
 
     console.log(this.inscricaoViagem);
     this.eventoService.inscricaoViagem(this.inscricaoViagem).then(res => { this.checkInscricao(res) }).catch(res => { this.checkInscricao(res) });
@@ -167,6 +171,10 @@ export class EventosComponent implements OnInit {
     }
     else if (result == "duplicate") {
       this.modalMessage = "Usuário já cadastrado";
+      jQuery('#modal-evento').modal('show');
+    }
+    else if (result == "not_found") {
+      this.modalMessage = "Usuário não encontrado";
       jQuery('#modal-evento').modal('show');
     }
     else {
@@ -200,16 +208,23 @@ export class EventosComponent implements OnInit {
   populateFields = function (res) {
 
     console.log("POPULATE FIELDS: " + res);
+
     this.validationButtonText = "Validar";
     this.disableButton = false;
     this.user = res;
-    this.userNome = this.user[0].nome;
-    this.userCelular = this.user[0].celular;
-    this.userEmail = this.user[0].email;
 
-    this.inscricaoViagem.Nome = this.user[0].nome;
-    this.inscricaoViagem.Email = this.user[0].email;
-    this.inscricaoViagem.Celular = this.user[0].celular;
+    if (this.user.length > 0) {
+      this.userNome = this.user[0].nome;
+      this.userCelular = this.user[0].celular;
+      this.userEmail = this.user[0].email;
+      this.inscricaoViagem.Nome = this.user[0].nome;
+      this.inscricaoViagem.Email = this.user[0].email;
+      this.inscricaoViagem.Celular = this.user[0].celular;
+    }
+    else {
+      alert("Usuário não encontrado");
+      this.inscricaoViagem.RG = "";
+    }
   }
 
   onChange = function (element) {
