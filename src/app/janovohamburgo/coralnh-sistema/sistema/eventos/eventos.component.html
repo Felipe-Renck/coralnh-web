@@ -197,7 +197,7 @@
               </div>
               <div class="col-sm-3">
                 <mat-input-container class="fullwidth">
-                  <input matInput placeholder="Responsável" maxlength="100" id="responsvel" [(ngModel)]="inscricaoViagem.Responsavel" name="Responsavel">
+                  <input matInput placeholder="Responsável" maxlength="100" id="responsvel" [(ngModel)]="inscricaoViagem.Responsavel" name="Responsavel" [disabled]="disableDate" [required]="requireField">
                   <mat-hint align="start">
                     <strong>Somente para menores de 18 anos</strong>
                   </mat-hint>
