@@ -98,6 +98,7 @@ export class EventosComponent implements OnInit {
   saveButtonEventosText = "";
   saveButtonViagemText = "";
   validationButtonText = "";
+  requireField = false;
 
   user = new User();
 
@@ -235,9 +236,11 @@ export class EventosComponent implements OnInit {
     if (userDate > date) {
       console.log('DATA MENOR');
       this.disableDate = false;
+      this.requireField = true;
     }
     else {
       this.disableDate = true;
+      this.requireField = false;
     }
   }
 
