@@ -82,7 +82,7 @@ export class EventosComponent implements OnInit {
 
   public eventos = [
     { local: 'Gramado', data: '07/04/2018', hidden: true },
-    { local: 'São Leopoldo', data: new Date('2018/4/21'), horario: '8:00h', endereco: 'Rua São Pedro,621 - Centro', valor: 'R$5,00', hidden: false },
+    { local: 'São Leopoldo', data: new Date('2018/4/21'), horario: '8:00h', endereco: 'Rua São Pedro,621 - Centro', valor: 'R$5,00', hidden: true },
     {
       local: 'Punta Del Leste',
       data: '12/10/2018 a 14/10/2018',
