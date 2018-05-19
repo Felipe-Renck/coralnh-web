@@ -88,7 +88,8 @@ export class EventosComponent implements OnInit {
       data: '12/10/2018 a 14/10/2018',
       descricao: 'Viagem Punta Del Leste / Chuy',
       valor: 'R$450,00', hidden: false
-    }
+    },
+    { local: 'Porto Alegre', data: new Date('2018/5/26'), horario: '12:30h - 18:00h', descricao: 'Impacto Esperança', valor: 'R$10,00', hidden: false },
   ];
 
   modalMessage: string = "";
@@ -131,9 +132,9 @@ export class EventosComponent implements OnInit {
 
     this.saveButtonEventosText = "Carregando...";
     this.disableButton = true;
-    this.inscricaoEvento.DataEvento = this.eventos[1].data;
-    this.inscricaoEvento.LocalEvento = this.eventos[1].local;
-    console.log(this.eventos[1].data);
+    this.inscricaoEvento.DataEvento = this.eventos[3].data;
+    this.inscricaoEvento.LocalEvento = this.eventos[3].local;
+    console.log(this.eventos[3].data);
     console.log(this.inscricaoEvento.DataEvento);
     this.eventoService.inscricao(this.inscricaoEvento).then(res => { this.checkInscricao(res) }).catch(res => { this.checkInscricao(res) });
   }
@@ -198,11 +199,8 @@ export class EventosComponent implements OnInit {
     console.log(res);
     if (res == 200) {
       this.createModal("success");
-      // Inscrição realizada com sucesso");
-      console.log(1);
     }
     else {
-      console.log(1);
       this.createModal("error");
     }
   }
