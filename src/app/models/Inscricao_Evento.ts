@@ -4,6 +4,6 @@ export class InscricaoEvento {
         public RG?: number,
         public DataEvento?: Date,
         public LocalEvento?: string,
-        public Automovel?: string,
+        public Automovel?: string
     ) { }
 }
