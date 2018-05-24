@@ -89,7 +89,8 @@ export class EventosComponent implements OnInit {
       descricao: 'Viagem Punta Del Leste / Chuy',
       valor: 'R$450,00', hidden: false
     },
-    { local: 'Porto Alegre', data: new Date('2018/5/26'), horario: '12:30h - 18:00h', descricao: 'Impacto Esperança', valor: 'R$10,00', hidden: false },
+    { local: 'Porto Alegre', data: new Date('2018/5/26'), horario: '12:30h - 18:00h', descricao: 'Impacto Esperança', valor: 'R$10,00', hidden: true },
+    { local: 'Caxias do Sul', data: new Date('2018/6/02'), horario: '15:30h', descricao: 'Apresentação Igreja Luterana', valor: 'R$10,00', hidden: false }
   ];
 
   modalMessage: string = "";
@@ -125,16 +126,16 @@ export class EventosComponent implements OnInit {
     console.log(this.hideEvento);
   }
 
-  salvar = function (form: FormControl) {
+  salvar = function (form: FormControl, index) {
     if (form.invalid) {
       return;
     }
 
     this.saveButtonEventosText = "Carregando...";
     this.disableButton = true;
-    this.inscricaoEvento.DataEvento = this.eventos[3].data;
-    this.inscricaoEvento.LocalEvento = this.eventos[3].local;
-    console.log(this.eventos[3].data);
+    this.inscricaoEvento.DataEvento = this.eventos[index].data;
+    this.inscricaoEvento.LocalEvento = this.eventos[index].local;
+    console.log(this.eventos[index].data);
     console.log(this.inscricaoEvento.DataEvento);
     this.eventoService.inscricao(this.inscricaoEvento).then(res => { this.checkInscricao(res) }).catch(res => { this.checkInscricao(res) });
   }

@@ -23,7 +23,7 @@
           <h3>
             <strong>Valor do ônibus: </strong>R$10,00</h3>
         </div>
-        <form class="formwidth" (ngSubmit)="salvar(myForm)" #myForm="ngForm">
+        <form class="formwidth" (ngSubmit)="salvar(myForm,0)" #myForm="ngForm">
           <div class="col-sm-3">
             <mat-input-container class="fullwidth">
               <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="inscricaoEvento.Nome" name="Nome" required>
@@ -46,7 +46,7 @@
             <div class="esgotado" [hidden]="false">Ônibus esgotado</div>
           </div>
           <div class="col-sm-2">
-            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" [disabled]="disableButton"
+            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm,0)" [disabled]="disableButton"
               type="submit">{{saveButtonEventosText}}</button>
           </div>
         </form>
@@ -79,7 +79,7 @@
           <h3>
             <strong>Valor do ônibus: </strong>{{ eventos[1].valor }}</h3>
         </div>
-        <form class="formwidth" (ngSubmit)="salvar(myForm)" #myForm="ngForm">
+        <form class="formwidth" (ngSubmit)="salvar(myForm,1)" #myForm="ngForm">
           <div class="col-sm-3">
             <mat-input-container class="fullwidth">
               <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="inscricaoEvento.Nome" name="Nome" required>
@@ -102,7 +102,7 @@
             <div class="esgotado" [hidden]="flagEsgotado">Ônibus esgotado</div>
           </div>
           <div class="col-sm-2">
-            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" [disabled]="disableButton"
+            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm,1)" [disabled]="disableButton"
               type="submit">{{saveButtonEventosText}}</button>
           </div>
         </form>
@@ -225,7 +225,7 @@
           <h3>
             <strong>Valor do ônibus: </strong>{{ eventos[3].valor }}</h3>
         </div>
-        <form class="formwidth" (ngSubmit)="salvar(myForm)" #myForm="ngForm">
+        <form class="formwidth" (ngSubmit)="salvar(myForm,3)" #myForm="ngForm">
           <div class="col-sm-3">
             <mat-input-container class="fullwidth">
               <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="inscricaoEvento.Nome" name="Nome" required>
@@ -234,7 +234,6 @@
               <input matInput placeholder="RG" id="RG" [(ngModel)]="inscricaoEvento.RG" name="RG" maxlength="11" required>
             </mat-input-container>
           </div>
-
           <div class="col-sm-3" id="locomocao">
             <div>
               <label class="example-margin">Você pretende ir de:</label>
@@ -248,7 +247,68 @@
             <div class="esgotado" [hidden]="flagEsgotado">Ônibus esgotado</div>
           </div>
           <div class="col-sm-2">
-            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm)" [disabled]="disableButton"
+            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm,3)" [disabled]="disableButton"
+              type="submit">{{saveButtonEventosText}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="modal-evento" class="modal fade close" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div style="color:black!important;text-align:center;" class="modal-body">
+            <span>{{modalMessage}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal-evento" class="modal fade +,close" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div style="color:black!important;text-align:center;" class="modal-body">
+            <span>{{modalMessage}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading" (click)="showEvento()" style="cursor: pointer">{{ eventos[4].local }} - {{eventos[4].data | date:'dd/MM/yyyy'}}</div>
+      <div class="panel-body" [hidden]="eventos[4].hidden">
+        <div class="col-sm-4" id="descricao">
+          <h3>
+            <strong>Data: </strong>{{eventos[4].data | date:'dd/MM/yyyy'}}</h3>
+          <h3>
+            <strong>Horário: </strong>{{ eventos[4].horario }}</h3>
+          <h3>
+            <strong>Descricao: </strong>{{ eventos[4].descricao }}</h3>
+          <h3>
+            <strong>Valor do ônibus: </strong>{{ eventos[4].valor }}</h3>
+        </div>
+        <form class="formwidth" (ngSubmit)="salvar(myForm,4)" #myForm="ngForm">
+          <div class="col-sm-3">
+            <mat-input-container class="fullwidth">
+              <input matInput placeholder="Nome Completo" maxlength="50" id="Nome" [(ngModel)]="inscricaoEvento.Nome" name="Nome" required>
+            </mat-input-container>
+            <mat-input-container class="fullwidth">
+              <input matInput placeholder="RG" id="RG" [(ngModel)]="inscricaoEvento.RG" name="RG" maxlength="11" required>
+            </mat-input-container>
+          </div>
+          <div class="col-sm-3" id="locomocao">
+            <div>
+              <label class="example-margin">Você pretende ir de:</label>
+            </div>
+            <mat-radio-group [(ngModel)]="inscricaoEvento.Automovel" name="automovel_4">
+              <div>
+                <mat-radio-button required value="{{values[0].value}}" color="primary">{{values[0].text}}</mat-radio-button>
+                <mat-radio-button required value="{{values[1].value}}" color="primary" [disabled]="!flagEsgotado">{{values[1].text}}</mat-radio-button>
+              </div>
+            </mat-radio-group>
+            <div class="esgotado" [hidden]="flagEsgotado">Ônibus esgotado</div>
+          </div>
+          <div class="col-sm-2">
+            <button class="btn btn-md btn-block btn-primary center-block" id="botao_inscricao" (click)="salvar(myForm,4)" [disabled]="disableButton"
               type="submit">{{saveButtonEventosText}}</button>
           </div>
         </form>
