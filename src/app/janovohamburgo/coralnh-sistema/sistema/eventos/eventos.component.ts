@@ -90,7 +90,7 @@ export class EventosComponent implements OnInit {
       valor: 'R$450,00', hidden: false
     },
     { local: 'Porto Alegre', data: new Date('2018/5/26'), horario: '12:30h - 18:00h', descricao: 'Impacto Esperança', valor: 'R$10,00', hidden: true },
-    { local: 'Caxias do Sul', data: new Date('2018/6/02'), horario: '15:30h', descricao: 'Apresentação Igreja Luterana', valor: 'R$10,00', hidden: false }
+    { local: 'Caxias do Sul', data: new Date('2018/6/02'), horario_saida: '16:00h', horario_retorno: '22:00h', descricao: 'Apresentação Igreja Luterana', valor: 'R$10,00', hidden: false }
   ];
 
   modalMessage: string = "";

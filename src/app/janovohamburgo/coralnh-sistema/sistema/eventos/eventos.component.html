@@ -280,11 +280,11 @@
           <h3>
             <strong>Data: </strong>{{eventos[4].data | date:'dd/MM/yyyy'}}</h3>
           <h3>
-            <strong>Horário: </strong>{{ eventos[4].horario }}</h3>
+            <strong>Saída: </strong>{{ eventos[4].horario_saida }}</h3>
           <h3>
+              <strong>Retorno: </strong>{{ eventos[4].horario_retorno }}</h3>
+              <h3>
             <strong>Descricao: </strong>{{ eventos[4].descricao }}</h3>
-          <h3>
-            <strong>Valor do ônibus: </strong>{{ eventos[4].valor }}</h3>
         </div>
         <form class="formwidth" (ngSubmit)="salvar(myForm,4)" #myForm="ngForm">
           <div class="col-sm-3">
