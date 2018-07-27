@@ -7,6 +7,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { Optional } from '@angular/core';
 import {DxSchedulerModule} from 'devextreme-angular';
 
+import { ContatoService } from "./services/contato.service";
+
 import { AppComponent } from './app.component';
 import { JanovohamburgoComponent } from './janovohamburgo/janovohamburgo/janovohamburgo.component';
 import { VerticalMaisComponent } from './vertical-mais/vertical-mais.component';
@@ -54,7 +56,7 @@ const appRoutes: Routes = [
       { enableTracing: false }
     )
   ],
-  providers: [
+  providers: [ ContatoService,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
